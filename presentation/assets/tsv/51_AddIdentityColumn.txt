@@ -1,0 +1,6 @@
+Phase	Process
+Database pre-release	Create new table
+Database release	Partition switch
+	Rename tables
+Code release	
+Database post-release	Drop old table

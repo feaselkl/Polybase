@@ -1,0 +1,14 @@
+All data files are available on Azure Blob Storage in a publically available Blob Storage share.
+
+North Carolina Population:  713KB
+https://cspolybasepublic.blob.core.windows.net/polybaserevealedpublicdata/NorthCarolinaPopulation.csv
+
+Raleigh Fire Incidents:  9265KB
+https://cspolybasepublic.blob.core.windows.net/polybaserevealedpublicdata/Fire_Incidents.7z
+
+Country Data:  62KB
+Country data from https://perso.telecom-paristech.fr/eagan/class/igr204/datasets.  Thanks to Petra Isenberg, Pierre Dragicevic and Yvonne Jansen for gathering and cleaning up this data set.  This data set is licensed under a Creative Commons Attribution-ShareAlike 3.0 License.
+https://cspolybasepublic.blob.core.windows.net/polybaserevealedpublicdata/factbook.csv
+
+The Volcano data set comes from Azure Samples and is available at:
+https://github.com/Azure-Samples/azure-cosmos-db-sample-data/blob/master/SampleData/VolcanoData.json

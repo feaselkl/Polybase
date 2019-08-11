@@ -1,0 +1,7 @@
+Phase	Process
+Database pre-release	
+Database release	Deploy new table type version
+	Deploy new procedure version
+Code release	Deploy new calling code
+Database post-release	Drop old procedure version
+	Drop old table type version

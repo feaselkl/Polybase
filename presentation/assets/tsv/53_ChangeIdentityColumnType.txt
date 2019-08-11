@@ -1,0 +1,10 @@
+Phase	Process
+Database pre-release	Create new table with data type
+	Create temporary trigger
+	Create backfill process
+	Disable backfill process 
+Database release	Rename tables
+	Drop temporary trigger
+Code release	
+Database post-release	Drop old table
+	Drop backfill process

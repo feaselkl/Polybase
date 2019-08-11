@@ -1,0 +1,14 @@
+Phase	Process
+Database pre-release	Add new column
+	Create backfill process (and maybe temp index)
+	Create trigger
+Database release	Deploy temporary versioned procedures (optional)
+Code release	Deploy calling code (optional)
+Database post-release	Deploy altered procedures (optional)
+	Deploy final versioned procedures (optional)
+	Drop old versions (optional)
+	Drop temporary index
+	Drop trigger
+	Drop backfill process
+	Drop old column
+	Rename new column (optional)

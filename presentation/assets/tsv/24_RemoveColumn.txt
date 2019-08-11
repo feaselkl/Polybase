@@ -1,0 +1,7 @@
+Phase	Process
+Database pre-release	
+Database release	Deploy new versions of procedures
+Code release	Deploy calling code
+Database post-release	Deploy altered procedures
+	Drop old versions of procedures 
+	Drop column

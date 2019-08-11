@@ -1,0 +1,7 @@
+Phase	Process
+Database pre-release	
+Database release	Rename table
+	Create temporary view
+	Deploy altered procedures
+Code release	
+Database post-release	Drop temporary view

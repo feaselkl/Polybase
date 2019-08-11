@@ -1,0 +1,5 @@
+Phase	Process
+Database pre-release	
+Database release	
+Code release	Deploy new calling code
+Database post-release	Deploy altered procedure

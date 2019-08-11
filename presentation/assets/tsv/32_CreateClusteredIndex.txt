@@ -1,0 +1,5 @@
+Phase	Process
+Database pre-release	Create index
+Database release	
+Code release	
+Database post-release	

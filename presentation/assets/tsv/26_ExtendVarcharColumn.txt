@@ -1,0 +1,7 @@
+Phase	Process
+Database pre-release	
+Database release	Alter table
+	Deploy altered procedures (optional)
+	Deploy versioned procedures (optional)
+Code release	Deploy calling code (optional)
+Database post-release	Deprecate old versions of procedures (optional)

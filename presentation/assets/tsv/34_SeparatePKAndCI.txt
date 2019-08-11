@@ -1,0 +1,6 @@
+Phase	Process
+Database pre-release	Drop old primary key & add new in a single transaction
+	Create new clustered index in a separate transaction
+Database release	
+Code release	
+Database post-release	
