@@ -133,35 +133,35 @@ Downsides:
 
 ---
 
-![Begin a new installation.](presentation/assets/image/01_NewInstallation.png)
+<img src="presentation/assets/image/01_NewInstallation.png" height="492" width="614" />
 
 ---
 
-![Optionally choose to install just PolyBase V2 connectors.](presentation/assets/image/02_JustV2.png)
+<img src="presentation/assets/image/02_JustV2.png" height="492" width="614" />
 
 ---
 
-![Alternatively, choose to install V1 and V2 connectors.](presentation/assets/image/03_V2AndV1.png)
+<img src="presentation/assets/image/03_V2AndV1.png" height="492" width="614" />
 
 ---
 
-![You may install PolyBase standalone or as part of a scale-out cluster.](presentation/assets/image/04_Standalone.png)
+<img src="presentation/assets/image/04_Standalone.png" height="492" width="614" />
 
 ---
 
-![If you installed V1 and you need Java, SQL Server can install Azul's Zulu Systems version of Java.](presentation/assets/image/05_AzulZulu.png)
+<img src="presentation/assets/image/05_AzulZulu.png" height="492" width="614" />
 
 ---
 
-![PolyBase services and their service accounts.](presentation/assets/image/06_PolyBaseServices.png)
+<img src="presentation/assets/image/06_PolyBaseServices.png" height="492" width="614" />
 
 ---
 
-<img src="presentation/assets/image/07_ConfigurationFilePath.png" height="512" width="410" />
+<img src="presentation/assets/image/07_ConfigurationFilePath.png" height="492" width="614" />
 
 ---
 
-![When installation succeeds, you might need a reboot.](presentation/assets/image/08_InstallationComplete.png)
+<img src="presentation/assets/image/08_InstallationComplete.png" height="492" width="614" />
 
 ---
 
@@ -194,23 +194,25 @@ We will demonstrate with Apache Hive and Apache Spark, both for Hortonworks Data
 
 ---
 
-![Follow the Hortonworks wizard.](presentation/assets/image/11_HiveWizard.png)
+<img src="presentation/assets/image/11_HiveWizard.png" height="461" width="593" />
 
 ---
 
-![Installation should be fast.](presentation/assets/image/13_InstallationInProgress.png)
+<img src="presentation/assets/image/13_InstallationInProgress.png" height="461" width="593" />
 
 ---
 
-![Find your new ODBC sources in the ODBC Sources application.](presentation/assets/image/14_ODBCDataSources.png)
+<img src="presentation/assets/image/14_ODBCDataSources.png" height="407" width="498" />
 
 ---
 
-![Configuring and testing a Hive data source.](presentation/assets/image/15_ConfigureHive.png)
+![Configuring and testing a Hive data source.](presentation/assets/image/.png)
+<img src="presentation/assets/image/15_ConfigureHive.png" height="519" width="546" />
 
 ---
 
-![Configuring and testing a Spark data source.](presentation/assets/image/16_ConfigureSpark.png)
+![Configuring and testing a Spark data source.](presentation/assets/image/.png)
+<img src="presentation/assets/image/16_ConfigureSpark.png" height="519" width="546" />
 
 ---
 
