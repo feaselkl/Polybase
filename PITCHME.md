@@ -206,12 +206,10 @@ We will demonstrate with Apache Hive and Apache Spark, both for Hortonworks Data
 
 ---
 
-![Configuring and testing a Hive data source.](presentation/assets/image/.png)
 <img src="presentation/assets/image/15_ConfigureHive.png" height="519" width="546" />
 
 ---
 
-![Configuring and testing a Spark data source.](presentation/assets/image/.png)
 <img src="presentation/assets/image/16_ConfigureSpark.png" height="519" width="546" />
 
 ---
