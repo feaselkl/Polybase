@@ -157,7 +157,7 @@ Downsides:
 
 ---
 
-![A sample configuration file path.](presentation/assets/image/07_ConfigurationFilePath.png) <!-- .element height="50%" width="50%" -->
+<img src="presentation/assets/image/07_ConfigurationFilePath.png" height="512" width="410" />
 
 ---
 
