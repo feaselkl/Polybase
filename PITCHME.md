@@ -58,7 +58,7 @@ We will look at installation, configuration, and a number of practical business 
 6. Data Virtualization
 7. Tuning and Administration
 
----
+---?image=presentation/assets/background/questions.jpg&size=cover&opacity=20
 
 ### What is PolyBase?
 
@@ -68,7 +68,7 @@ PolyBase is Microsoft's newest technology for covering three use cases:
 2. Data virtualization:  creating the appearance of local data while still having the data live remotely.
 3. Scale-out versus scale-up and Massively Parallel Processing (MPP).
 
----
+---?image=presentation/assets/background/calendar.jpg&size=cover&opacity=20
 
 ### A Brief History
 
@@ -76,7 +76,7 @@ PolyBase is Microsoft's newest technology for covering three use cases:
 * SQL Server 2016:  PolyBase "V1" introduced.
 * SQL Server 2019:  PolyBase "V2" introduced.  PolyBase also brought into SQL Server Big Data Clusters.
 
----
+---?image=presentation/assets/background/elephant5.jpg&size=cover&opacity=20
 
 ### Supported Data Sources:  V1
 
@@ -85,7 +85,7 @@ PolyBase V1 supported two external data sources:
 1. HDFS -- Hadoop
 2. WASB(S) -- Blob Storage
 
----
+---?image=presentation/assets/background/connections.jpg&size=cover&opacity=35
 
 ### Supported Data Sources:  V2
 
@@ -97,7 +97,7 @@ PolyBase V2 has blown open the door in supported data sources:
 4. Teradata
 5. Any ODBC connector -- Hive, Spark, Excel
 
----
+---?image=presentation/assets/background/duplicates.jpg&size=cover&opacity=20
 
 ### Massively Parallel Processing
 
@@ -105,7 +105,7 @@ SQL Server is a classic "scale-up" technology:  if you want more power, add more
 
 Hadoop is a great example of an MPP system:  if you want more power, add more servers; the system will coordinate processing.
 
----
+---?image=presentation/assets/background/space.jpg&size=cover&opacity=35
 
 ### MPP and Scale-Out Versus Scale-Up
 
@@ -184,7 +184,7 @@ RECONFIGURE
 GO
 ```
 
----
+---?image=presentation/assets/background/cobra.jpg&size=cover&opacity=20
 
 ### Driver Installation
 
@@ -226,7 +226,7 @@ We will demonstrate with Apache Hive and Apache Spark, both for Hortonworks Data
 6. Data Virtualization
 7. Tuning and Administration
 
----
+---?image=presentation/assets/background/legend.jpg&size=cover&opacity=20
 
 ### External Objects
 
@@ -236,7 +236,7 @@ Three sorts of external objects exist.
 2. External File Format
 3. External Table
 
----
+---?image=presentation/assets/background/lab.jpg&size=cover&opacity=20
 
 ### External Data Source
 
@@ -308,7 +308,7 @@ CREATE EXTERNAL DATA SOURCE ClusterinoSpark WITH
 @[12](Use the credentials we created for Spark.)
 @[13](Enable predicate pushdown.  This is optional.)
 
----
+---?image=presentation/assets/background/paper-stack.jpg&size=cover&opacity=20
 
 ### External File Format
 
@@ -353,7 +353,7 @@ CREATE EXTERNAL FILE FORMAT OrcFileFormat WITH
 @[3](ORC and Parquet are column-optimized formats, great for aggregating big data sets.)
 @[4](ORC supports data ompression with default or Snappy codecs.)
 
----
+---?image=presentation/assets/background/table.jpg&size=cover&opacity=20
 
 ### External Table
 
@@ -389,23 +389,25 @@ WITH
 @[14](Specify a particular external file format.)
 @[15-16](Determine rejection behavior.)
 
----
+---?image=presentation/assets/background/rejection.jpg&size=cover&opacity=20
 
 ### Rejection and You
 
 Going from unstructured to structured data is a risk:  conversions may fail.  When that happens, the PolyBase engine rejects that row.  After we meet a rejection threshold, PolyBase fails the query.
 
----
+---?image=presentation/assets/background/sound-mixer.jpg&size=cover&opacity=20
 
 ### Rejection and You
 
 The three parameters we control are:
 
 `REJECT_TYPE` : { `VALUE`, `PERCENTAGE` }
+
 `REJECT_VALUE`
+
 `REJECT_SAMPLE_VALUE` = Number of rows to pull in before recalculating rejection percentage.
 
----
+---?image=presentation/assets/background/white-wall.jpg&size=cover&opacity=20
 
 ### Rejection and You
 
@@ -488,7 +490,7 @@ WITH
 6. Data Virtualization
 7. Tuning and Administration
 
----
+---?image=presentation/assets/background/ice.jpg&size=cover&opacity=20
 
 ### Cold Storage
 
@@ -498,7 +500,7 @@ Assumptions:
 3. Occasionally someone needs this under-utilized data.
 4. When users do need the under-utilized data, they can afford to wait a while.
 
----
+---?image=presentation/assets/background/ice-crystals.jpg&size=cover&opacity=20
 
 ### Cold Storage
 
@@ -513,7 +515,7 @@ Benefits:
 
 ### Demo Time
 
----
+---?image=presentation/assets/background/colored-pencils.jpg&size=cover&opacity=20
 
 ### Alternate Approaches
 
@@ -534,7 +536,7 @@ Benefits:
 6. Data Virtualization
 7. Tuning and Administration
 
----
+---?image=presentation/assets/background/tunnel.jpg&size=cover&opacity=20
 
 ### ELT
 
@@ -543,7 +545,7 @@ Assumptions:
 2. You have processes in place (e.g., SSIS packages) to Extract, Transform, and Load this data
 3. You have a large amount of data
 
----
+---?image=presentation/assets/background/chain.jpg&size=cover&opacity=20
 
 ### ELT
 
@@ -558,7 +560,7 @@ Benefits:
 
 ### Demo Time
 
----
+---?image=presentation/assets/background/colored-pencils.jpg&size=cover&opacity=20
 
 ### Alternate Approaches
 
@@ -579,7 +581,7 @@ Benefits:
 6. **Data Virtualization**
 7. Tuning and Administration
 
----
+---?image=presentation/assets/background/stack.jpg&size=cover&opacity=20
 
 ### Data Virtualization
 
@@ -589,7 +591,7 @@ Assumptions:
 3. You would like to query these source systems with T-SQL and integrate them together in your queries
 4. Performance is not a key consideration
 
----
+---?image=presentation/assets/background/flexible.jpg&size=cover&opacity=20
 
 ### Data Virtualization
 
@@ -618,7 +620,7 @@ Benefits:
 6. Data Virtualization
 7. **Tuning and Administration**
 
----
+---?image=presentation/assets/background/calculator.jpg&size=cover&opacity=20
 
 ### Statistics
 
@@ -630,7 +632,7 @@ Limitations:
 3. Not all external sources support sampling.
 4. SQL Server generates statistics, so you need to bring the data over.  Make sure you have enough disk space!
 
----
+---?image=presentation/assets/background/dictionary.jpg&size=cover&opacity=20
 
 ### Using Statistics
 
@@ -640,7 +642,7 @@ Once created, external table statistics behave the same way as normal table stat
 
 ### Demo Time
 
----
+---?image=presentation/assets/background/magnifying-glass.jpg&size=cover&opacity=20
 
 ### Important DMVs
 
@@ -650,7 +652,7 @@ There are several important DMVs for query tuning and regular administration.
 
 ### Demo Time
 
----
+---?image=presentation/assets/background/rollercoaster.jpg&size=cover&opacity=20
 
 ### Execution Plans
 

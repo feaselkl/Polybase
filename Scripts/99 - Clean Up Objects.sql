@@ -58,6 +58,7 @@ DROP TABLE IF EXISTS dbo.FireIncidents2018;
 DROP TABLE IF EXISTS dbo.FireIncidents2019;
 DROP TABLE IF EXISTS dbo.FireIncidentsNull;
 DROP TABLE IF EXISTS dbo.FireIncidentsOld;
+DROP VIEW IF EXISTS dbo.FireIncidentsLocal;
 
 -- ELT
 IF (OBJECT_ID('ELT.Employee') IS NOT NULL)

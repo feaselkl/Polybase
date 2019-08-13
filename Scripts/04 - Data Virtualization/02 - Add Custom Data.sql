@@ -31,7 +31,6 @@ BEGIN
     );
 END
 GO
-drop external table dbo.countrydata
 IF (OBJECT_ID('dbo.CountryData') IS NULL)
 BEGIN
 	CREATE EXTERNAL TABLE dbo.CountryData
