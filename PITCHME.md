@@ -133,35 +133,35 @@ Downsides:
 
 ---
 
-<img src="presentation/assets/image/01_NewInstallation.png" height="492" width="614" />
+<img src="presentation/assets/image/01_NewInstallation.png" height="550" />
 
 ---
 
-<img src="presentation/assets/image/02_JustV2.png" height="492" width="614" />
+<img src="presentation/assets/image/02_JustV2.png" height="550" />
 
 ---
 
-<img src="presentation/assets/image/03_V2AndV1.png" height="492" width="614" />
+<img src="presentation/assets/image/03_V2AndV1.png" height="550" />
 
 ---
 
-<img src="presentation/assets/image/04_Standalone.png" height="492" width="614" />
+<img src="presentation/assets/image/04_Standalone.png" height="550" />
 
 ---
 
-<img src="presentation/assets/image/05_AzulZulu.png" height="492" width="614" />
+<img src="presentation/assets/image/05_AzulZulu.png" height="550" />
 
 ---
 
-<img src="presentation/assets/image/06_PolyBaseServices.png" height="492" width="614" />
+<img src="presentation/assets/image/06_PolyBaseServices.png" height="550" />
 
 ---
 
-<img src="presentation/assets/image/07_ConfigurationFilePath.png" height="492" width="614" />
+<img src="presentation/assets/image/07_ConfigurationFilePath.png" height="550" />
 
 ---
 
-<img src="presentation/assets/image/08_InstallationComplete.png" height="492" width="614" />
+<img src="presentation/assets/image/08_InstallationComplete.png" height="550" />
 
 ---
 
@@ -194,23 +194,23 @@ We will demonstrate with Apache Hive and Apache Spark, both for Hortonworks Data
 
 ---
 
-<img src="presentation/assets/image/11_HiveWizard.png" height="461" width="593" />
+<img src="presentation/assets/image/11_HiveWizard.png" height="550" />
 
 ---
 
-<img src="presentation/assets/image/13_InstallationInProgress.png" height="461" width="593" />
+<img src="presentation/assets/image/13_InstallationInProgress.png"  height="550" />
 
 ---
 
-<img src="presentation/assets/image/14_ODBCDataSources.png" height="407" width="498" />
+<img src="presentation/assets/image/14_ODBCDataSources.png" height="550" />
 
 ---
 
-<img src="presentation/assets/image/15_ConfigureHive.png" height="519" width="546" />
+<img src="presentation/assets/image/15_ConfigureHive.png" height="550" />
 
 ---
 
-<img src="presentation/assets/image/16_ConfigureSpark.png" height="519" width="546" />
+<img src="presentation/assets/image/16_ConfigureSpark.png" height="550" />
 
 ---
 
