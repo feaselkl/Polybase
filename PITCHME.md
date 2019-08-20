@@ -351,7 +351,7 @@ CREATE EXTERNAL FILE FORMAT OrcFileFormat WITH
 ```
 
 @[3](ORC and Parquet are column-optimized formats, great for aggregating big data sets.)
-@[4](ORC supports data ompression with default or Snappy codecs.)
+@[4](ORC supports data compression with default or Snappy codecs.)
 
 ---?image=presentation/assets/background/table.jpg&size=cover&opacity=20
 
