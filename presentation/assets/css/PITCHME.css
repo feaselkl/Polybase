@@ -27,6 +27,14 @@
   font-size: 50% !important;
 }
 
+.reveal p {
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
 .reveal p span.slide-title {
   color: white;
   text-shadow: 1px 0 0;
@@ -68,11 +76,6 @@
 
 .white {
   color: white;
-  text-shadow:
-	-1px -1px 0 #000,
-	1px -1px 0 #000,
-	-1px 1px 0 #000,
-	1px 1px 0 #000;
 }
 
 .gp-tip { font-size : 1.5em; }
