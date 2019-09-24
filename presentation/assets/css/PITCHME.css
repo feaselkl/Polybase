@@ -35,6 +35,14 @@
 		1px 1px 0 #000;
 }
 
+.reveal li {
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
 .reveal p span.slide-title {
   color: white;
   text-shadow: 1px 0 0;
