@@ -72,10 +72,12 @@
 
 .reveal a {
     # color: #af5a08 !important;
+	text-shadow: none;
 }
 
 .reveal a:hover {
     # color: #e27b1f !important;
+	text-shadow: none;
 }
 
 #gp-logo img {
