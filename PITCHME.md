@@ -22,7 +22,7 @@
 		<td><a href="https://curatedsql.com">Curated SQL</a></td>
 	</tr>
 	<tr>
-		<td><a href="https://www.apress.com/us/book/9781484254608"><img src="https://www.catallaxyservices.com/media/PolyBaseRevealed.png" height="133" width="93" /></a></td>
+		<td><a href="https://www.apress.com/us/book/9781484254608"><img src="https://www.catallaxyservices.com/media/PolyBaseRevealed.png" height="153" width="107" /></a></td>
 		<td><a href="https://www.apress.com/us/book/9781484254608">PolyBase Revealed</a></td>
 	</tr>
 </table>
