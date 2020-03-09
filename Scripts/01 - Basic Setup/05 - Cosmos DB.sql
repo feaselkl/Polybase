@@ -110,3 +110,35 @@ ORDER BY
     v.Elevation ASC;
 GO
 
+-- We can also create a separate table without the coordinates.
+IF NOT EXISTS
+(
+    SELECT 1
+    FROM sys.external_tables t
+    WHERE
+        t.name = N'Volcano2'
+)
+BEGIN
+    CREATE EXTERNAL TABLE dbo.Volcano2
+    (
+        _id NVARCHAR(100) NOT NULL, 
+        VolcanoName NVARCHAR(100) NOT NULL, 
+        Country NVARCHAR(100) NULL, 
+        Region NVARCHAR(100) NULL,
+        Location_Type NVARCHAR(100) NULL,
+        Elevation INT NULL,
+        Type NVARCHAR(100) NULL,
+        Status NVARCHAR(200) NULL,
+        LastEruption NVARCHAR(300) NULL
+    )
+    WITH
+    (
+        LOCATION='PolyBaseTest.Volcano',
+        DATA_SOURCE = CosmosDB
+    );
+END
+GO
+
+-- Now we get one row per volcano; PolyBase skips the coordinates column.
+SELECT * FROM dbo.Volcano2;
+GO
