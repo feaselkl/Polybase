@@ -40,6 +40,17 @@ BEGIN
 	DROP EXTERNAL TABLE dbo.Volcano;
 END
 GO
+IF EXISTS
+(
+	SELECT 1
+	FROM sys.tables
+	WHERE
+		name = N'Volcano2'
+)
+BEGIN
+	DROP EXTERNAL TABLE dbo.Volcano2;
+END
+GO
 
 -- Cold Storage
 DECLARE
@@ -144,7 +155,7 @@ BEGIN
 	DROP EXTERNAL FILE FORMAT SemiColonFileFormat;
 END
 GO
-IF EXISTS
+/*IF EXISTS
 (
 	SELECT 1
 	FROM sys.external_data_sources d
@@ -176,7 +187,7 @@ IF EXISTS
 BEGIN
 	DROP EXTERNAL DATA SOURCE CosmosDB;
 END
-GO
+GO*/
 IF EXISTS
 (
 	SELECT 1

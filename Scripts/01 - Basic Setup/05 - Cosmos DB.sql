@@ -25,7 +25,7 @@ IF NOT EXISTS
 BEGIN
     CREATE EXTERNAL DATA SOURCE CosmosDB WITH
     (
-        LOCATION = 'mongodb://cspolybase.documents.azure.com:10255',
+        LOCATION = 'mongodb://cspolybase2.documents.azure.com:10255',
         CONNECTION_OPTIONS = 'ssl=true',
         CREDENTIAL = CosmosCredential,
         PUSHDOWN = ON
