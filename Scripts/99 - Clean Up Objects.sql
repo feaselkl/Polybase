@@ -155,6 +155,42 @@ BEGIN
 	DROP EXTERNAL FILE FORMAT SemiColonFileFormat;
 END
 GO
+IF EXISTS
+(
+	SELECT 1
+	FROM sys.external_data_sources d
+	WHERE
+		d.name = N'Desktop'
+)
+BEGIN
+	DROP EXTERNAL DATA SOURCE Desktop;
+END
+GO
+
+IF (OBJECT_ID('dbo.PostgresEvent') IS NOT NULL)
+BEGIN
+	DROP EXTERNAL TABLE dbo.PostgresEvent;
+END
+GO
+IF EXISTS
+(
+	SELECT 1
+	FROM sys.external_data_sources d
+	WHERE
+		d.name = N'PostgresEvents'
+)
+BEGIN
+	DROP EXTERNAL DATA SOURCE PostgresEvents;
+END
+GO
+IF EXISTS(SELECT 1 FROM sys.database_scoped_credentials WHERE name = N'PostgresCredential')
+BEGIN
+	DROP DATABASE SCOPED CREDENTIAL PostgresCredential;
+END
+GO
+
+-- These are sources I re-use between presentations, so I'm leaving them.
+-- For your cleanup, you might want to uncomment these and drop the sources.
 /*IF EXISTS
 (
 	SELECT 1
@@ -188,14 +224,3 @@ BEGIN
 	DROP EXTERNAL DATA SOURCE CosmosDB;
 END
 GO*/
-IF EXISTS
-(
-	SELECT 1
-	FROM sys.external_data_sources d
-	WHERE
-		d.name = N'Desktop'
-)
-BEGIN
-	DROP EXTERNAL DATA SOURCE Desktop;
-END
-GO
