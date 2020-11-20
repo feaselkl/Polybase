@@ -5,36 +5,32 @@
 ## Data Virtualization with PolyBase
 
 <a href="https://www.catallaxyservices.com">Kevin Feasel</a> (<a href="https://twitter.com/feaselkl">@feaselkl</a>)<br />
-<a href="https://csmore.info/on/zdt">https://CSmore.info/on/polybase</a>
+<a href="https://csmore.info/on/polybase">https://CSmore.info/on/polybase</a>
 
 ---
 
 @title[Who Am I?]
 
-@div[left-60]
+[drag=60 100, drop=0 0]
 <table>
-	<tr>
-		<td><a href="https://csmore.info"><img src="https://www.catallaxyservices.com/media/Logo.png" height="133" width="119" /></a></td>
-		<td><a href="https://csmore.info">Catallaxy Services</a></td>
-	</tr>
-	<tr>
-		<td><a href="https://curatedsql.com"><img src="https://www.catallaxyservices.com/media/CuratedSQLLogo.png" height="133" width="119" /></a></td>
-		<td><a href="https://curatedsql.com">Curated SQL</a></td>
-	</tr>
-	<tr>
-		<td><a href="https://www.apress.com/us/book/9781484254608"><img src="https://www.catallaxyservices.com/media/PolyBaseRevealed.png" height="153" width="107" /></a></td>
-		<td><a href="https://www.apress.com/us/book/9781484254608">PolyBase Revealed</a></td>
-	</tr>
+<tr>
+<td><a href="https://csmore.info"><img src="https://www.catallaxyservices.com/media/Logo.png" height="133" width="119" /></a></td>
+<td><a href="https://csmore.info">Catallaxy Services</a></td>
+</tr>
+<tr>
+<td><a href="https://curatedsql.com"><img src="https://www.catallaxyservices.com/media/CuratedSQLLogo.png" height="133" width="119" /></a></td>
+<td><a href="https://curatedsql.com">Curated SQL</a></td>
+</tr>
+<tr>
+<td><a href="https://www.apress.com/us/book/9781484254608"><img src="https://www.catallaxyservices.com/media/PolyBaseRevealed.png" height="153" width="107" /></a></td>
+<td><a href="https://www.apress.com/us/book/9781484254608">PolyBase Revealed</a></td>
+</tr>
 </table>
-@divend
 
-@div[right-40]
-	<br /><br />
-	<a href="https://www.twitter.com/feaselkl"><img src="https://www.catallaxyservices.com/media/HeadShot.jpg" height="358" width="315" /></a>
-	<br />
-	<a href="https://www.twitter.com/feaselkl">@feaselkl</a>
-</div>
-@divend
+[drag=40 100, drop=60 0]
+![Kevin Feasel](https://www.catallaxyservices.com/media/HeadShot.jpg)
+
+[@feaselkl](https://www.twitter.com/feaselkl)
 
 ---?image=presentation/assets/background/motivation.jpg&size=cover&opacity=20
 
@@ -133,56 +129,49 @@ Downsides:
 
 ---
 
-<img src="presentation/assets/image/01_NewInstallation.png" height="600" />
+[drag=100]
+![New installation](presentation/assets/image/01_NewInstallation.png)
 
 ---
 
-<img src="presentation/assets/image/02_JustV2.png" height="600" />
+[drag=100]
+![Install only V2 components](presentation/assets/image/02_JustV2.png)
 
 ---
 
-<img src="presentation/assets/image/03_V2AndV1.png" height="600" />
+[drag=100]
+![Install V1 components as well](presentation/assets/image/03_V2AndV1.png)
 
 ---
 
-<img src="presentation/assets/image/04_Standalone.png" height="600" />
+[drag=100]
+![Install PolyBase standalone](presentation/assets/image/04_Standalone.png)
 
 ---
 
-<img src="presentation/assets/image/05_AzulZulu.png" height="600" />
+[drag=100]
+![Install Azul Zulu Open JRE](presentation/assets/image/05_AzulZulu.png)
 
 ---
 
-<img src="presentation/assets/image/06_PolyBaseServices.png" height="600" />
+[drag=100]
+![Configure PolyBase serices](presentation/assets/image/06_PolyBaseServices.png)
 
 ---
 
-<img src="presentation/assets/image/07_ConfigurationFilePath.png" height="600" />
+[drag=100]
+![Save install details](presentation/assets/image/07_ConfigurationFilePath.png)
 
 ---
 
-<img src="presentation/assets/image/08_InstallationComplete.png" height="600" />
+[drag=100]
+![Installation is complete](presentation/assets/image/08_InstallationComplete.png)
 
 ---
 
 ### Enabling PolyBase
 
-```sql
-USE [master]
-GO
-EXEC sp_configure
-	@configname = 'polybase enabled',
-	@configvalue = 1;
-GO
-RECONFIGURE;
-GO
-EXEC sp_configure
-	@configname = 'hadoop connectivity',
-	@configvalue = 7;
-GO
-RECONFIGURE
-GO
-```
+@code[sql](presentation/assets/code/EnablePolyBase.sql)
 
 ---?image=presentation/assets/background/cobra.jpg&size=cover&opacity=20
 
@@ -194,23 +183,28 @@ We will demonstrate with Apache Hive and Apache Spark, both for Hortonworks Data
 
 ---
 
-<img src="presentation/assets/image/11_HiveWizard.png" height="600" />
+[drag=100]
+![Install the Hive ODBC driver](presentation/assets/image/11_HiveWizard.png)
 
 ---
 
-<img src="presentation/assets/image/13_InstallationInProgress.png"  height="600" />
+[drag=100]
+![Install the Hive ODBC driver](presentation/assets/image/13_InstallationInProgress.png)
 
 ---
 
-<img src="presentation/assets/image/14_ODBCDataSources.png" height="600" />
+[drag=100]
+![Install the Hive ODBC driver](presentation/assets/image/14_ODBCDataSources.png)
 
 ---
 
-<img src="presentation/assets/image/15_ConfigureHive.png" height="600" />
+[drag=100]
+![Install the Hive ODBC driver](presentation/assets/image/15_ConfigureHive.png)
 
 ---
 
-<img src="presentation/assets/image/16_ConfigureSpark.png" height="600" />
+[drag=100]
+![Install the Hive ODBC driver](presentation/assets/image/16_ConfigureSpark.png)
 
 ---
 
@@ -673,7 +667,20 @@ PolyBase has a number of useful business cases.  It won't give you the greatest 
 ---
 
 ### Wrapping Up
-
-To learn more, go here:  <a href="https://csmore.info/on/polybase">https://CSmore.info/on/polybase</a>
-
-And for help, contact me:  <a href="mailto:feasel@catallaxyservices.com">feasel@catallaxyservices.com</a> | <a href="https://www.twitter.com/feaselkl">@feaselkl</a>
+<p>
+	To learn more, go here:
+	<br />
+	<a href="https://csmore.info/on/polybase">https://CSmore.info/on/polybase</a>
+</p>
+<br />
+<p>
+	And for help, contact me:
+	<br />
+	<a href="mailto:feasel@catallaxyservices.com">feasel@catallaxyservices.com</a> | <a href="https://www.twitter.com/feaselkl">@feaselkl</a>
+</p>
+<br />
+<p>
+	Catallaxy Services consulting:
+	<br />
+	<a href="https://csmore.info/contact">https://CSmore.info/on/contact</a>
+</p>
