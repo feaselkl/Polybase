@@ -1,5 +1,7 @@
 USE [Scratch]
 GO
+OPEN MASTER KEY DECRYPTION BY PASSWORD = '<<SomeSecureKey>>';
+GO
 IF NOT EXISTS
 (
     SELECT 1
@@ -11,7 +13,7 @@ BEGIN
     CREATE EXTERNAL DATA SOURCE VolcanoType WITH
     (
         LOCATION = 'odbc://noplace',
-        CONNECTION_OPTIONS = 'Driver={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)}; DBQ=C:\SourceCode\Polybase\Scripts\04 - Data Virtualization\VolcanoTypes.xlsx'
+        CONNECTION_OPTIONS = 'Driver={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)}; DBQ=D:\SourceCode\Polybase\Scripts\04 - Data Virtualization\VolcanoTypes.xlsx'
     );
 END
 GO
