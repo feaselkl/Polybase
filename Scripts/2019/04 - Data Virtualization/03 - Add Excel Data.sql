@@ -13,7 +13,7 @@ BEGIN
     CREATE EXTERNAL DATA SOURCE VolcanoType WITH
     (
         LOCATION = 'odbc://noplace',
-        CONNECTION_OPTIONS = 'Driver={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)}; DBQ=D:\SourceCode\Polybase\Scripts\04 - Data Virtualization\VolcanoTypes.xlsx'
+        CONNECTION_OPTIONS = 'Driver={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)}; DBQ=D:\SourceCode\Polybase\Scripts\VolcanoTypes.xlsx'
     );
 END
 GO

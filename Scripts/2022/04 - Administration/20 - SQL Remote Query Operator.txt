@@ -1,0 +1,100 @@
+<UDF ProcName="sp_execute_memo_node_12"><Statements xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan">
+  <StmtSimple StatementCompId="1" StatementId="1" StatementType="EXECUTEMEMO" StatementText="sp_execute_memo" QueryPlanHash="0x00000000000000000000000000000000">
+    <QueryPlan>
+      <RelOp LogicalOp="Move" PhysicalOp="External Round Robin" AvgRowSize="102.000006" EstimateRows="2991520" EstimateCPU="0.0" EstimateIO="0.0" EstimateRebinds="0.0" EstimateRewinds="0.0" NodeId="12" Parallel="false" PDWAccumulativeCost="10984.8620861683" EstimatedTotalSubtreeCost="10984.8620861683" xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan">
+        <OutputList>
+          <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="RegistrationState" />
+          <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleMake" />
+          <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleYear" />
+        </OutputList>
+        <Move MoveType="ExternalRoundRobin" DistributionType="NoKey" IsDistributed="true" IsExternal="false" IsFull="false">
+          <RelOp LogicalOp="External Select" PhysicalOp="External Select" AvgRowSize="102.000006" EstimateRows="2991520" EstimateCPU="0.0" EstimateIO="0.0" EstimateRebinds="0.0" EstimateRewinds="0.0" NodeId="9" Parallel="false" PDWAccumulativeCost="0.0" EstimatedTotalSubtreeCost="0.0" xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan">
+            <OutputList>
+              <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="RegistrationState" />
+              <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleMake" />
+              <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleYear" />
+            </OutputList>
+            <ExternalSelect MaterializeOperation="ExternalPushDown" DistributionType="External" IsDistributed="false" IsExternal="true" IsFull="false">
+              <RelOp LogicalOp="Filter" PhysicalOp="Filter" AvgRowSize="102.000006" EstimateRows="2991520" EstimateCPU="0.0" EstimateIO="0.0" EstimateRebinds="0.0" EstimateRewinds="0.0" NodeId="7" Parallel="false" PDWAccumulativeCost="0.0" EstimatedTotalSubtreeCost="0.0" xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan">
+                <OutputList>
+                  <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="RegistrationState" />
+                  <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleMake" />
+                  <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleYear" />
+                </OutputList>
+                <Filter>
+                  <DefinedValues>
+                    <DefinedValue>
+                      <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="RegistrationState" />
+                    </DefinedValue>
+                    <DefinedValue>
+                      <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleMake" />
+                    </DefinedValue>
+                    <DefinedValue>
+                      <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleYear" />
+                    </DefinedValue>
+                  </DefinedValues>
+                  <Predicate>
+                    <ScalarOperator>
+                      <Logical Operation="AND">
+                        <ScalarOperator>
+                          <Compare CompareOp="GE">
+                            <ScalarOperator>
+                              <Identifier Table="ParkingViolationsSQLControl">
+                                <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleYear" />
+                              </Identifier>
+                            </ScalarOperator>
+                            <ScalarOperator>
+                              <Const ConstValue="2005" />
+                            </ScalarOperator>
+                          </Compare>
+                        </ScalarOperator>
+                        <ScalarOperator>
+                          <Compare CompareOp="LE">
+                            <ScalarOperator>
+                              <Identifier Table="ParkingViolationsSQLControl">
+                                <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleYear" />
+                              </Identifier>
+                            </ScalarOperator>
+                            <ScalarOperator>
+                              <Const ConstValue="2007" />
+                            </ScalarOperator>
+                          </Compare>
+                        </ScalarOperator>
+                      </Logical>
+                    </ScalarOperator>
+                  </Predicate>
+                  <RelOp LogicalOp="Get" PhysicalOp="Get" AvgRowSize="102.000006" EstimateRows="33239200" EstimateCPU="0.0" EstimateIO="0.0" EstimateRebinds="0.0" EstimateRewinds="0.0" NodeId="1" Parallel="false" PDWAccumulativeCost="0.0" EstimatedTotalSubtreeCost="0.0" xmlns="http://schemas.microsoft.com/sqlserver/2004/07/showplan">
+                    <OutputList>
+                      <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="RegistrationState" />
+                      <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleMake" />
+                      <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleYear" />
+                    </OutputList>
+                    <Get IsExternal="true" IsDistributed="false" IsHashDistributed="false" IsReplicated="false" IsRoundRobin="false">
+                      <Bookmarks>
+                        <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="Bmk1000" />
+                      </Bookmarks>
+                      <OutputColumns>
+                        <DefinedValues>
+                          <DefinedValue>
+                            <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="RegistrationState" />
+                          </DefinedValue>
+                          <DefinedValue>
+                            <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleMake" />
+                          </DefinedValue>
+                          <DefinedValue>
+                            <ColumnReference Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" Column="VehicleYear" />
+                          </DefinedValue>
+                        </DefinedValues>
+                        <Object Database="Scratch" Schema="dbo" Table="ParkingViolationsSQLControl" Alias="pv" />
+                      </OutputColumns>
+                    </Get>
+                  </RelOp>
+                </Filter>
+              </RelOp>
+            </ExternalSelect>
+          </RelOp>
+        </Move>
+      </RelOp>
+    </QueryPlan>
+  </StmtSimple>
+</Statements></UDF>

@@ -3,8 +3,11 @@ All data files are available on Azure Blob Storage in a publically available Blo
 North Carolina Population:  713KB
 https://cspolybasepublic.blob.core.windows.net/polybaserevealedpublicdata/NorthCarolinaPopulation.csv
 
-Raleigh Fire Incidents:  9265KB
+Raleigh Fire Incidents (2019 edition):  9265KB
 https://cspolybasepublic.blob.core.windows.net/polybaserevealedpublicdata/Fire_Incidents.7z
+
+Raleigh Fire Incidents (2022 edition):  12470KB
+https://cspolybasepublic.blob.core.windows.net/polybaserevealedpublicdata/Fire_Incidents2022.7z
 
 Country Data:  62KB
 Country data from https://perso.telecom-paristech.fr/eagan/class/igr204/datasets.  Thanks to Petra Isenberg, Pierre Dragicevic and Yvonne Jansen for gathering and cleaning up this data set.  This data set is licensed under a Creative Commons Attribution-ShareAlike 3.0 License.

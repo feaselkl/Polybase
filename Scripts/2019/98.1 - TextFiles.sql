@@ -13,7 +13,7 @@ BEGIN
     CREATE EXTERNAL DATA SOURCE AccessTest WITH
     (
         LOCATION = 'odbc://noplace',
-        CONNECTION_OPTIONS = 'Driver={Microsoft Access Text Driver (*.txt, *.csv)}; DBQ=D:\SourceCode\PolyBase\Scripts\AccessTest'
+        CONNECTION_OPTIONS = 'Driver={Microsoft Access Text Driver (*.txt, *.csv)}; DBQ=D:\SourceCode\PolyBase\Scripts\'
     );
 END
 GO

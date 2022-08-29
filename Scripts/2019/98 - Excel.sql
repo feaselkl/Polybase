@@ -14,7 +14,7 @@ BEGIN
     CREATE EXTERNAL DATA SOURCE NorthCarolinaPopulationExcelUntyped WITH
     (
         LOCATION = 'odbc://noplace',
-        CONNECTION_OPTIONS = 'Driver={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)}; DBQ=D:\SourceCode\Polybase\NorthCarolinaPopulation.xlsx'
+        CONNECTION_OPTIONS = 'Driver={Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)}; DBQ=D:\SourceCode\Polybase\Scripts\NorthCarolinaPopulation.xlsx'
     );
 END
 GO

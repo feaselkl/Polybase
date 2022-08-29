@@ -18,7 +18,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h2>Data Virtualization with PolyBase</h2>
+					<h2>Data Virtualization in SQL Server 2022</h2>
 					
 					<a href="https://www.catallaxyservices.com">Kevin Feasel</a> (<a href="https://twitter.com/feaselkl">@feaselkl</a>)<br />
 					<a href="https://csmore.info/on/polybase">https://csmore.info/on/polybase</a>
@@ -50,11 +50,34 @@
 						</div>					
 					</div>
 				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>PolyBase Revealed</h3>
+					
+					<div class="container">
+						<div class="col">
+							<a href="https://www.apress.com/us/book/9781484254608"><img src="../WebsiteAssets/PolyBaseRevealed.png" height="480" /></a>
+						</div>
+						<div class="col">
+							<ul>
+								<li>Released for SQL Server 2019</li>
+								<li>First PolyBase-specific book ever written</li>
+								<li>Covered PolyBase v1 (Hadoop + Azure Blob Storage) and v2 (ODBC)</li>
+							</ul>
+						</div>					
+					</div>
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Dozens of Copies Sold</h3>
+					
+					<img src="presentation/assets/image/DozensOfUs.jpg" />
+				</section>
 
 				<section data-background-image="presentation/assets/background/motivation.jpg" data-background-opacity="0.2">
 					<h3>Motivation</h3>
 					
-					<p>The goal of this talk is to cover PolyBase, Microsoft's technology for data virtualization and query scale-out.</p>
+					<p>The goal of this talk is to cover Microsoft's technologies for data virtualization in SQL Server 2022, including PolyBase.</p>
 
 					<p>We will look at installation, configuration, and a number of practical business scenarios involving the product.</p>
 				</section>
@@ -63,25 +86,22 @@
 					<h3>Agenda</h3>
 					
 					<ol>
-						<li class="active">What is PolyBase?</li>
+						<li class="active">A Historical Review</li>
 						<li>Installation + Configuration</li>
 						<li>The Building Blocks</li>
-						<li>Cold Storage</li>
-						<li>ELT</li>
-						<li>Data Virtualization</li>
-						<li>Tuning and Administration</li>
+						<li>Advanced Scenarios</li>
 					</ol>
 				</section>
 				
 				<section data-background-image="presentation/assets/background/questions.jpg" data-background-opacity="0.2">
 					<h3>What is PolyBase?</h3>
 					
-					<p>PolyBase is Microsoft's newest technology for covering three use cases:</p>
+					<p>PolyBase is Microsoft's technology for covering <s>three</s> two use cases:</p>
 					
 					<ol>
 						<li>Connecting to heterogeneous, remote data sources.</li>
 						<li>Data virtualization:  creating the appearance of local data while still having the data live remotely.</li>
-						<li>Scale-out versus scale-up and Massively Parallel Processing (MPP).</li>
+						<li><s>Scale-out versus scale-up and Massively Parallel Processing (MPP).</s></li>
 					</ol>
 				</section>
 				
@@ -91,7 +111,9 @@
 					<ul>
 						<li>Parallel Data Warehouse (2012):  PolyBase introduced as a way to integrate SQL Server and Hadoop.</li>
 						<li>SQL Server 2016:  PolyBase "V1" introduced.</li>
-						<li>SQL Server 2019:  PolyBase "V2" introduced.  PolyBase also brought into SQL Server Big Data Clusters.</li>
+						<li>Azure SQL Data Warehouse (now Azure Synapse Analytics):  PolyBase used for data lake integrations.</li>
+						<li>SQL Server 2019:  PolyBase "V2" introduced.  PolyBase also brought into SQL Server Big Data Clusters (RIP).</li>
+						<li>SQL Server 2022:  Some data virtualization outside PolyBase.  This brings new functionality but also removes old features.</li>
 					</ul>
 				</section>
 				
@@ -109,7 +131,7 @@
 				<section data-background-image="presentation/assets/background/connections.jpg" data-background-opacity="0.2">
 					<h3>Supported Data Sources:  V2</h3>
 					
-					<p>PolyBase V2 has blown open the door in supported data sources:</p>
+					<p>PolyBase V2 includes V1 data sources as well as ODBC-based integrations:</p>
 					
 					<ol>
 						<li>SQL Server</li>
@@ -118,10 +140,39 @@
 						<li>Teradata</li>
 						<li>Any ODBC connector -- Hive, Spark, Excel</li>
 					</ol>
+					
+					<p>Note that the generic ODBC connector is Windows-only.</p>
 				</section>
 				
+				<section data-background-image="presentation/assets/background/folders.jpg" data-background-opacity="0.2">
+					<h3>Supported Data Sources:  2022</h3>
+					
+					<p>SQL Server 2022 <strong>eliminates</strong> V1 support.</p>
+					<p>In return, it introduces (or re-introduces):</p>
+					
+					<ol>
+						<li>Amazon S3</li>
+						<li>Azure Blob Storage (abs)</li>
+						<li>Azure Data Lake Storage Gen2 (adls), including Delta tables</li>
+					</ol>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/choices.jpg" data-background-opacity="0.2" data-markdown style="font-size:0.85em">
+					<textarea data-template>
+					### Connectors and Versions
+					
+					|Data Source|2016-2019|2022|
+					|-----------|---------|----|
+					|Oracle, MongoDB, SQL Server, Teradata|Read-only (2019)|Read-only|
+					|Generic ODBC|Read-only (2019, Windows)|Read-only (Windows)|
+					|Azure Storage|Read/Write (wasbs)|Read/Write (abs/adls)|
+					|AWS S3|NONE|Read/Write|
+					|Hadoop (CDH and HDP)|Read/Write|NONE|
+					</textarea>
+				</section>
+
 				<section data-background-image="presentation/assets/background/duplicates.jpg" data-background-opacity="0.2">
-					<h3>Massively Parallel Processing</h3>
+					<h3>Scale:  Out and Up</h3>
 					
 					<p>SQL Server is a classic "scale-up" technology:  if you want more power, add more RAM/CPUs/resources to the single server.</p>
 
@@ -129,19 +180,11 @@
 				</section>
 				
 				<section data-background-image="presentation/assets/background/space.jpg" data-background-opacity="0.2">
-					<h3>MPP and Scale-Out Versus Scale-Up</h3>
+					<h3>PolyBase and Scale</h3>
 					
-					<p>Upsides:</p>
-					<ul>
-						<li>Scale-out is often cheaper than scale-up</li>
-						<li>You hit the ceiling on scale-up long before scale-out</li>
-					</ul>
+					<p>Prior to SQL Server 2022, PolyBase offered a feature known as Scale-Out Clusters, in which you could perform PolyBase commands against multiple SQL Server instances.  It looked to be the first phase in support for Massive Parallel Processing in on-premises SQL Server.</p>
 					
-					<p>Downsides:</p>
-					<ul>
-						<li>Scale-out is typically more complex</li>
-						<li>Scale-out has a longer startup time</li>
-					</ul>
+					<p>It is no longer available in SQL Server 2022.  RIP.</p>
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
@@ -159,11 +202,31 @@
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>SQL Server 2022 Installation</h3>
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
 					<img src="presentation/assets/image/01_NewInstallation.png" height="650" alt="New installation" />
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/02_JustV2.png" height="650" alt="Install only V2 components" />
+					<img src="presentation/assets/image/02_PolyBase.png" height="650" alt="Install PolyBase components" />
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<img src="presentation/assets/image/03_Configuration.png" height="650" alt="Configure PolyBase" />
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<img src="presentation/assets/image/04_PolyBase2022Services.png" height="650" alt="Service selection for SQL Server 2022" />
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<img src="presentation/assets/image/05_InstallationComplete.png" height="650" alt="Installation is complete" />
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>SQL Server 2019 Installation</h3>
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
@@ -183,10 +246,6 @@
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/07_ConfigurationFilePath.png" height="650" alt="Save install details" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
 					<img src="presentation/assets/image/08_InstallationComplete.png" height="650" alt="Installation is complete" />
 				</section>
 				
@@ -200,8 +259,7 @@
 						@configname = 'polybase enabled',
 						@configvalue = 1;
 					GO
-					RECONFIGURE;
-					GO
+					-- Only needed for 2019 and earlier
 					EXEC sp_configure
 						@configname = 'hadoop connectivity',
 						@configvalue = 7;
@@ -215,44 +273,19 @@
 					<h3>Driver Installation</h3>
 					
 					<p>In order to use the generic ODBC connector, you need to install an appropriate ODBC driver on the machine hosting SQL Server.  Grab the right driver and follow the normal install steps.</p>
-
-					<p>We will demonstrate with Apache Hive and Apache Spark, both for Hortonworks Data Platform (HDP) 3.0.</p>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/11_HiveWizard.png" height="650" alt="Install the Hive ODBC driver" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/13_InstallationInProgress.png" height="650" alt="Install the Hive ODBC driver" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/14_ODBCDataSources.png" height="650" alt="Install the Hive ODBC driver" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/15_ConfigureHive.png" height="650" alt="Install the Hive ODBC driver" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/16_ConfigureSpark.png" height="650" alt="Install the Hive ODBC driver" />
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
 					<h3>Agenda</h3>
 					
 					<ol>
-						<li>What is PolyBase?</li>
+						<li>A Historical Review</li>
 						<li>Installation + Configuration</li>
 						<li class="active">The Building Blocks</li>
-						<li>Cold Storage</li>
-						<li>ELT</li>
-						<li>Data Virtualization</li>
-						<li>Tuning and Administration</li>
+						<li>Advanced Scenarios</li>
 					</ol>
 				</section>
-				
+
 				<section data-background-image="presentation/assets/background/legend.jpg" data-background-opacity="0.2">
 					<h3>External Objects</h3>
 					
@@ -274,17 +307,20 @@
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<pre><code data-line-numbers="|1|3|4|5" data-trim><script type="text/template">
-					CREATE EXTERNAL DATA SOURCE Clusterino WITH
+					<h3>Azure Blob Storage</h3>
+					
+					<pre><code data-line-numbers="|1|3|4" data-trim><script type="text/template">
+					CREATE EXTERNAL DATA SOURCE AzureNCPopBlob WITH
 					(
-						TYPE = HADOOP,
-						LOCATION = 'hdfs://clusterino:8020',
-						RESOURCE_MANAGER_LOCATION = N'clusterino:8050'
+						LOCATION = 'abs://ncpop@cspolybaseblob.blob.core.windows.net',
+						CREDENTIAL = AzureStorageCredential
 					);
 					</script></code></pre>
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>SQL Server</h3>
+					
 					<pre><code data-line-numbers="|1-2|4-9|6|7|8" data-trim><script type="text/template">
 					CREATE DATABASE SCOPED CREDENTIAL SqlWin10Credentials
 					WITH IDENTITY = 'PolyBaseUser', Secret = '<<Some Password>>';
@@ -299,6 +335,8 @@
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Spark</h3>
+				
 					<pre><code data-line-numbers="|1-2|4-14|6|7|8-10|11|12|13" data-trim><script type="text/template">
 					CREATE DATABASE SCOPED CREDENTIAL SparkCredential
 					WITH IDENTITY = '<Your Username>', Secret = '<Your Password>';
@@ -322,17 +360,20 @@
 					
 					<p>An external file format tells SQL Server what type of file you intend to use.  SQL Server supports delimited files (e.g., comma or tab separated), ORC, and Parquet formats.</p>
 
-					<p>This is <strong>not</strong> required for V2 data sources, as they do not read from files.</p>
+					<p>This is <strong>not</strong> required for V2 data sources, as they do not read from files.  It is required for Blob Storage/Data Lake Storage and S3.</p>
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<pre><code data-line-numbers="|1|3|4-10|6|7|8|9" data-trim><script type="text/template">
+					<h3>CSV (with Header)</h3>
+					
+					<pre><code data-line-numbers="|1|3|4-11|6|7|8|9|10" data-trim><script type="text/template">
 					CREATE EXTERNAL FILE FORMAT CsvFileFormat WITH
 					(
 						FORMAT_TYPE = DELIMITEDTEXT,
 						FORMAT_OPTIONS
 						(
 							FIELD_TERMINATOR = N',',
+							FIRST_ROW = 2,
 							USE_TYPE_DEFAULT = True,
 							STRING_DELIMITER = '"',
 							ENCODING = 'UTF8'
@@ -342,6 +383,8 @@
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Optimized Row Columnar (ORC)</h3>
+					
 					<pre><code data-line-numbers="|3|4" data-trim><script type="text/template">
 					CREATE EXTERNAL FILE FORMAT OrcFileFormat WITH
 					(
@@ -370,8 +413,8 @@
 					)
 					WITH
 					(
+						DATA_SOURCE = DataLake,
 						LOCATION = N'/PolyBaseData/NYCParkingTicketsORC/',
-						DATA_SOURCE = Clusterino,
 						FILE_FORMAT = OrcFileFormat,
 						REJECT_TYPE = VALUE,
 						REJECT_VALUE = 5000
@@ -426,14 +469,14 @@
 					)
 					WITH
 					(
-						LOCATION = 'Scratch.dbo.ParkingViolationsLocal',
-						DATA_SOURCE = SQLCONTROL
+						DATA_SOURCE = SQLCONTROL,
+						LOCATION = 'Scratch.dbo.ParkingViolationsLocal'
 					);
 					</script></code></pre>
 				</section>
 				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<pre><code data-line-numbers="|1-11|14|15|16" data-trim><script type="text/template">
+					<pre><code data-line-numbers="|1-11|14|15" data-trim><script type="text/template">
 					CREATE EXTERNAL TABLE dbo.NorthCarolinaPopulationTypedSpark
 					(
 						SummaryLevel INT,
@@ -447,8 +490,8 @@
 					)
 					WITH
 					(
-						LOCATION = 'NorthCarolinaPopulationTyped',
-						DATA_SOURCE = ClusterinoSpark
+						DATA_SOURCE = ClusterinoSpark,
+						LOCATION = 'NorthCarolinaPopulationTyped'
 					);
 					</script></code></pre>
 				</section>
@@ -461,16 +504,13 @@
 					<h3>Agenda</h3>
 					
 					<ol>
-						<li>What is PolyBase?</li>
+						<li>A Historical Review</li>
 						<li>Installation + Configuration</li>
 						<li>The Building Blocks</li>
-						<li class="active">Cold Storage</li>
-						<li>ELT</li>
-						<li>Data Virtualization</li>
-						<li>Tuning and Administration</li>
+						<li class="active">Advanced Scenarios</li>
 					</ol>
 				</section>
-				
+
 				<section data-background-image="presentation/assets/background/ice.jpg" data-background-opacity="0.2">
 					<h3>Cold Storage</h3>
 					
@@ -497,34 +537,7 @@
 						<li>Partitioned views mean no code changes are necessary and queries automatically benefit</li>
 					</ol>
 				</section>
-				
-				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
-					<h3>Demo Time</h3>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/colored-pencils.jpg" data-background-opacity="0.2">
-					<h3>Alternate Approaches</h3>
-					
-					<ul>
-						<li>Migrate old data to Azure Blob Storage and skip the partitioned view</li>
-						<li>Store all old data in one external table</li>
-					</ul>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>Agenda</h3>
-					
-					<ol>
-						<li>What is PolyBase?</li>
-						<li>Installation + Configuration</li>
-						<li>The Building Blocks</li>
-						<li>Cold Storage</li>
-						<li class="active">ELT</li>
-						<li>Data Virtualization</li>
-						<li>Tuning and Administration</li>
-					</ol>
-				</section>
-				
+
 				<section data-background-image="presentation/assets/background/tunnel.jpg" data-background-opacity="0.2">
 					<h3>ELT</h3>
 					
@@ -550,34 +563,7 @@
 						<li>ELT with PolyBase lets you stick with T-SQL instead of T-SQL + SSIS / Biml + C#</li>
 					</ol>
 				</section>
-				
-				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
-					<h3>Demo Time</h3>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/colored-pencils.jpg" data-background-opacity="0.2">
-					<h3>Alternate Approaches</h3>
-					
-					<ul>
-						<li>Create views on the source system and perform more transformation on the source side</li>
-						<li>Use ELT to combine data from multiple source systems as part of the same process</li>
-					</ul>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>Agenda</h3>
-					
-					<ol>
-						<li>What is PolyBase?</li>
-						<li>Installation + Configuration</li>
-						<li>The Building Blocks</li>
-						<li>Cold Storage</li>
-						<li>ELT</li>
-						<li class="active">Data Virtualization</li>
-						<li>Tuning and Administration</li>
-					</ol>
-				</section>
-				
+
 				<section data-background-image="presentation/assets/background/stack.jpg" data-background-opacity="0.2">
 					<h3>Data Virtualization</h3>
 					
@@ -608,70 +594,13 @@
 				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
 					<h3>Demo Time</h3>
 				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>Agenda</h3>
-					
-					<ol>
-						<li>What is PolyBase?</li>
-						<li>Installation + Configuration</li>
-						<li>The Building Blocks</li>
-						<li>Cold Storage</li>
-						<li>ELT</li>
-						<li>Data Virtualization</li>
-						<li class="active">Tuning and Administration</li>
-					</ol>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/calculator.jpg" data-background-opacity="0.2">
-					<h3>Statistics</h3>
-					
-					<p>PolyBase allows you to create statistics on external tables.</p>
-					
-					<p>Limitations:</p>
-					
-					<ol>
-						<li>Statistics are <strong>not</strong> auto-created.</li>
-						<li>Statistics are <strong>not</strong> updatable--need to drop and re-create.</li>
-						<li>Not all external sources support sampling.</li>
-						<li>SQL Server generates statistics, so you need to bring the data over.  Make sure you have enough disk space!</li>
-					</ol>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/dictionary.jpg" data-background-opacity="0.2">
-					<h3>Using Statistics</h3>
-					
-					<p>Once created, external table statistics behave the same way as normal table statistics and the optimizer can use them similarly.</p>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
-					<h3>Demo Time</h3>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/magnifying-glass.jpg" data-background-opacity="0.2">
-					<h3>Important DMVs</h3>
-					
-					<p>There are several important DMVs for query tuning and regular administration.</p>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
-					<h3>Demo Time</h3>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/rollercoaster.jpg" data-background-opacity="0.2">
-					<h3>Execution Plans</h3>
-					
-					<p>PolyBase adds execution information to query plans, including much of what you will find in the DMVs and sometimes a bit more.</p>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
-					<h3>Demo Time</h3>
-				</section>
 
 				<section data-background-image="presentation/assets/background/wrappingup.jpg" data-background-opacity="0.2">
 					<h3>Wrapping Up</h3>
 					
-					<p>PolyBase has a number of useful business cases.  It won't give you the greatest performance, but if you want a SQL interface and performance is not a top consideration, PolyBase has you covered.</p>
+					<p>SQL Server 2022 offers an update to data virtualization, retaining ODBC-based PolyBase and adding an API-based virtualization process.</p>
+					
+					<p>Data virtaulization in SQL Server has a number of useful business cases.  It won't give you the greatest performance, but if you want a unified SQL interface and performance is not a top consideration, it does the job.</p>
 				</section>
 				
 				<section data-background-image="presentation/assets/background/wrappingup.jpg" data-background-opacity="0.2">
