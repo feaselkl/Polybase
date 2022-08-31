@@ -88,8 +88,8 @@ BEGIN
 	)
 	WITH
 	(
+        DATA_SOURCE = AzureNCPopBlob,
 		LOCATION = N'Census/NorthCarolinaPopulation.csv',
-		DATA_SOURCE = AzureNCPopBlob,
 		FILE_FORMAT = CsvFileFormatWithHeader,
 		REJECT_TYPE = VALUE,
 		REJECT_VALUE = 5

@@ -83,8 +83,8 @@ BEGIN
 	)
 	WITH
 	(
-		LOCATION = N'factbook.csv',
 		DATA_SOURCE = AzureNCPopBlob,
+		LOCATION = N'factbook.csv',
 		FILE_FORMAT = SemiColonFileFormat,
 		REJECT_TYPE = VALUE,
 		REJECT_VALUE = 5

@@ -101,8 +101,8 @@ BEGIN
     )
     WITH
     (
-        LOCATION = 'event',
-        DATA_SOURCE = PostgresEvents
+        DATA_SOURCE = PostgresEvents,
+        LOCATION = 'event'
     );
 END
 GO

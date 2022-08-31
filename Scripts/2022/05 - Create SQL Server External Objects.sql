@@ -17,8 +17,8 @@ BEGIN
 	)
 	WITH
 	(
-		LOCATION = 'ForensicAccounting.dbo.Employee',
-		DATA_SOURCE = Desktop
+		DATA_SOURCE = Desktop,
+		LOCATION = 'ForensicAccounting.dbo.Employee'
 	);
 END
 GO

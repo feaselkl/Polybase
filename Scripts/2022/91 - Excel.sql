@@ -40,8 +40,8 @@ BEGIN
     )
     WITH
     (
-        LOCATION = 'NorthCarolinaPopulation$',
-        DATA_SOURCE = NorthCarolinaPopulationExcelUntyped
+        DATA_SOURCE = NorthCarolinaPopulationExcelUntyped,
+        LOCATION = 'NorthCarolinaPopulation$'
     );
 END
 GO

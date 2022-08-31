@@ -35,8 +35,8 @@ BEGIN
     )
     WITH
     (
-        LOCATION = '[AirportCodeLocationLookupClean.csv]',
-        DATA_SOURCE = AccessTest
+        DATA_SOURCE = AccessTest,
+        LOCATION = '[AirportCodeLocationLookupClean.csv]'
     );
 END
 GO

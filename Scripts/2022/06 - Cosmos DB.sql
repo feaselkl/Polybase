@@ -56,8 +56,8 @@ BEGIN
     )
     WITH
     (
-        LOCATION='PolyBaseTest.Volcano',
-        DATA_SOURCE = CosmosDB
+        DATA_SOURCE = CosmosDB,
+        LOCATION='PolyBaseTest.Volcano'
     );
 END
 GO
@@ -133,8 +133,8 @@ BEGIN
     )
     WITH
     (
-        LOCATION='PolyBaseTest.Volcano',
-        DATA_SOURCE = CosmosDB
+        DATA_SOURCE = CosmosDB,
+        LOCATION='PolyBaseTest.Volcano'
     );
 END
 GO

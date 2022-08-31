@@ -59,8 +59,8 @@ BEGIN
     )
     WITH
     (
-        LOCATION='Employee',
-        DATA_SOURCE = CosmosCore
+        DATA_SOURCE = CosmosCore,
+        LOCATION='Employee'
     );
 END
 GO

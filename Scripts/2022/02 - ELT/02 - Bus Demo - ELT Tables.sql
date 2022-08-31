@@ -17,8 +17,8 @@ BEGIN
 	)
 	WITH
 	(
-		LOCATION = 'ForensicAccounting.dbo.Employee',
-		DATA_SOURCE = Desktop
+		DATA_SOURCE = Desktop,
+		LOCATION = 'ForensicAccounting.dbo.Employee'
 	);
 END
 
@@ -32,8 +32,8 @@ BEGIN
 	)
 	WITH
 	(
-		LOCATION = 'ForensicAccounting.dbo.Bus',
-		DATA_SOURCE = Desktop
+		DATA_SOURCE = Desktop,
+		LOCATION = 'ForensicAccounting.dbo.Bus'
 	);
 END
 
@@ -78,8 +78,8 @@ BEGIN
 	)
 	WITH
 	(
-		LOCATION = 'ForensicAccounting.dbo.Calendar',
-		DATA_SOURCE = Desktop
+		DATA_SOURCE = Desktop,
+		LOCATION = 'ForensicAccounting.dbo.Calendar'
 	);
 END
 
@@ -92,8 +92,8 @@ BEGIN
 	)
 	WITH
 	(
-		LOCATION = 'ForensicAccounting.dbo.ExpenseCategory',
-		DATA_SOURCE = Desktop
+		DATA_SOURCE = Desktop,
+		LOCATION = 'ForensicAccounting.dbo.ExpenseCategory'
 	);
 END
 
@@ -106,8 +106,8 @@ BEGIN
 	)
 	WITH
 	(
-		LOCATION = 'ForensicAccounting.dbo.Vendor',
-		DATA_SOURCE = Desktop
+		DATA_SOURCE = Desktop,
+		LOCATION = 'ForensicAccounting.dbo.Vendor'
 	);
 END
 
@@ -120,8 +120,8 @@ BEGIN
 	)
 	WITH
 	(
-		LOCATION = 'ForensicAccounting.dbo.VendorExpenseCategory',
-		DATA_SOURCE = Desktop
+		DATA_SOURCE = Desktop,
+		LOCATION = 'ForensicAccounting.dbo.VendorExpenseCategory'
 	);
 END
 
@@ -139,8 +139,8 @@ BEGIN
 	)
 	WITH
 	(
-		LOCATION = 'ForensicAccounting.dbo.LineItem',
-		DATA_SOURCE = Desktop
+		DATA_SOURCE = Desktop,
+		LOCATION = 'ForensicAccounting.dbo.LineItem'
 	);
 END
 GO

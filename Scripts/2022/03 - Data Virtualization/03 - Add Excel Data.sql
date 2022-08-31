@@ -32,8 +32,8 @@ BEGIN
     )
     WITH
     (
-        LOCATION = '[VolcanoTypes$]',
-        DATA_SOURCE = VolcanoType
+        DATA_SOURCE = VolcanoType,
+        LOCATION = '[VolcanoTypes$]'
     );
 END
 GO
