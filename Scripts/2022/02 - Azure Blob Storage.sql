@@ -38,7 +38,7 @@ IF NOT EXISTS
         e.name = N'CsvFileFormat'
 )
 BEGIN
-    CREATE EXTERNAL FILE FORMAT CsvFileFormatWithHeader WITH
+    CREATE EXTERNAL FILE FORMAT CsvFileFormat WITH
     (
         FORMAT_TYPE = DELIMITEDTEXT,
         FORMAT_OPTIONS
