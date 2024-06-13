@@ -29,10 +29,15 @@ IF NOT EXISTS
 BEGIN
 	CREATE EXTERNAL DATA SOURCE Desktop WITH
 	(
-		LOCATION = 'sqlserver://WINDEV2208EVAL_SOMEWHERE',
-		CONNECTION_OPTIONS = 'Server=WINDEV2208EVAL\SOMEWHERE',
+		--Note: make sure your IP address is included in the Azure firewall!
+		--LOCATION = 'sqlserver://WINDEV2208EVAL_SOMEWHERE',
+		--CONNECTION_OPTIONS = 'Server=WINDEV2208EVAL\SOMEWHERE',
+		LOCATION = 'sqlserver://cspolybase.database.windows.net',
+		CONNECTION_OPTIONS = 'Server=cspolybase.database.windows.net',
 		PUSHDOWN = ON,
 		CREDENTIAL = DesktopCredentials
 	);
 END
 GO
+
+select * from sys.external_data_sources
