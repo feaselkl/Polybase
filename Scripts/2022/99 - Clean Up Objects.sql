@@ -170,17 +170,6 @@ BEGIN
 	DROP EXTERNAL FILE FORMAT SemiColonFileFormat;
 END
 GO
-IF EXISTS
-(
-	SELECT 1
-	FROM sys.external_data_sources d
-	WHERE
-		d.name = N'Desktop'
-)
-BEGIN
-	DROP EXTERNAL DATA SOURCE Desktop;
-END
-GO
 
 IF (OBJECT_ID('dbo.PostgresEvent') IS NOT NULL)
 BEGIN
@@ -321,5 +310,17 @@ BEGIN
 	DROP EXTERNAL DATA SOURCE MarsFarming;
 END
 GO
+IF EXISTS
+(
+	SELECT 1
+	FROM sys.external_data_sources d
+	WHERE
+		d.name = N'Desktop'
+)
+BEGIN
+	DROP EXTERNAL DATA SOURCE Desktop;
+END
+GO
+
 
 */

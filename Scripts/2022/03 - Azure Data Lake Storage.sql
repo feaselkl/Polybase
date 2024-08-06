@@ -13,7 +13,7 @@ IF NOT EXISTS
 BEGIN
 	CREATE DATABASE SCOPED CREDENTIAL DataLakeCredential
 	WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
-	SECRET = 'sv=2021-06-08&<The rest of your key>';
+	SECRET = '<YOUR SECRET>';
 END
 GO
 IF NOT EXISTS
@@ -26,7 +26,7 @@ IF NOT EXISTS
 BEGIN
 	CREATE EXTERNAL DATA SOURCE MarsFarming WITH
 	(
-		LOCATION = 'adls://bdadatalake.dfs.core.windows.net/synapse/marsfarming_curated',
+		LOCATION = 'abs://bdadatalake.blob.core.windows.net/synapse/marsfarming_curated',
 		CREDENTIAL = DataLakeCredential
 	);
 END
