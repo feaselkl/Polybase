@@ -1,6 +1,6 @@
 # Covers SQL Server 2022 on Linux
 # Base OS layer: Latest Ubuntu LTS
-FROM mcr.microsoft.com/mssql/server:2022-CU12-GDR1-ubuntu-22.04
+FROM mcr.microsoft.com/mssql/server:2022-latest
 USER root
 # Install prerequistes since it is needed to get repo config for SQL server
 RUN apt-get update && \
