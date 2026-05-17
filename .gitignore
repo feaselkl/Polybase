@@ -47,3 +47,9 @@ Temporary Items
 .apdisk
 sqltrail/PITCHME.yaml
 sqltrail/PITCHME.md
+
+# =========================
+# Local secrets
+# =========================
+.env
+Scripts/docker/.env

@@ -1,6 +1,11 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
+# Data CSVs must keep LF endings — the remote SQL Server BULK INSERT in
+# infra/docker/sqlserver-remote/init/03-load-eruptions.sql.tmpl hardcodes
+# ROWTERMINATOR='0x0a'. CRLF would silently reject every row past the first.
+data/*.csv text eol=lf
+
 # Custom for Visual Studio
 *.cs     diff=csharp
 

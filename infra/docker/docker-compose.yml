@@ -1,0 +1,190 @@
+services:
+  sqlserver:
+    build:
+      context: ./sqlserver
+      # Lets the Dockerfile's parquet-to-csv builder stage pull
+      # RaleighFireIncidents.parquet from the repo's top-level data/ dir
+      # without widening the main build context.
+      additional_contexts:
+        data: ../../data
+    image: polybase-demo/sqlserver:2025
+    container_name: sqlserver
+    hostname: sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD:-Polybase!Demo2025}"
+      MSSQL_PID: "Developer"
+      # Substituted into *.sql.tmpl files at first boot. Empty values are allowed:
+      # the credential is still created but external sources using it will fail
+      # until you run `docker compose down -v` and re-up with secrets in .env.
+      MASTER_KEY_PASSWORD: "${MASTER_KEY_PASSWORD:-<<SomeSecureKey>>}"
+      COSMOS_USER: "${COSMOS_USER:-}"
+      COSMOS_KEY: "${COSMOS_KEY:-}"
+      AZURE_BLOB_SAS: "${AZURE_BLOB_SAS:-}"
+      AZURE_ADLS_SAS: "${AZURE_ADLS_SAS:-}"
+      AZURE_SQL_USER: "${AZURE_SQL_USER:-}"
+      AZURE_SQL_PASSWORD: "${AZURE_SQL_PASSWORD:-}"
+      POSTGRES_USER: "${POSTGRES_USER:-polybase}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-pgtestpwd}"
+      REMOTE_SQL_USER: "${REMOTE_SQL_USER:-polybase_reader}"
+      REMOTE_SQL_PASSWORD: "${REMOTE_SQL_PASSWORD:-PolybaseRemote!Demo2025}"
+      S3_ACCESS_KEY: "${S3_ACCESS_KEY:-polybases3key}"
+      S3_SECRET_KEY: "${S3_SECRET_KEY:-polybases3secret}"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+      # MinIO's TLS cert exposed at the runtime path SQL Server reads
+      # for trusted CA certs — no image rebuild required.
+      - ./s3/public.crt:/var/opt/mssql/security/ca-certificates/s3-mock.crt:ro
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "$$MSSQL_SA_PASSWORD" -C -l 5 -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 60s
+    depends_on:
+      postgres:
+        condition: service_healthy
+      sqlserver-remote:
+        condition: service_healthy
+      s3-init:
+        condition: service_completed_successfully
+
+  # Second SQL Server instance, target of the federated-read demo. Same
+  # image as the primary. init scripts are bind-mounted from
+  # ./sqlserver-remote/init so they override what the image bakes in.
+  # External port 31433 (so it doesn't collide with the primary on 1433).
+  sqlserver-remote:
+    build:
+      context: ./sqlserver
+      additional_contexts:
+        data: ../../data
+    image: polybase-demo/sqlserver:2025
+    container_name: sqlserver-remote
+    hostname: sqlserver-remote
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD:-Polybase!Demo2025}"
+      MSSQL_PID: "Developer"
+      REMOTE_SQL_USER: "${REMOTE_SQL_USER:-polybase_reader}"
+      REMOTE_SQL_PASSWORD: "${REMOTE_SQL_PASSWORD:-PolybaseRemote!Demo2025}"
+    ports:
+      - "31433:1433"
+    volumes:
+      - sqlserver-remote-data:/var/opt/mssql
+      # Same data bind mount as the primary so BULK INSERT during init can
+      # see VolcanoEruptions.csv on first boot.
+      - ../../data:/var/opt/mssql/data-shared:ro
+      # Bind-mount the remote-only init scripts on top of the image's
+      # baked-in /docker-entrypoint-initdb.d. This overrides the primary's
+      # PolyBase + credentials bootstrap with the ExternalExample setup.
+      - ./sqlserver-remote/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "$$MSSQL_SA_PASSWORD" -C -l 5 -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 60s
+
+  # S3-compatible object storage (MinIO) with TLS. SQL Server
+  # 2025's PolyBase S3 connector requires HTTPS on Linux, so the mock is
+  # configured with a custom PKCS12 keystore generated from
+  # ./s3/cert.pem (which is also installed into the SQL Server
+  # container's CA trust store via the Dockerfile).
+  # MinIO loads our self-signed cert from /root/.minio/certs/{public.crt,private.key}.
+  # Hostname `s3` is in the cert SAN, so SQL Server connects to s3:9000 and
+  # validates against the same cert mounted into the SQL Server container's
+  # /var/opt/mssql/security/ca-certificates/.
+  s3:
+    image: quay.io/minio/minio:latest
+    container_name: s3
+    hostname: s3
+    environment:
+      MINIO_ROOT_USER: "${S3_ACCESS_KEY:-polybases3key}"
+      MINIO_ROOT_PASSWORD: "${S3_SECRET_KEY:-polybases3secret}"
+    volumes:
+      - s3-data:/data
+      - ./s3/public.crt:/root/.minio/certs/public.crt:ro
+      - ./s3/private.key:/root/.minio/certs/private.key:ro
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"   # S3 API (HTTPS)
+      - "9001:9001"   # Web console (HTTPS)
+    # There is no health check: MinIO's "ready" probes need an alias configured
+    # inside the server container, which it doesn't ship with. The
+    # s3-init sidecar retries its first mc call until MinIO responds,
+    # which is a stronger ready signal than any in-container probe.
+
+  # One-shot init using minio/mc (MinIO's official client): waits for MinIO,
+  # creates the ncpop bucket, and uploads the HHI Parquet. Idempotent via
+  # flag file in s3-init-flag volume.
+  s3-init:
+    image: minio/mc:latest
+    container_name: s3-init
+    depends_on:
+      s3:
+        condition: service_started
+    environment:
+      S3_ACCESS_KEY: "${S3_ACCESS_KEY:-polybases3key}"
+      S3_SECRET_KEY: "${S3_SECRET_KEY:-polybases3secret}"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        if [ -f /init-flag/done ]; then
+          echo "[s3-init] Already initialized; exiting.";
+          exit 0;
+        fi
+        echo "[s3-init] Waiting for MinIO at https://s3:9000...";
+        for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20; do
+          if mc alias set local https://s3:9000 "$$S3_ACCESS_KEY" "$$S3_SECRET_KEY" --insecure >/dev/null 2>&1; then
+            echo "[s3-init] MinIO is up, alias configured.";
+            break;
+          fi
+          if [ "$$i" -eq 20 ]; then
+            echo "[s3-init] Gave up waiting for MinIO." >&2;
+            exit 1;
+          fi
+          sleep 2;
+        done
+        echo "[s3-init] Creating bucket ncpop (idempotent)...";
+        mc mb local/ncpop --insecure --ignore-existing
+        echo "[s3-init] Uploading HHI parquet to ncpop/Census/...";
+        mc cp /data/NCCountyMedianHouseholdIncome.parquet local/ncpop/Census/NCCountyMedianHouseholdIncome.parquet --insecure
+        echo "[s3-init] Creating bucket cold-storage (idempotent)...";
+        mc mb local/cold-storage --insecure --ignore-existing
+        touch /init-flag/done
+        echo "[s3-init] Done."
+    volumes:
+      - ../../data:/data:ro
+      - s3-init-flag:/init-flag
+
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    hostname: postgres
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER:-polybase}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-pgtestpwd}"
+      POSTGRES_DB: volcanodemo
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-polybase} -d volcanodemo"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  sqlserver-data:
+  sqlserver-remote-data:
+  postgres-data:
+  s3-data:
+  s3-init-flag:

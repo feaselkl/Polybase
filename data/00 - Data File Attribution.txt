@@ -1,0 +1,32 @@
+All data files are available in this repository.
+
+North Carolina County-Level Population (NorthCarolinaPopulation.csv)
+Data from Census.gov: https://www.census.gov/data/tables/time-series/demo/popest/2020s-counties-total.html
+
+North Carolina City-Level Population (NorthCarolinaPopulationCities.csv)
+Data from Census.gov: https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html
+
+North Carolina County-Level Unemployment, 2019-2024 (NCCountyUnemployment.parquet)
+Data from the U.S. Bureau of Labor Statistics, Local Area Unemployment Statistics (LAUS) county annual averages: https://www.bls.gov/lau/tables.htm
+Per-year source files: https://www.bls.gov/lau/laucnty19.xlsx through https://www.bls.gov/lau/laucnty24.xlsx
+
+North Carolina County-Level Median Household Income, 2019-2023 (NCCountyMedianHouseholdIncome.parquet)
+Data from the U.S. Census Bureau, American Community Survey 5-Year Estimates, variable B19013_001E (Median household income in the past 12 months): https://www.census.gov/programs-surveys/acs
+Pulled via the Census Data API: https://api.census.gov/data/{year}/acs/acs5?get=NAME,B19013_001E&for=county:*&in=state:37
+
+Raleigh Fire Incidents (RaleighFireIncidents.parquet)
+Data from Raleigh Open Data: https://data-ral.opendata.arcgis.com/datasets/fire-incidents
+
+Country Data (factbook.csv)
+Data from https://perso.telecom-paristech.fr/eagan/class/igr204/datasets.  Thanks to Petra Isenberg, Pierre Dragicevic and Yvonne Jansen for gathering and cleaning up this data set.  This data set is licensed under a Creative Commons Attribution-ShareAlike 3.0 License.
+
+Volcano Data (VolcanoData.json)
+Data from Azure Samples: https://github.com/Azure-Samples/azure-cosmos-db-sample-data/blob/master/SampleData/VolcanoData.json
+
+Volcano types (VolcanoTypes.xlsx)
+Data from various web searches and Wikipedia
+
+Significant Volcanic Eruptions (VolcanoEruptions.csv)
+Data from NOAA NCEI Significant Volcanic Eruptions Database: https://www.ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes/volcanoes
+Pulled via the HazEL API: https://www.ngdc.noaa.gov/hazel/hazard-service/api/v1/volcanoes (paginate with ?page=N&itemsPerPage=200)
+A "significant" eruption is one that caused fatalities, caused at least ~$1M in damage, had VEI >= 6, generated a tsunami, or was associated with a significant earthquake.

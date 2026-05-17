@@ -1,0 +1,899 @@
+EruptionId,VolcanoName,Country,Region,Latitude,Longitude,Elevation,Morphology,EventYear,EventMonth,EventDay,VEI,DeathsTotal,InjuriesTotal,HousesDestroyed,DamageMillionsUSD,Agent,TimeErupt,Status
+1,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1169,2,4,,16000,,,,"S,W",D1,Historical
+2,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1329,7,15,3,,,,,I,D1,Historical
+3,Karthala,Comoros,Indian O-W,-11.75,43.38,2361,Shield volcano,1883,3,,2,,,,,L,D1,Historical
+4,Ritter Island,Papua New Guinea,New Guinea-NE of,-5.519,148.115,75,Stratovolcano,1888,3,13,2,,,,,W,D1,Historical
+5,Rabaul,Papua New Guinea,New Britain-SW Pac,-4.246,152.194,688,Pyroclastic shield,1850,,,2,,,,,T,D1,Historical
+6,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1832,11,1,2,,,,,L,D1,Historical
+7,Nyiragongo,"Congo, DRC",Africa-C,-1.52,29.25,3470,Stratovolcano,1977,1,10,1,,,,,L,D1,Historical
+8,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,787,,,3,,,,,,D2,Historical
+9,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1779,8,8,3,,,,,,D2,Historical
+10,Ischia,Italy,Italy,40.73,13.897,789,Complex volcano,1302,,,,,,,,,D6,Historical
+11,Alayta,Ethiopia,Africa-NE,12.888,40.573,1496,Shield volcano,1907,8,4,2,,,,,,D2,Historical
+12,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1905,3,10,2,1,1,,,T,D2,Historical
+13,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,1986,7,24,2,1,,,,T,D1,Historical
+14,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1536,3,26,3,1,,,,T,D1,Historical
+15,Karthala,Comoros,Indian O-W,-11.75,43.38,2361,Shield volcano,1904,2,25,2,1,,,,L,D1,Historical
+16,Rabaul,Papua New Guinea,New Britain-SW Pac,-4.246,152.194,688,Pyroclastic shield,1878,2,4,3,1,,,,T,D1,Historical
+17,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1737,5,20,3,2,,,,T,D2,Historical
+18,Okataina,New Zealand,New Zealand,-38.157,176.507,1111,Lava dome,1917,4,1,1,2,3,,,T,D1,Historical
+19,Manam,Papua New Guinea,New Guinea-NE of,-4.08,145.037,1807,Stratovolcano,1899,,,2,2,,,,,D1,Historical
+20,Karkar,Papua New Guinea,New Guinea-NE of,-4.647,145.976,1839,Stratovolcano,1979,3,8,2,2,,,,P,D1,Historical
+21,Campi Flegrei,Italy,Italy,40.827,14.139,458,Caldera,1970,3,2,,3,,,,S,D5,Historical
+22,"Fournaise, Piton de la",Reunion,Indian O-W,-21.244,55.708,2632,Shield volcano,1972,8,,2,3,,,,I,D1,Historical
+23,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1682,8,12,3,4,,,,,D2,Historical
+24,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1805,8,11,2,4,,,,,D2,Historical
+25,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,1919,5,22,3,4,,10,,T,D1,Historical
+26,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,1930,9,11,3,6,20,,,"P,W,T",D1,Historical
+27,Okataina,New Zealand,New Zealand,-38.157,176.507,1111,Lava dome,1903,8,30,1,4,,,,T,D1,Historical
+28,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1928,11,8,1,5,,,,L,D1,Historical
+29,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1872,4,24,3,9,11,,,"L,G",D2,Historical
+30,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1979,9,12,3,9,23,,,T,D1,Historical
+31,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1987,4,17,2,2,7,,,T,D1,Historical
+32,Whakaari/White Island,New Zealand,New Zealand,-37.52,177.18,294,Stratovolcano,1914,9,10,,11,,,,A,D1,Historical
+33,Niuafo'ou,Tonga,Tonga-SW Pacific,-15.6,-175.63,260,Shield volcano,1886,8,31,4,,,,,,D1,Historical
+34,Nyamulagira,"Congo, DRC",Africa-C,-1.408,29.2,3058,Shield volcano,1912,12,3,3,20,,,,L,D1,Historical
+35,Karkar,Papua New Guinea,New Guinea-NE of,-4.647,145.976,1839,Stratovolcano,1895,6,17,2,21,,,,"I,M",D1,Historical
+36,Campi Flegrei,Italy,Italy,40.827,14.139,458,Caldera,1538,9,29,3,24,,,,T,D5,Historical
+37,Niuafo'ou,Tonga,Tonga-SW Pacific,-15.6,-175.63,260,Shield volcano,1853,6,24,,25,,,,L,D1,Historical
+38,Bam,Papua New Guinea,New Guinea-NE of,-3.613,144.818,685,Stratovolcano,1954,8,3,2,25,,,,I,D2,Historical
+39,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1944,3,27,3,27,,,,"T,L,I",D2,Historical
+40,Oku Volcanic Field,Cameroon,Africa-W,6.25,10.5,3011,Maar,1984,8,15,,37,,,,G,D5,Radiocarbon
+41,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,-141,,,,40,,,,,D1,Historical
+42,Santorini,Greece,Greece,36.404,25.396,367,Shield volcano,1926,1,23,2,48,,,,S,D2,Historical
+43,Dama Ali,Ethiopia,Africa-NE,11.28,41.63,1068,Shield volcano,1631,2,14,,50,,,,S,D5,Historical
+44,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1843,11,25,2,59,,,,L,D1,Historical
+45,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,1944,12,4,2,117,250,,,T,D1,Historical
+49,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,1979,2,20,1,149,,,,G,D1,Historical
+61,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1587,,,4,,,,,,D1,Historical
+64,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1672,8,4,3,3000,,,,P,D1,Historical
+69,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1822,12,27,3,100,,,,,D1,Historical
+71,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1832,12,25,2,32,,,,,D1,Historical
+81,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1872,4,15,4,30,,50,,T,D1,Historical
+82,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1872,11,3,4,200,,,,"P,T",D1,Historical
+87,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1902,12,,2,16,45,,,P,D1,Historical
+92,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1920,7,25,2,35,,,,P,D1,Historical
+94,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1930,12,18,3,1369,,1109,,"P,M",D1,Historical
+100,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1954,1,18,2,64,57,144,,P,D1,Historical
+104,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1961,5,8,3,6,6,,,P,D1,Historical
+105,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1969,1,7,2,3,,,,P,D1,Historical
+111,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1986,12,31,2,1,,,,M,D1,Historical
+112,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1994,11,22,3,66,100,,,P,D1,Historical
+116,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1311,,,3,,,,,,D1,Historical
+117,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1334,,,3,,,,,M,D1,Historical
+118,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1376,,,3,,,,,,D1,Historical
+119,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1385,,,3,,,,,,D1,Historical
+126,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1586,,,5,10000,,,,,D1,Historical
+128,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1716,7,20,2,,,,,M,D1,Historical
+132,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1826,10,13,4,,65,,,M,D1,Historical
+133,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1848,5,16,3,22,,800,,M,D1,Historical
+135,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1864,1,4,2,54,,,,M,D1,Historical
+136,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1875,1,29,,,30,,,m,D1,Historical
+137,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1901,5,22,3,,,,,,D1,Historical
+138,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1919,5,19,4,5110,,9000,,M,D1,Historical
+140,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1951,8,31,4,7,,,,,D1,Historical
+141,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1966,4,26,4,215,86,,,"M,m,P",D1,Historical
+144,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1990,2,10,4,35,,,,"T,P",D1,Historical
+159,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1860,4,,2,,,,,,D1,Historical
+167,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1885,4,18,2,74,,,,A,D1,Historical
+176,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1895,5,22,2,80,,,,M,D1,Historical
+191,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1909,8,29,2,221,,,,m,D1,Historical
+193,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1911,11,8,3,,,,,,D1,Historical
+195,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1913,6,23,2,,,,,,D1,Historical
+196,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1941,9,21,2,,,,,,D1,Historical
+198,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1946,2,,2,6,,81,,F,D1,Historical
+199,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1946,10,29,2,,,,,,D1,Historical
+200,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1950,8,28,1,6,,,,P,D1,Historical
+201,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1963,5,5,2,1,,,,T,D1,Historical
+202,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1967,8,31,3,3,,,,M,D1,Historical
+203,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1985,5,10,3,70,,,,A,D1,Historical
+204,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1978,9,19,3,12,,,,M,D1,Historical
+205,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1976,8,31,2,119,,,,M,D1,Historical
+206,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1981,3,29,3,1,,,,P,D1,Historical
+261,Lamongan,Indonesia,Java,-7.981,113.341,1641,Stratovolcano,1843,8,,2,4,,,,,D3,Historical
+269,Lamongan,Indonesia,Java,-7.981,113.341,1641,Stratovolcano,1869,8,,2,8,,,,"T,A",D3,Historical
+294,Raung,Indonesia,Java,-8.119,114.056,3260,Stratovolcano,1593,,,5,,,,,,D1,Historical
+295,Raung,Indonesia,Java,-8.119,114.056,3260,Stratovolcano,1597,,,3,,,,,T,D1,Historical
+296,Raung,Indonesia,Java,-8.119,114.056,3260,Stratovolcano,1638,,,4,1001,,,,M,D1,Historical
+297,Raung,Indonesia,Java,-8.119,114.056,3260,Stratovolcano,1730,,,3,,,,,"M,T",D1,Historical
+298,Raung,Indonesia,Java,-8.119,114.056,3260,Stratovolcano,1817,,,4,,,,,,D1,Historical
+333,Ijen,Indonesia,Java,-8.058,114.242,2769,Stratovolcano,1817,1,24,2,,,90,,M,D1,Historical
+345,Batur,Indonesia,Lesser Sunda Is,-8.24,115.378,1711,Caldera,1963,9,5,2,2,,,,,D1,Historical
+351,Agung,Indonesia,Lesser Sunda Is,-8.343,115.508,2997,Stratovolcano,1963,3,18,5,1028,624,,,"P,T,M,A",D1,Historical
+353,Agung,Indonesia,Lesser Sunda Is,-8.343,115.508,2997,Stratovolcano,1963,5,16,3,120,,,,,D1,Historical
+367,Tambora,Indonesia,Lesser Sunda Is,-8.25,118,2850,Stratovolcano,1815,4,10,7,60000,,,,"P,W,A,I",D1,Historical
+389,Iya,Indonesia,Lesser Sunda Is,-8.891,121.641,618,Stratovolcano,1969,1,28,3,2,10,287,,"T,m",D1,Historical
+394,Paluweh,Indonesia,Lesser Sunda Is,-8.32,121.708,875,Stratovolcano,1928,8,4,3,226,200,,,"W,T",D1,Historical
+395,Paluweh,Indonesia,Lesser Sunda Is,-8.32,121.708,875,Stratovolcano,1964,1,1,2,1,3,,,,D1,Historical
+397,Paluweh,Indonesia,Lesser Sunda Is,-8.32,121.708,875,Stratovolcano,1973,1,,3,,,,,,D1,Historical
+398,Paluweh,Indonesia,Lesser Sunda Is,-8.32,121.708,875,Stratovolcano,1981,9,5,2,,,,,P,D1,Historical
+410,Lewotobi,Indonesia,Lesser Sunda Is,-8.542,122.775,1703,Stratovolcano,1869,7,7,2,2,,,,,D1,Historical
+411,Lewotobi,Indonesia,Lesser Sunda Is,-8.542,122.775,1703,Stratovolcano,1907,9,28,2,1,,,,,D1,Historical
+439,Iliwerung,Indonesia,Lesser Sunda Is,-8.532,123.573,583,Complex volcano,1870,,,3,,,,,,D1,Historical
+441,Iliwerung,Indonesia,Lesser Sunda Is,-8.532,123.573,583,Complex volcano,1948,4,7,2,,,,,,D1,Historical
+445,Iliwerung,Indonesia,Lesser Sunda Is,-8.532,123.573,583,Complex volcano,1973,12,,2,2,,,,W,D1,Historical
+447,Iliwerung,Indonesia,Lesser Sunda Is,-8.532,123.573,583,Complex volcano,1983,8,17,1,,,,,W,D1,Historical
+450,Sirung,Indonesia,Lesser Sunda Is,-8.497,124.131,1347,Complex volcano,1953,6,,,5,1,,,,D1,Historical
+457,Teon,Pacific Ocean,Banda Sea,-6.976,129.144,728,Stratovolcano,1659,11,11,4,,,,,,D2,Historical
+458,Teon,Pacific Ocean,Banda Sea,-6.976,129.144,728,Stratovolcano,1660,2,,4,3,,,,"G,T",D2,Historical
+466,Serua,Pacific Ocean,Banda Sea,-6.312,130.017,608,Stratovolcano,1692,6,4,4,,,,,L,D2,Historical
+472,Banda Api,Pacific Ocean,Banda Sea,-4.523,129.881,596,Caldera,1598,,,3,,,,,,D1,Historical
+474,Banda Api,Pacific Ocean,Banda Sea,-4.523,129.881,596,Caldera,1615,3,,3,,,,,,D1,Historical
+477,Banda Api,Pacific Ocean,Banda Sea,-4.523,129.881,596,Caldera,1694,11,20,3,,,,,,D1,Historical
+482,Banda Api,Pacific Ocean,Banda Sea,-4.523,129.881,596,Caldera,1820,6,11,2,,,,,,D1,Historical
+486,Banda Api,Pacific Ocean,Banda Sea,-4.523,129.881,596,Caldera,1988,5,9,3,4,,,,"T,L",D1,Historical
+488,Colo,Indonesia,Sulawesi-Indonesia,-0.162,121.601,404,Stratovolcano,1983,7,23,4,,,,,,D1,Historical
+489,Soputan,Indonesia,Sulawesi-Indonesia,1.112,124.737,1785,Stratovolcano,1845,2,8,2,118,,,,,D1,Historical
+525,Mahawu,Indonesia,Sulawesi-Indonesia,1.352,124.865,1299,Stratovolcano,1958,7,12,2,1,10,,,M,D1,Historical
+530,Ruang,Indonesia,Sangihe Is-Indonesia,2.3,125.37,725,Stratovolcano,1870,8,,2,,,40,,,D2,Historical
+533,Ruang,Indonesia,Sangihe Is-Indonesia,2.3,125.37,725,Stratovolcano,1871,3,3,2,400,,75,,W,D2,Historical
+552,Karangetang,Indonesia,Sangihe Is-Indonesia,2.781,125.407,1797,Stratovolcano,1940,6,20,2,1,2,,,,D1,Historical
+561,Karangetang,Indonesia,Sangihe Is-Indonesia,2.781,125.407,1797,Stratovolcano,1974,2,11,3,4,,,,A,D1,Historical
+562,Karangetang,Indonesia,Sangihe Is-Indonesia,2.781,125.407,1797,Stratovolcano,1976,9,15,2,1,1,24,,"P,L",D1,Historical
+569,Banua Wuhu,Indonesia,Sangihe Is-Indonesia,3.138,125.491,-5,Submarine volcano,1889,9,6,2,,,,,,D2,Historical
+578,Awu,Indonesia,Sangihe Is-Indonesia,3.689,125.447,1318,Stratovolcano,1711,12,11,3,3000,,,,P,D1,Historical
+580,Awu,Indonesia,Sangihe Is-Indonesia,3.689,125.447,1318,Stratovolcano,1812,8,6,3,953,,,,"P,M",D1,Historical
+581,Awu,Indonesia,Sangihe Is-Indonesia,3.689,125.447,1318,Stratovolcano,1856,3,2,3,2806,,,,P,D1,Historical
+584,Awu,Indonesia,Sangihe Is-Indonesia,3.689,125.447,1318,Stratovolcano,1892,6,7,3,1532,,,,"P,M",D1,Historical
+585,Awu,Indonesia,Sangihe Is-Indonesia,3.689,125.447,1318,Stratovolcano,1913,3,14,2,138,,,,,D1,Historical
+589,Awu,Indonesia,Sangihe Is-Indonesia,3.689,125.447,1318,Stratovolcano,1966,8,12,4,39,1000,,,"P,M,I",D1,Historical
+594,Dukono,Indonesia,Halmahera-Indonesia,1.699,127.878,1273,Complex volcano,1550,11,,3,,,,,,D1,Historical
+599,Gamkonora,Indonesia,Halmahera-Indonesia,1.38,127.53,1635,Stratovolcano,1673,5,20,5,,,,,W,D1,Historical
+607,Gamalama,Indonesia,Halmahera-Indonesia,0.81,127.332,1714,Stratovolcano,1608,7,18,3,,,,,,D1,Historical
+617,Gamalama,Indonesia,Halmahera-Indonesia,0.81,127.332,1714,Stratovolcano,1772,5,9,3,35,,,,T,D1,Historical
+618,Gamalama,Indonesia,Halmahera-Indonesia,0.81,127.332,1714,Stratovolcano,1773,2,2,2,,,,,I,D1,Historical
+619,Gamalama,Indonesia,Halmahera-Indonesia,0.81,127.332,1714,Stratovolcano,1775,,,3,1300,,,,"P,I",D1,Historical
+627,Gamalama,Indonesia,Halmahera-Indonesia,0.81,127.332,1714,Stratovolcano,1838,2,26,2,4,,,,T,D1,Historical
+629,Gamalama,Indonesia,Halmahera-Indonesia,0.81,127.332,1714,Stratovolcano,1840,2,2,3,,,500,,,D1,Historical
+643,Gamalama,Indonesia,Halmahera-Indonesia,0.81,127.332,1714,Stratovolcano,1871,8,7,2,1,1,,,T,D1,Historical
+657,Gamalama,Indonesia,Halmahera-Indonesia,0.81,127.332,1714,Stratovolcano,1962,12,31,2,5,5,,,,D1,Historical
+663,Kie Besi,Indonesia,Halmahera-Indonesia,0.32,127.4,1357,Stratovolcano,1550,,,3,,,,,,D1,Historical
+664,Kie Besi,Indonesia,Halmahera-Indonesia,0.32,127.4,1357,Stratovolcano,1646,7,19,4,,,,,P,D1,Historical
+665,Kie Besi,Indonesia,Halmahera-Indonesia,0.32,127.4,1357,Stratovolcano,1760,,,4,2000,,,,M,D1,Historical
+666,Kie Besi,Indonesia,Halmahera-Indonesia,0.32,127.4,1357,Stratovolcano,1861,12,29,4,326,47,,,"P,I",D1,Historical
+669,Kie Besi,Indonesia,Halmahera-Indonesia,0.32,127.4,1357,Stratovolcano,1890,6,29,2,,,,,,D1,Historical
+677,Ragang,Philippines,Mindanao-Philippines,7.691,124.507,2790,Stratovolcano,1873,1,16,2,,,,,,D2,Historical
+679,Camiguin,Philippines,Mindanao-Philippines,9.203,124.673,1552,Stratovolcano,1871,4,30,2,,,,,,D2,Historical
+680,Camiguin,Philippines,Mindanao-Philippines,9.203,124.673,1552,Stratovolcano,1950,9,15,3,68,,,,P,D2,Historical
+693,Kanlaon,Philippines,Philippines-C,10.41,123.13,2422,Stratovolcano,1996,8,10,2,3,18,,,T,D1,Historical
+697,Bulusan,Philippines,Luzon-Philippines,12.769,124.056,1535,Stratovolcano,1933,12,25,2,9,,,,,D1,Historical
+698,Bulusan,Philippines,Luzon-Philippines,12.769,124.056,1535,Stratovolcano,1978,7,29,2,,,,,,D1,Historical
+704,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1766,7,20,3,49,,,,m,D1,Historical
+706,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1800,10,30,2,,,,,,D1,Historical
+707,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1814,2,1,4,1200,,,,"P,M,E",D1,Historical
+712,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1853,7,13,3,34,,,,P,D1,Historical
+714,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1858,1,,2,,,,,P,D1,Historical
+716,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1871,12,8,3,3,,,,P,D1,Historical
+724,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1887,3,9,3,15,,,,T,D1,Historical
+730,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1897,5,23,3,350,,,,"P,T,M",D1,Historical
+732,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1928,1,,3,,,,,P,D1,Historical
+733,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1938,6,5,2,,,,,,D1,Historical
+735,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1947,1,7,2,,,,,,D1,Historical
+736,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1968,4,21,3,6,,,,"M,P",D1,Historical
+739,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1984,9,9,3,1,,,,M,D1,Historical
+745,Taal,Philippines,Luzon-Philippines,14.011,120.998,311,Stratovolcano,1572,,,3,,,,,L,D1,Historical
+752,Taal,Philippines,Luzon-Philippines,14.011,120.998,311,Stratovolcano,1716,9,24,4,,,,,,D1,Historical
+753,Taal,Philippines,Luzon-Philippines,14.011,120.998,311,Stratovolcano,1749,8,11,3,,,,,,D1,Historical
+754,Taal,Philippines,Luzon-Philippines,14.011,120.998,311,Stratovolcano,1754,11,28,4,12,,,,"W,T",D1,Historical
+756,Taal,Philippines,Luzon-Philippines,14.011,120.998,311,Stratovolcano,1874,7,19,2,,,,,,D1,Historical
+761,Taal,Philippines,Luzon-Philippines,14.011,120.998,311,Stratovolcano,1911,1,30,3,1335,199,543,,"P,W",D1,Historical
+762,Taal,Philippines,Luzon-Philippines,14.011,120.998,311,Stratovolcano,1965,9,28,4,355,,,,"P,W",D1,Historical
+777,Didicas,Philippines,Luzon-N of,19.077,122.202,228,Compound volcano,1969,3,21,2,3,,,,W,D1,Historical
+787,Unnamed,Taiwan,Taiwan-E of,24,121.83,0,Submarine volcano,1853,10,29,2,,,,,,D3,Historical
+821,Kuchinoerabujima,Japan,Ryukyu Is,30.443,130.217,657,Stratovolcano,1841,4,,2,,,,,T,D1,Historical
+823,Kuchinoerabujima,Japan,Ryukyu Is,30.443,130.217,657,Stratovolcano,1933,12,24,4,8,26,,,T,D1,Historical
+843,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,764,,,4,80,,,,"T,L",D1,Historical
+844,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,766,7,20,3,,,,,,D1,Historical
+846,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1471,11,3,5,,,,,P,D1,Historical
+858,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1779,11,8,4,153,,,,"T,W,I",D1,Historical
+859,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1781,4,11,4,38,,,,W,D1,Historical
+867,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1914,1,12,4,63,112,2268,19,"I,S,A,T",D1,Historical
+874,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1946,1,,2,1,,,,,D1,Historical
+878,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1955,10,13,3,,,,,,D1,Historical
+904,Kirishimayama,Japan,Kyushu-Japan,31.934,130.862,1700,Shield volcano,1566,10,31,3,,,,,,D1,Historical
+915,Kirishimayama,Japan,Kyushu-Japan,31.934,130.862,1700,Shield volcano,1716,11,9,3,1,31,,,,D1,Historical
+916,Kirishimayama,Japan,Kyushu-Japan,31.934,130.862,1700,Shield volcano,1717,2,7,3,1,30,,,,D1,Historical
+932,Unzendake,Japan,Kyushu-Japan,32.761,130.299,1483,Complex volcano,1792,5,21,2,15000,707,6200,,"W,A",D1,Historical
+933,Unzendake,Japan,Kyushu-Japan,32.761,130.299,1483,Complex volcano,1991,6,3,1,43,,,,P,D1,Historical
+949,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1331,12,,2,,,,,,D1,Historical
+960,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1485,1,,2,1,,,,,D1,Historical
+990,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1826,10,,2,,,,,T,D1,Historical
+994,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1854,2,,2,3,,,,,D1,Historical
+995,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1872,12,,3,4,,,,T,D1,Historical
+1012,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1953,4,27,2,6,,,,T,D1,Historical
+1019,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1957,10,,2,12,,,,T,D1,Historical
+1065,Fujisan,Japan,Honshu-Japan,35.361,138.728,3776,Stratovolcano,1707,12,16,4,,,75,,,D4,Historical
+1100,Niigata-Yakeyama,Japan,Honshu-Japan,36.921,138.036,2400,Lava dome,1974,7,28,2,3,,,,T,D1,Historical
+1106,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1596,5,1,2,,,,,T,D1,Historical
+1133,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1721,6,22,1,15,,,,T,D1,Historical
+1145,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1783,8,5,4,1491,,,,"F,P,I",D1,Historical
+1146,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1803,7,4,2,,,,,,D1,Historical
+1147,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1803,11,7,2,,,,,T,D1,Historical
+1158,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1900,1,22,2,25,,,,,D1,Historical
+1163,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1936,7,29,3,2,,,,"P,T",D1,Historical
+1166,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1947,8,14,2,11,,,,,D1,Historical
+1168,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1950,9,23,2,1,1,,,T,D1,Historical
+1176,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1961,8,18,2,1,,,,T,D1,Historical
+1190,Kusatsu-Shiranesan,Japan,Honshu-Japan,36.618,138.528,2165,Stratovolcano,1932,10,1,3,2,7,,,M,D1,Historical
+1203,Nasudake,Japan,Honshu-Japan,37.125,139.963,1915,Stratovolcano,1410,3,5,3,180,,,,,D2,Historical
+1211,Bandaisan,Japan,Honshu-Japan,37.601,140.072,1816,Stratovolcano,1888,7,15,4,461,70,,,"A,P",D3,Historical
+1213,Adatarayama,Japan,Honshu-Japan,37.647,140.281,1728,Stratovolcano,1900,7,17,2,72,10,,,T,D1,Historical
+1215,Azumayama,Japan,Honshu-Japan,37.735,140.244,1949,Stratovolcano,1893,6,7,2,2,,,,T,D1,Historical
+1232,Zaozan [Zaosan],Japan,Honshu-Japan,38.144,140.44,1841,Complex volcano,1867,10,21,2,3,,,,M,D2,Historical
+1246,Chokaisan,Japan,Honshu-Japan,39.099,140.049,2236,Stratovolcano,1801,8,14,2,8,,,,T,D1,Historical
+1315,Izu-Oshima,Japan,Izu Is-Japan,34.724,139.394,746,Stratovolcano,1953,10,5,1,1,,,,,D1,Historical
+1318,Izu-Oshima,Japan,Izu Is-Japan,34.724,139.394,746,Stratovolcano,1957,10,13,2,1,53,,,T,D1,Historical
+1332,Izu-Oshima,Japan,Izu Is-Japan,34.724,139.394,746,Stratovolcano,1986,11,15,3,1,,,,I,D1,Historical
+1342,Dubbi,Eritrea,Africa-NE,13.579,41.809,1625,Stratovolcano,1861,5,7,3,106,,,,P,D3,Historical
+1343,Okataina,New Zealand,New Zealand,-38.157,176.507,1111,Lava dome,1886,6,10,5,153,,,,T,D1,Historical
+1344,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1906,4,4,3,350,300,,,"T,L",D2,Historical
+1345,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1794,6,15,3,400,,,,"M,L,T,G",D2,Historical
+1346,Rabaul,Papua New Guinea,New Britain-SW Pac,-4.246,152.194,688,Pyroclastic shield,1937,5,29,4,507,,,,"P,T,W,I",D1,Historical
+1348,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,79,8,25,5,2100,,,,"P,T",D2,Historical
+1349,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1631,12,16,5,4000,,,,"P,E,M",D2,Historical
+1350,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1669,3,11,3,,,,,,D1,Historical
+1351,Santorini,Greece,Greece,36.404,25.396,367,Shield volcano,-1610,,,7,,,,,W,D2,Historical
+1352,"Uwayrid, Harrat",Saudi Arabia,Arabia-W,27.08,37.25,1920,Volcanic field,640,,,2,,,,,T,D6,Anthropology
+1353,Dakataua,Papua New Guinea,New Britain-SW Pac,-5.046,150.1,408,Caldera,1895,,,2,,,,,?,D3,Anthropology
+1354,Witori,Papua New Guinea,New Britain-SW Pac,-5.575,150.516,724,Caldera,1914,,,3,,,,,I,D2,Historical
+1355,Kyejo,Tanzania,Africa-E,-9.229,33.792,2176,Stratovolcano,1800,,,2,,,,,L,D3,Historical
+1356,Santorini,Greece,Greece,36.404,25.396,367,Shield volcano,1650,9,26,4,120,,,,"G,W,T",D2,Historical
+1357,Long Island,Papua New Guinea,New Guinea-NE of,-5.358,147.12,1280,Complex volcano,1660,,,6,2000,,,,"T,P,W,I",D1,Historical
+1380,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1698,5,,3,,,,,,D2,Historical
+1405,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1813,5,,2,,,,,,D2,Historical
+1440,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,1879,2,4,2,,,,,,D1,Historical
+1476,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,1944,8,20,2,,,1,,W,D1,Historical
+1581,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1929,8,2,1,2,,,,T,D1,Historical
+1628,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1985,12,19,1,1,,,,S,D1,Historical
+1650,Santorini,Greece,Greece,36.404,25.396,367,Shield volcano,1866,2,20,2,1,,,,T,D2,Historical
+1666,"Lengai, Ol Doinyo",Tanzania,Africa-E,-2.764,35.914,2962,Stratovolcano,1917,1,1,3,,,,,,D1,Historical
+1668,"Lengai, Ol Doinyo",Tanzania,Africa-E,-2.764,35.914,2962,Stratovolcano,1940,7,24,2,,,,,,D1,Historical
+1671,"Lengai, Ol Doinyo",Tanzania,Africa-E,-2.764,35.914,2962,Stratovolcano,1966,8,14,4,,,,,,D1,Historical
+1672,"Lengai, Ol Doinyo",Tanzania,Africa-E,-2.764,35.914,2962,Stratovolcano,1967,7,8,3,,,,,,D1,Historical
+1682,Nyamulagira,"Congo, DRC",Africa-C,-1.408,29.2,3058,Shield volcano,1938,1,28,1,,,,,,D1,Historical
+1713,Cameroon,Cameroon,Africa-W,4.203,9.17,4095,Stratovolcano,1909,4,28,2,,,,,,D1,Historical
+1719,Oku Volcanic Field,Cameroon,Africa-W,6.25,10.5,3011,Maar,1986,8,21,3,1700,300,,,G,D5,Radiocarbon
+1731,Karthala,Comoros,Indian O-W,-11.75,43.38,2361,Shield volcano,1977,4,5,1,1,,293,,L,D1,Historical
+1904,Taupo,New Zealand,New Zealand,-38.781,175.893,760,Caldera,233,,,6,,,,,,D6,Radiocarbon
+2029,Unnamed,Tonga,Tonga-SW Pacific,-21.338,-175.65,-68,Submarine volcano,1907,7,,,,,,,,D2,Historical
+2065,Ofu-Olosega,United States,Samoa-SW Pacific,-14.175,-169.618,639,Shield volcano,1866,9,12,2,,,,,,D3,Historical
+2068,Savaii,Samoa,Samoa-SW Pacific,-13.612,-172.525,1858,Shield volcano,1905,8,4,2,,,,,,D2,Historical
+2069,St. Andrew Strait,Papua New Guinea,Admiralty Is-SW Paci,-2.38,147.35,270,Complex volcano,350,,,,,,,,,D2,Historical
+2071,St. Andrew Strait,Papua New Guinea,Admiralty Is-SW Paci,-2.38,147.35,270,Complex volcano,1953,6,27,,,,,,,D2,Historical
+2125,Manam,Papua New Guinea,New Guinea-NE of,-4.08,145.037,1807,Stratovolcano,1996,12,3,3,13,29,,,P,D1,Historical
+2177,Rabaul,Papua New Guinea,New Britain-SW Pac,-4.246,152.194,688,Pyroclastic shield,683,,,6,,,,,,D1,Historical
+2180,Rabaul,Papua New Guinea,New Britain-SW Pac,-4.246,152.194,688,Pyroclastic shield,1994,9,19,3,5,,,86,"T,W,E",D1,Historical
+2188,Lamington,Papua New Guinea,New Guinea,-8.95,148.15,1680,Stratovolcano,1951,1,21,4,2942,,,,P,D2,Historical
+2190,Bagana,Papua New Guinea,Bougainville-SW Paci,-6.137,155.196,1855,Lava cone,1883,12,,3,,,,,T,D1,Historical
+2208,Kavachi,Solomon Is.,Solomon Is-SW Pacifi,-8.991,157.979,-20,Submarine volcano,1951,,,2,,,,,,D1,Historical
+2227,Savo,Solomon Is.,Solomon Is-SW Pacifi,-9.13,159.82,485,Stratovolcano,1568,,,3,1001,,,,"P,T,M",D3,Historical
+2234,Tinakula,Solomon Is.,Santa Cruz Is-SW Pac,-10.386,165.804,796,Stratovolcano,1966,1,13,3,,,,,,D1,Historical
+2235,Tinakula,Solomon Is.,Santa Cruz Is-SW Pac,-10.386,165.804,796,Stratovolcano,1971,9,6,2,,,,,,D1,Historical
+2250,Ambrym,Vanuatu,Vanuatu-SW Pacific,-16.25,168.12,1334,Pyroclastic shield,1894,10,,3,10,,,,"T,L",D1,Historical
+2251,Ambrym,Vanuatu,Vanuatu-SW Pacific,-16.25,168.12,1334,Pyroclastic shield,1913,12,6,3,21,,,,T,D1,Historical
+2308,Yasur,Vanuatu,Vanuatu-SW Pacific,-19.532,169.447,361,Stratovolcano,1994,1,15,3,1,,,,T,D1,Historical
+2367,Marapi,Indonesia,Sumatra,-0.38,100.474,2885,Complex volcano,1975,1,,2,80,,,,M,D1,Historical
+2372,Marapi,Indonesia,Sumatra,-0.38,100.474,2885,Complex volcano,1992,7,5,2,1,5,,,T,D1,Historical
+2429,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,1883,8,27,6,36417,,,,"W,P,I",D1,Historical
+2431,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,1928,3,26,2,,,,,,D1,Historical
+2433,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,1930,3,17,2,,,,,,D1,Historical
+2496,Tangkuban Parahu,Indonesia,Java,-6.77,107.6,2084,Stratovolcano,1846,5,27,2,,,,,,D1,Historical
+2504,Papandayan,Indonesia,Java,-7.32,107.73,2665,Stratovolcano,1924,12,18,1,1,,,,G,D2,Historical
+2505,Guntur,Indonesia,Java,-7.143,107.841,2251,Complex volcano,1690,,,3,,,,,,D3,Historical
+2521,Galunggung,Indonesia,Java,-7.25,108.058,2168,Stratovolcano,1822,10,8,5,4011,,,,"P,M",D1,Historical
+2524,Galunggung,Indonesia,Java,-7.25,108.058,2168,Stratovolcano,1982,5,17,4,68,,,15,"I,T",D1,Historical
+2527,Ciremai,Indonesia,Java,-6.895,108.408,3039,Stratovolcano,1698,,,3,,,,,,D2,Historical
+2571,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,1826,10,11,2,,,,,,D1,Historical
+2572,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,1847,12,4,2,,,,,,D1,Historical
+2573,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,1928,5,13,2,40,,,,T,D1,Historical
+2574,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,1939,10,13,1,10,,,,T,D1,Historical
+2582,Miyakejima,Japan,Izu Is-Japan,34.094,139.526,775,Stratovolcano,1874,7,3,3,1,,45,,T,D1,Historical
+2583,Miyakejima,Japan,Izu Is-Japan,34.094,139.526,775,Stratovolcano,1940,7,12,2,11,20,24,,L,D1,Historical
+2585,Miyakejima,Japan,Izu Is-Japan,34.094,139.526,775,Stratovolcano,1983,10,3,3,,,400,,"L,T",D1,Historical
+2589,Hachijojima,Japan,Izu Is-Japan,33.137,139.766,854,Stratovolcano,1606,1,23,2,,,,,,D5,Historical
+2591,Aogashima,Japan,Izu Is-Japan,32.458,139.759,423,Stratovolcano,1780,7,27,3,7,,,,,D4,Historical
+2592,Aogashima,Japan,Izu Is-Japan,32.458,139.759,423,Stratovolcano,1785,4,18,3,135,,,,,D4,Historical
+2594,Myojinsho,Japan,Izu Is-Japan,31.888,139.918,11,Submarine volcano,1915,6,19,,,,,,W,D1,Historical
+2608,Izu-Torishima,Japan,Izu Is-Japan,30.484,140.303,394,Stratovolcano,1902,8,7,3,125,,,,,D1,Historical
+2609,Izu-Torishima,Japan,Izu Is-Japan,30.484,140.303,394,Stratovolcano,1939,8,17,2,2,,,,,D1,Historical
+2673,Oshima-Oshima,Japan,Hokkaido-Japan,41.51,139.367,732,Stratovolcano,1741,8,23,4,2000,,871,,"W,S",D4,Historical
+2676,Hokkaido-Komagatake,Japan,Hokkaido-Japan,42.063,140.677,1131,Stratovolcano,1640,7,31,5,700,,20,,W,D1,Historical
+2679,Hokkaido-Komagatake,Japan,Hokkaido-Japan,42.063,140.677,1131,Stratovolcano,1856,9,25,4,25,,,,"P,T",D1,Historical
+2686,Hokkaido-Komagatake,Japan,Hokkaido-Japan,42.063,140.677,1131,Stratovolcano,1929,6,17,4,2,4,1915,,T,D1,Historical
+2693,Toya,Japan,Hokkaido-Japan,42.544,140.839,733,Stratovolcano,1663,8,16,5,5,,,,"T,P",D1,Historical
+2695,Toya,Japan,Hokkaido-Japan,42.544,140.839,733,Stratovolcano,1822,3,9,4,50,53,,,P,D1,Historical
+2696,Toya,Japan,Hokkaido-Japan,42.544,140.839,733,Stratovolcano,1910,7,25,2,1,,,,M,D1,Historical
+2697,Toya,Japan,Hokkaido-Japan,42.544,140.839,733,Stratovolcano,1944,12,28,2,1,,,,T,D1,Historical
+2699,Toya,Japan,Hokkaido-Japan,42.544,140.839,733,Stratovolcano,1978,10,24,3,3,2,,,m,D1,Historical
+2740,Tokachidake,Japan,Hokkaido-Japan,43.418,142.686,2077,Stratovolcano,1926,5,24,3,144,207,5080,,"M,T",D1,Historical
+2746,Tokachidake,Japan,Hokkaido-Japan,43.418,142.686,2077,Stratovolcano,1962,6,29,3,5,11,,,T,D1,Historical
+2813,Raikoke,Russia,Kuril Is,48.292,153.25,551,Stratovolcano,1778,,,4,15,,,,T,D2,Historical
+2818,Sinarka,Russia,Kuril Is,48.873,154.182,911,Stratovolcano,1872,,,4,,,,,P,D3,Historical
+2822,Kharimkotan,Russia,Kuril Is,49.12,154.508,1145,Stratovolcano,1933,1,8,5,2,,,,W,D2,Historical
+2840,Alaid,Russia,Kuril Is,50.861,155.565,2285,Stratovolcano,1854,6,27,3,,,,,,D1,Historical
+2844,Alaid,Russia,Kuril Is,50.861,155.565,2285,Stratovolcano,1981,4,27,2,,,,,,D1,Historical
+2882,Avachinsky,Russia,Kamchatka,53.256,158.836,2717,Stratovolcano,1827,6,27,2,,,,,,D1,Historical
+2921,Karymsky,Russia,Kamchatka,54.049,159.443,1513,Stratovolcano,1996,1,2,2,,,,,,D1,Historical
+2952,Bezymianny,Russia,Kamchatka,55.972,160.595,2882,Stratovolcano,1956,3,30,5,,,,,,D1,Historical
+3046,Klyuchevskoy,Russia,Kamchatka,56.056,160.642,4754,Stratovolcano,1977,8,2,3,1,,,,T,D1,Historical
+3050,Klyuchevskoy,Russia,Kamchatka,56.056,160.642,4754,Stratovolcano,1983,3,8,2,1,,,,T,D1,Historical
+3060,Sheveluch,Russia,Kamchatka,56.653,161.36,3283,Stratovolcano,1854,2,18,5,,,,,,D1,Historical
+3067,Sheveluch,Russia,Kamchatka,56.653,161.36,3283,Stratovolcano,1990,2,2,3,,,,,,D1,Historical
+3105,Cleveland,United States,Aleutian Is,52.825,-169.944,1730,Stratovolcano,1944,6,10,3,1,,,,T,D1,Historical
+3117,Vsevidof,United States,Aleutian Is,53.13,-168.693,2149,Stratovolcano,1957,3,11,2,,,,,,D3,Historical
+3164,Shishaldin,United States,Aleutian Is,54.756,-163.97,2857,Stratovolcano,1825,3,21,3,,,,,,D1,Historical
+3248,Novarupta,United States,Alaska Peninsula,58.266,-155.159,841,Caldera,1912,9,6,6,2,,,,T,D2,Historical
+3268,Augustine,United States,Alaska-SW,59.363,-153.435,1218,Lava dome,1883,10,6,4,8,,,,,D1,Historical
+3294,Spurr,United States,Alaska-SW,61.299,-152.251,3374,Stratovolcano,1992,9,17,4,1,,,2,I,D1,Historical
+3297,Churchill,United States,Alaska-E,61.38,-141.75,5005,Stratovolcano,847,,,6,,,,,,D6,Radiocarbon
+3304,St. Helens,United States,US-Washington,46.2,-122.18,2549,Stratovolcano,1800,,,5,,,,,I,D1,Historical
+3314,St. Helens,United States,US-Washington,46.2,-122.18,2549,Stratovolcano,1980,5,18,5,61,,,2000,"P,M,T",D1,Historical
+3343,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,1790,11,,4,5405,,,,P,D1,Historical
+3344,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,1823,2,,,,,,,L,D1,Historical
+3347,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,1840,5,30,,,,,,,D1,Historical
+3372,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,1924,5,10,2,1,,,,T,D1,Historical
+3407,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,1975,11,29,,2,,,4,W,D1,Historical
+3423,Mauna Loa,United States,Hawaiian Is,19.475,-155.608,4170,Shield volcano,1868,4,3,2,77,,,,"W,M",D1,Historical
+3432,Mauna Loa,United States,Hawaiian Is,19.475,-155.608,4170,Shield volcano,1877,2,14,,,,,,,D1,Historical
+3443,Mauna Loa,United States,Hawaiian Is,19.475,-155.608,4170,Shield volcano,1919,9,29,,,,,,,D1,Historical
+3473,Colima,Mexico,Mexico,19.514,-103.62,3850,Stratovolcano,1576,,,3,,,,,,D1,Historical
+3477,Colima,Mexico,Mexico,19.514,-103.62,3850,Stratovolcano,1818,2,5,4,,,,,,D1,Historical
+3479,Colima,Mexico,Mexico,19.514,-103.62,3850,Stratovolcano,1913,1,20,4,13,,,,"P,m",D1,Historical
+3502,Popocatepetl,Mexico,Mexico,19.023,-98.622,5393,Stratovolcano,1996,4,30,3,5,,,,,D1,Historical
+3518,"Chichon, El",Mexico,Mexico,17.36,-93.23,1150,Tuff cone,1982,3,29,5,1879,,,3.3,"P,T,M,S",D1,Historical
+3519,"Chichon, El",Mexico,Mexico,17.36,-93.23,1150,Tuff cone,1982,4,4,5,33,,,,P,D1,Historical
+3521,Santa Maria,Guatemala,Guatemala,14.757,-91.552,3745,Stratovolcano,1902,10,25,6,10000,,,,"T,G",D1,Historical
+3523,Santa Maria,Guatemala,Guatemala,14.757,-91.552,3745,Stratovolcano,1929,11,2,3,200,,,,"P,M",D1,Historical
+3543,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,1581,12,26,4,,,,,,D1,Historical
+3546,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,1617,,,3,,,,,,D1,Historical
+3551,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,1717,8,27,4,,,3000,,S,D1,Historical
+3559,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,1860,8,18,2,,,,,,D1,Historical
+3562,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,1932,1,21,4,,,,,,D1,Historical
+3569,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,1963,9,28,3,7,,,,M,D1,Historical
+3573,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,1971,9,14,3,10,,,,"M,T",D1,Historical
+3574,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,1974,10,10,4,,,,,"T,M",D1,Historical
+3578,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,1999,5,21,2,,,,,,D1,Historical
+3580,Pacaya,Guatemala,Guatemala,14.382,-90.601,2569,Complex volcano,1565,8,,3,,,,,,D1,Historical
+3608,Pacaya,Guatemala,Guatemala,14.382,-90.601,2569,Complex volcano,1995,4,7,3,1,,1,,M,D1,Historical
+3651,Izalco,El Salvador,El Salvador,13.813,-89.633,1950,Stratovolcano,1920,10,29,3,,,,,P,D1,Historical
+3662,San Salvador,El Salvador,El Salvador,13.734,-89.294,1893,Stratovolcano,1659,9,30,3,,,,,S,D2,Historical
+3664,San Salvador,El Salvador,El Salvador,13.734,-89.294,1893,Stratovolcano,1917,6,7,3,325,,,,"S,L",D2,Historical
+3665,Ilopango,El Salvador,El Salvador,13.672,-89.053,450,Caldera,450,,,6,30000,,,,,D3,Historical
+3688,Cosiguina,Nicaragua,Nicaragua,12.98,-87.57,872,Stratovolcano,1835,1,20,5,,,,,"G,I",D3,Historical
+3726,"Negro, Cerro",Nicaragua,Nicaragua,12.506,-86.702,728,Cinder cone,1992,4,10,3,11,50,,3,"T,I",D1,Historical
+3763,Maderas,Nicaragua,Nicaragua,11.446,-85.515,1394,Stratovolcano,1996,9,27,,6,,,,m,U,Holocene
+3766,Rincon de la Vieja,Costa Rica,Costa Rica,10.83,-85.324,1916,Complex volcano,1966,11,6,3,,,,,"P,T,G",D1,Historical
+3821,Irazu,Costa Rica,Costa Rica,9.979,-83.852,3436,Stratovolcano,1963,12,10,3,40,,400,,"M,T",D1,Historical
+3830,"Ruiz, Nevado del",Colombia,Colombia,4.892,-75.324,5279,Stratovolcano,1595,3,12,4,636,,,,M,D1,Historical
+3833,"Ruiz, Nevado del",Colombia,Colombia,4.892,-75.324,5279,Stratovolcano,1845,2,19,3,1000,,,,M,D1,Historical
+3835,"Ruiz, Nevado del",Colombia,Colombia,4.892,-75.324,5279,Stratovolcano,1985,11,13,3,23080,10000,,,M,D1,Historical
+3846,Purace,Colombia,Colombia,2.32,-76.4,4650,Stratovolcano,1885,5,25,3,,,,,,D1,Historical
+3851,Purace,Colombia,Colombia,2.32,-76.4,4650,Stratovolcano,1949,5,26,2,17,,,,T,D1,Historical
+3855,Dona Juana,Colombia,Colombia,1.5,-76.936,4137,Stratovolcano,1899,11,13,4,55,,,,P,D2,Historical
+3900,Guagua Pichincha,Ecuador,Ecuador,-0.171,-78.598,4784,Stratovolcano,1660,10,27,4,,,,,P,D1,Historical
+3906,Guagua Pichincha,Ecuador,Ecuador,-0.171,-78.598,4784,Stratovolcano,1999,10,5,3,2,,,,T,D1,Historical
+3918,Cotopaxi,Ecuador,Ecuador,-0.677,-78.436,5911,Stratovolcano,1742,6,15,3,,,,,M,D2,Historical
+3919,Cotopaxi,Ecuador,Ecuador,-0.677,-78.436,5911,Stratovolcano,1742,12,9,3,,,,,M,D2,Historical
+3927,Cotopaxi,Ecuador,Ecuador,-0.677,-78.436,5911,Stratovolcano,1768,4,4,4,,,,,M,D2,Historical
+3944,Cotopaxi,Ecuador,Ecuador,-0.677,-78.436,5911,Stratovolcano,1877,6,25,4,340,,,,M,D2,Historical
+3959,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,1640,,,3,5000,,,,P,D1,Historical
+3965,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,1886,1,11,4,2,,,,P,D1,Historical
+3966,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,1916,3,3,4,,,,,,D1,Historical
+3970,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,1999,10,16,3,1,4,,,T,D1,Historical
+4033,"Azul, Cerro",Ecuador,Galapagos,-0.92,-91.408,1640,Shield volcano,1943,4,13,3,1,,,,T,D1,Historical
+4052,Huaynaputina,Peru,Peru,-16.614,-70.854,4679,Stratovolcano,1600,2,19,6,1500,,,,,D5,Historical
+4078,Unnamed,Chile,Chile-Is,-33.62,-76.83,-642,Submarine volcano,1839,2,12,2,,,,,,Unknown,Uncertain
+4118,Lonquimay,Chile,Chile-C,-38.379,-71.586,2832,Stratovolcano,1988,12,25,3,1,,,,T,D1,Historical
+4139,Villarrica,Chile,Chile-C,-39.42,-71.93,2847,Stratovolcano,1949,1,1,3,54,,,,M,D1,Historical
+4140,Villarrica,Chile,Chile-C,-39.42,-71.93,2847,Stratovolcano,1964,3,3,2,25,,,,M,D1,Historical
+4141,Villarrica,Chile,Chile-C,-39.42,-71.93,2847,Stratovolcano,1971,10,29,2,15,,,,M,D1,Historical
+4150,Carran-Los Venados,Chile,Chile-C,-40.35,-72.07,1114,Pyroclastic cone,1955,7,26,4,2,,,,G,D1,Historical
+4153,Puyehue-Cordon Caulle,Chile,Chile-C,-40.59,-72.117,2236,Stratovolcano,1960,5,25,3,,,,,,U,Holocene
+4160,Calbuco,Chile,Chile-S,-41.33,-72.618,1974,Stratovolcano,1917,4,,3,,,,,,D2,Historical
+4161,Calbuco,Chile,Chile-S,-41.33,-72.618,1974,Stratovolcano,1929,1,6,3,,,,,,D2,Historical
+4172,Liamuiga,St. Kitts & Nevis,W Indies,17.37,-62.8,1156,Stratovolcano,1843,2,8,,,,,,,D6,Radiocarbon
+4175,Soufriere Hills,Montserrat,W Indies,16.72,-62.18,915,Stratovolcano,1997,8,1,3,2,,,,,D1,Historical
+4187,Soufriere Guadeloupe,Guadeloupe,W Indies,16.044,-61.664,1467,Stratovolcano,1843,2,17,,,,,,,D1,Historical
+4193,Pelee,Martinique,W Indies,14.809,-61.166,1372,Stratovolcano,1902,5,8,4,28000,,,,P,D2,Historical
+4197,Soufriere St. Vincent,St. Vincent & the Grenadines,W Indies,13.33,-61.18,1220,Stratovolcano,1812,4,27,4,56,,,,"T, m",D1,Historical
+4199,Soufriere St. Vincent,St. Vincent & the Grenadines,W Indies,13.33,-61.18,1220,Stratovolcano,1902,5,7,4,1680,,,,P,D1,Historical
+4202,Soufriere St. Vincent,St. Vincent & the Grenadines,W Indies,13.33,-61.18,1220,Stratovolcano,1979,4,13,3,2,,,,"T,P",D1,Historical
+4205,Kick 'em Jenny,Netherlands,W Indies,12.3,-61.64,-185,Submarine volcano,1965,10,24,,,,,,,D1,Historical
+4224,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1177,,,3,,,,,,D2,Historical
+4225,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1262,,,3,,,,,F,D2,Historical
+4226,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1311,1,18,4,,,,,F,D2,Historical
+4227,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1357,,,4,,,,,,D2,Historical
+4229,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1580,8,11,4,,,,,,D2,Historical
+4231,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1625,9,2,5,,,,,,D2,Historical
+4232,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1660,11,3,4,,,,,,D2,Historical
+4233,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1721,5,11,5,,,,,,D2,Historical
+4234,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1755,10,17,4,2,,,,E,D2,Historical
+4238,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1918,10,12,4,,,,,,D2,Historical
+4241,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1104,10,15,5,,,,,,D1,Historical
+4242,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1158,1,19,4,,,,,,D1,Historical
+4243,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1206,12,4,2,,,,,,D1,Historical
+4244,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1300,7,11,4,600,,,,,D1,Historical
+4245,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1341,5,19,3,,,,,,D1,Historical
+4246,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1389,12,1,3,,,,,,D1,Historical
+4248,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1510,7,25,4,1,,,,T,D1,Historical
+4249,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1597,1,3,4,,,,,,D1,Historical
+4250,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1636,5,15,3,,,,,,D1,Historical
+4251,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1693,2,13,4,,,,,,D1,Historical
+4252,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1766,4,5,4,,,,,,D1,Historical
+4253,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1845,9,2,4,,,,,,D1,Historical
+4254,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1970,5,5,3,,,,,,D1,Historical
+4255,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1980,8,17,3,,,,,,D1,Historical
+4275,Grimsvotn,Iceland,Iceland-NE,64.416,-17.316,1719,Caldera,1684,12,,2,1,,,,F,D1,Historical
+4280,Grimsvotn,Iceland,Iceland-NE,64.416,-17.316,1719,Caldera,1784,4,,4,9350,,,,I,D1,Historical
+4283,Grimsvotn,Iceland,Iceland-NE,64.416,-17.316,1719,Caldera,1861,5,,2,,,,,,D1,Historical
+4291,Grimsvotn,Iceland,Iceland-NE,64.416,-17.316,1719,Caldera,1996,9,30,3,,,,,,D1,Historical
+4305,Askja,Iceland,Iceland-NE,65.033,-16.783,1080,Stratovolcano,1875,3,29,5,,,,,,D2,Historical
+4316,Krafla,Iceland,Iceland-NE,65.715,-16.728,800,Caldera,1729,6,30,2,,,,,,D1,Historical
+4319,Krafla,Iceland,Iceland-NE,65.715,-16.728,800,Caldera,1977,4,27,1,,,,,,D1,Historical
+4326,Oraefajokull,Iceland,Iceland-SE,64,-16.65,2010,Stratovolcano,1362,6,5,5,220,,,,"T,F",D4,Historical
+4327,Oraefajokull,Iceland,Iceland-SE,64,-16.65,2010,Stratovolcano,1727,8,3,4,3,,,,F,D4,Historical
+4339,Fayal,Portugal,Azores,38.576,-28.713,1041,Stratovolcano,1672,4,24,2,3,,,,,D2,Historical
+4342,Pico,Portugal,Azores,38.47,-28.4,2351,Stratovolcano,1718,2,1,2,2,,,,,D4,Historical
+4345,Sao Jorge,Portugal,Azores,38.65,-28.08,1053,Fissure vent,1580,5,1,3,10,,,,P,D2,Historical
+4346,Sao Jorge,Portugal,Azores,38.65,-28.08,1053,Fissure vent,1808,5,1,1,9,,,,L,D2,Historical
+4362,Furnas,Portugal,Azores,37.77,-25.32,805,Stratovolcano,1630,9,3,4,200,,,,"M,T",D5,Historical
+4367,La Palma,Spain,Canary Is,28.57,-17.83,2426,Stratovolcano,1677,11,22,2,1,,,,G,D1,Historical
+4371,La Palma,Spain,Canary Is,28.57,-17.83,2426,Stratovolcano,1971,10,28,2,,,,,,D1,Historical
+4374,Tenerife,Spain,Canary Is,28.271,-16.641,3715,Stratovolcano,1706,5,5,2,,,,,,D2,Historical
+4377,Lanzarote,Spain,Canary Is,29.03,-13.63,670,Fissure vent,1730,9,1,2,,,,,,D3,Historical
+4383,Fogo,Cape Verde,Cape Verde Is,14.95,-24.35,2829,Stratovolcano,1847,4,9,2,,,,,S,D1,Historical
+4388,Fogo,Cape Verde,Cape Verde Is,14.95,-24.35,2829,Stratovolcano,1995,4,2,2,,20,10,,,D1,Historical
+4412,Deception Island,Antarctica,Antarctica,-62.957,-60.637,602,Caldera,1967,12,4,3,,,,,,D1,Historical
+4428,Pinatubo,Philippines,Luzon-Philippines,15.13,120.35,1486,Stratovolcano,1991,6,15,6,800,4,,,"P,m,I",D1,Historical
+4439,Coropuna,Peru,Peru,-15.52,-72.65,6377,Stratovolcano,1990,5,29,3,,,,,,D1,Historical
+4442,"Hudson, Cerro",Chile,Chile-S,-45.9,-72.97,1905,Stratovolcano,1991,8,8,5,,,,,,D1,Historical
+4443,Victory,Papua New Guinea,New Guinea,-9.2,149.072,1832,Stratovolcano,1890,,,2,,,,,P,D2,Historical
+4444,Balbi,Papua New Guinea,Bougainville-SW Paci,-5.916,155.001,2715,Stratovolcano,1825,,,,,,,,P,U,Holocene
+4445,Savo,Solomon Is.,Solomon Is-SW Pacifi,-9.13,159.82,485,Stratovolcano,1840,,,3,100,,,,P,D3,Historical
+4446,Tinakula,Solomon Is.,Santa Cruz Is-SW Pac,-10.386,165.804,796,Stratovolcano,1840,,,3,,,,,P,D1,Historical
+4447,Ambae,Vanuatu,Vanuatu-SW Pacific,-15.389,167.835,1496,Shield volcano,1670,,,2,,,,,L,D1,Historical
+4448,Ambae,Vanuatu,Vanuatu-SW Pacific,-15.389,167.835,1496,Shield volcano,1870,,,2,100,,,,M,D1,Historical
+4449,Kuwae,Vanuatu,Vanuatu-SW Pacific,-16.83,168.523,-2,Caldera,1430,,,,,,,,P,D1,Historical
+4450,Sorikmarapi,Indonesia,Sumatra,0.686,99.539,2145,Stratovolcano,1892,5,21,2,180,,,,M,D1,Historical
+4451,Kaba,Indonesia,Sumatra,-3.522,102.615,1940,Stratovolcano,1833,11,24,2,126,,,,M,D2,Historical
+4452,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,1993,6,13,1,1,5,,,T,D1,Historical
+4453,Papandayan,Indonesia,Java,-7.32,107.73,2665,Stratovolcano,1772,8,12,3,2957,,,,A,D2,Historical
+4454,Guntur,Indonesia,Java,-7.143,107.841,2251,Complex volcano,1800,10,8,,,,,,M,D3,Historical
+4455,Guntur,Indonesia,Java,-7.143,107.841,2251,Complex volcano,1829,,,2,,,,,,D3,Historical
+4456,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,1786,,,2,38,,,,A,D1,Historical
+4457,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,1964,12,13,1,114,,,,,D1,Historical
+4458,Lokon-Empung,Indonesia,Sulawesi-Indonesia,1.358,124.792,1580,Stratovolcano,1991,10,24,1,1,,,,"T,P",D1,Historical
+4459,Karangetang,Indonesia,Sangihe Is-Indonesia,2.781,125.407,1797,Stratovolcano,1992,5,11,1,6,1,,,P,D1,Historical
+4460,Gamkonora,Indonesia,Halmahera-Indonesia,1.38,127.53,1635,Stratovolcano,1564,12,31,3,,,,,,D1,Historical
+4461,Camiguin,Philippines,Mindanao-Philippines,9.203,124.673,1552,Stratovolcano,1954,,,,2,,,,m,D2,Historical
+4462,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1993,2,2,2,75,,,,P,D1,Historical
+4464,Pinatubo,Philippines,Luzon-Philippines,15.13,120.35,1486,Stratovolcano,1992,7,12,1,6,,,,m,D1,Historical
+4465,Ambalatungan Group,Philippines,Luzon-Philippines,17.32,121.1,2329,Compound volcano,1952,,,1,12,,,,,U,Fumarolic
+4466,Tengchong,China,China-S,25.23,98.5,2865,Pyroclastic cone,1609,,,,,,,,E,D5,Historical
+4467,Io-Torishima,Japan,Ryukyu Is,27.881,128.223,212,Complex volcano,1664,,,,,,,,A,D1,Historical
+4468,Kikai,Japan,Ryukyu Is,30.793,130.305,704,Caldera,-4350,,,7,,,,,P,D1,Historical
+4469,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1780,2,9,4,,,,,F,D1,Historical
+4470,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1974,6,17,3,3,,,,M,D1,Historical
+4471,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1974,8,9,3,5,,,,M,D1,Historical
+4472,Kirishimayama,Japan,Kyushu-Japan,31.934,130.862,1700,Shield volcano,1895,10,16,2,4,,,,T,D1,Historical
+4473,Kirishimayama,Japan,Kyushu-Japan,31.934,130.862,1700,Shield volcano,1896,3,15,2,1,1,,,T,D1,Historical
+4474,Kirishimayama,Japan,Kyushu-Japan,31.934,130.862,1700,Shield volcano,1900,2,16,2,2,3,,,,D1,Historical
+4475,Kirishimayama,Japan,Kyushu-Japan,31.934,130.862,1700,Shield volcano,1923,7,1,2,1,,,,,D1,Historical
+4476,Unzendake,Japan,Kyushu-Japan,32.761,130.299,1483,Complex volcano,1664,4,15,2,30,,,,m,D1,Historical
+4477,Unzendake,Japan,Kyushu-Japan,32.761,130.299,1483,Complex volcano,1993,6,23,1,1,,,,P,D1,Historical
+4478,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1816,7,5,2,1,,,,T,D1,Historical
+4479,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1979,9,6,2,3,11,,,T,D1,Historical
+4480,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1598,5,13,2,800,,,,T,D1,Historical
+4481,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1911,5,8,2,1,2,60,,T,D1,Historical
+4482,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1911,8,15,2,2,36,,,T,D1,Historical
+4483,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1930,8,20,3,6,,,,T,D1,Historical
+4484,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1931,8,20,3,3,,,,,D1,Historical
+4485,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1941,7,13,2,1,1,,,T,D1,Historical
+4486,Izu-Oshima,Japan,Izu Is-Japan,34.724,139.394,746,Stratovolcano,1789,,,2,,,,,T,D1,Historical
+4487,Esan,Japan,Hokkaido-Japan,41.805,141.166,618,Stratovolcano,1846,11,18,1,,,,,M,D3,Historical
+4488,Shikotsu,Japan,Hokkaido-Japan,42.688,141.38,1320,Caldera,1804,,,3,,,,,,D1,Historical
+4489,Klyuchevskoy,Russia,Kamchatka,56.056,160.642,4754,Stratovolcano,1762,,,2,,,,,,D1,Historical
+4490,Tseax River Cone,Canada,Canada,55.111,-128.899,612,Pyroclastic cone,1730,,,,,,,,G,D4,Radiocarbon
+4491,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,1993,4,19,,1,22,,,A,D1,Historical
+4492,Hualalai,United States,Hawaiian Is,19.692,-155.87,2523,Shield volcano,1800,,,,2,,,,L,D3,Historical
+4493,Michoacan-Guanajuato,Mexico,Mexico,19.85,-101.75,3860,Cinder cone,1943,2,20,4,103,,,,"E,I",D2,Historical
+4494,"Chichon, El",Mexico,Mexico,17.36,-93.23,1150,Tuff cone,1982,5,27,5,1,,,,m,D1,Historical
+4495,Santa Maria,Guatemala,Guatemala,14.757,-91.552,3745,Stratovolcano,1978,9,2,3,1,,,,M,D1,Historical
+4496,Santa Maria,Guatemala,Guatemala,14.757,-91.552,3745,Stratovolcano,1990,7,19,3,4,,,,T,D1,Historical
+4497,San Salvador,El Salvador,El Salvador,13.734,-89.294,1893,Stratovolcano,590,,,,,,,,,D2,Historical
+4498,Mombacho,Nicaragua,Nicaragua,11.826,-85.968,1344,Stratovolcano,1570,,,,400,,,,A,U,Holocene
+4499,Arenal,Costa Rica,Costa Rica,10.463,-84.703,1670,Stratovolcano,1968,7,29,3,80,,,,"P,T",D1,Historical
+4500,Arenal,Costa Rica,Costa Rica,10.463,-84.703,1670,Stratovolcano,1975,6,17,3,2,,,,,D1,Historical
+4501,Arenal,Costa Rica,Costa Rica,10.463,-84.703,1670,Stratovolcano,1988,7,6,3,1,,,,T,D1,Historical
+4502,Galeras,Colombia,Colombia,1.22,-77.37,4276,Complex volcano,1993,1,14,2,9,,,,T,D1,Historical
+4503,Cotopaxi,Ecuador,Ecuador,-0.677,-78.436,5911,Stratovolcano,1698,,,3,,,,,M,D2,Historical
+4504,Sangay,Ecuador,Ecuador,-2.005,-78.341,5286,Stratovolcano,1976,8,12,3,2,4,,,T,D1,Historical
+4505,Llaima,Chile,Chile-C,-38.692,-71.729,3125,Stratovolcano,1937,2,9,2,3,,,,F,D1,Historical
+4506,Villarrica,Chile,Chile-C,-39.42,-71.93,2847,Stratovolcano,1963,5,21,2,,,,,M,D1,Historical
+4507,"Hudson, Cerro",Chile,Chile-S,-45.9,-72.97,1905,Stratovolcano,1971,8,12,3,3,,,,M,D1,Historical
+4508,Pelee,Martinique,W Indies,14.809,-61.166,1372,Stratovolcano,1902,8,30,4,1500,,,,P,D2,Historical
+4509,Vestmannaeyjar,Iceland,Iceland-S,63.416,-20.266,283,Submarine volcano,1973,1,27,3,1,,300,,G,D1,Historical
+4510,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1947,11,2,4,1,,,,L,D1,Historical
+4511,Grimsvotn,Iceland,Iceland-NE,64.416,-17.316,1719,Caldera,1629,,,2,4,,,,F,D1,Historical
+4512,Sao Jorge,Portugal,Azores,38.65,-28.08,1053,Fissure vent,1757,7,9,,1053,,,,S,D2,Historical
+4513,Yasur,Vanuatu,Vanuatu-SW Pacific,-19.532,169.447,361,Stratovolcano,1878,1,10,3,,,,,,D1,Historical
+4515,Avachinsky,Russia,Kamchatka,53.256,158.836,2717,Stratovolcano,1827,8,9,2,,,,,,D1,Historical
+4518,Myojinsho,Japan,Izu Is-Japan,31.888,139.918,11,Submarine volcano,1953,3,11,2,,,,,,D1,Historical
+4520,Lokon-Empung,Indonesia,Sulawesi-Indonesia,1.358,124.792,1580,Stratovolcano,1775,,,3,,,,,,D1,Historical
+4521,Raoul Island,New Zealand,Kermadec Is,-29.27,-177.92,516,Stratovolcano,2006,3,17,1,1,,,,T,D1,Historical
+4522,Okmok,United States,Aleutian Is,53.43,-168.13,1073,Shield volcano,1878,8,29,2,,,,,,D1,Historical
+4523,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1780,9,9,4,,,,,,D1,Historical
+4542,Soufriere Hills,Montserrat,W Indies,16.72,-62.18,915,Stratovolcano,2003,7,12,3,,,,,,D1,Historical
+4562,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,416,,,,,,,,W,D1,Historical
+4582,Asuncion,United States,Mariana Is-C Pacific,19.671,145.406,857,Stratovolcano,1819,,,,,,,,,D2,Historical
+4583,Augustine,United States,Alaska-SW,59.363,-153.435,1218,Lava dome,1540,,,4,,,,,,D1,Historical
+4603,Iliwerung,Indonesia,Lesser Sunda Is,-8.532,123.573,583,Complex volcano,1979,7,18,,1239,32,,,W,D1,Historical
+4623,Soufriere Hills,Montserrat,W Indies,16.72,-62.18,915,Stratovolcano,2006,5,20,2,,,,,P,D1,Historical
+4643,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,2006,8,17,3,6,,,,T,D1,Historical
+4645,Aniakchak,United States,Alaska Peninsula,56.88,-158.17,1341,Caldera,-1645,,,6,,,,,,D2,Historical
+4663,Sirung,Indonesia,Lesser Sunda Is,-8.497,124.131,1347,Complex volcano,1987,12,1,,125,,237,5,,D1,Historical
+4683,Ritter Island,Papua New Guinea,New Guinea-NE of,-5.519,148.115,75,Stratovolcano,1974,10,17,1,,,,,,D1,Historical
+4703,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,2002,12,30,,,,,,,D1,Historical
+4704,Ritter Island,Papua New Guinea,New Guinea-NE of,-5.519,148.115,75,Stratovolcano,1972,10,9,1,,,,,,D1,Historical
+4705,"Huila, Nevado del",Colombia,Colombia,2.93,-76.03,5364,Stratovolcano,2007,4,18,,,,,,,D5,Historical
+4707,Pelee,Martinique,W Indies,14.809,-61.166,1372,Stratovolcano,1902,5,5,4,23,,,,"W,M",D2,Historical
+4708,Soufriere Hills,Montserrat,W Indies,16.72,-62.18,915,Stratovolcano,1999,1,20,3,,,,,,D1,Historical
+4724,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1693,1,9,,,,,,,D1,Historical
+4743,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,1916,7,3,3,,,,,,D1,Historical
+4744,Karangetang,Indonesia,Sangihe Is-Indonesia,2.781,125.407,1797,Stratovolcano,1997,4,17,1,3,,,,P,D1,Historical
+4764,"Tair, Jebel at",Yemen,Red Sea,15.55,41.83,244,Stratovolcano,2007,9,30,3,7,1,,,,D3,Historical
+4784,Banua Wuhu,Indonesia,Sangihe Is-Indonesia,3.138,125.491,-5,Submarine volcano,1918,7,18,3,,,,,,D2,Historical
+4805,Pelee,Martinique,W Indies,14.809,-61.166,1372,Stratovolcano,1902,5,20,4,,,20,,,D2,Historical
+4807,Piparo,Trinidad,Trinidad,10,-61,140,Mud volcano,1911,11,3,,,,,,,D1,Historical
+4808,Soufriere Hills,Montserrat,W Indies,16.72,-62.18,915,Stratovolcano,1997,12,26,,,,,,,D1,Historical
+4824,Cosiguina,Nicaragua,Nicaragua,12.98,-87.57,872,Stratovolcano,1951,8,3,,,,,,,D3,Historical
+4844,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,1954,2,,,,,,,W,D1,Historical
+4845,Santorini,Greece,Greece,36.404,25.396,367,Shield volcano,1050,,,,,,,,,D2,Historical
+4846,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1169,2,11,,,,,,,D1,Historical
+4847,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1690,2,3,3,,,,,W,D2,Historical
+4848,Santorini,Greece,Greece,36.404,25.396,367,Shield volcano,1707,5,,3,,,,,,D2,Historical
+4849,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1714,6,30,,,,,,,D2,Historical
+4850,Myojinsho,Japan,Izu Is-Japan,31.888,139.918,11,Submarine volcano,1952,9,16,2,,,,,,D1,Historical
+4851,Myojinsho,Japan,Izu Is-Japan,31.888,139.918,11,Submarine volcano,1952,9,23,2,,,,,,D1,Historical
+4852,Myojinsho,Japan,Izu Is-Japan,31.888,139.918,11,Submarine volcano,1952,9,24,2,31,,,,P,D1,Historical
+4853,Myojinsho,Japan,Izu Is-Japan,31.888,139.918,11,Submarine volcano,1952,9,26,2,,,,,,D1,Historical
+4864,Banua Wuhu,Indonesia,Sangihe Is-Indonesia,3.138,125.491,-5,Submarine volcano,1919,4,3,3,,,,,,D2,Historical
+4884,Chaiten,Chile,Chile-S,-42.835,-72.651,1122,Caldera,2008,5,2,,1,,,,,D1,Holocene
+4904,Santorini,Greece,Greece,36.404,25.396,367,Shield volcano,46,,,3,,,,,,D2,Historical
+4905,Peuet Sague,Indonesia,Sumatra,4.903,96.289,2785,Complex volcano,1837,9,,,,,,,,D1,Historical
+4906,Umboi,Papua New Guinea,New Guinea-NE of,-5.592,147.892,1335,Complex volcano,1857,4,17,,,,,,,U,Holocene
+4907,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1868,9,5,,,,,,,D1,Historical
+4924,Kasatochi,United States,Aleutian Is,52.177,-175.508,314,Stratovolcano,2008,8,8,3,,,,,,D1,Historical
+4944,"Huila, Nevado del",Colombia,Colombia,2.93,-76.03,5364,Stratovolcano,2008,11,20,,10,,,,,D5,Historical
+4964,Nyiragongo,"Congo, DRC",Africa-C,-1.52,29.25,3470,Stratovolcano,2002,1,17,1,100,,,,L,D1,Historical
+4965,Bora-Bericha-Tullu Moye,Ethiopia,Africa-NE,8.211,39.081,2345,Pumice cone,1900,,,,,,,,,D2,Anthropology
+4966,Fentale,Ethiopia,Africa-NE,8.985,39.906,2007,Stratovolcano,1250,,,,,,,,,D3,Historical
+4967,"Arhab, Harra of",Yemen,Arabia-S,15.603,44.098,3100,Volcanic field,500,,,,,,,,,D6,Historical
+4968,"Arhab, Harra of",Yemen,Arabia-S,15.603,44.098,3100,Volcanic field,200,,,,,,,,,D6,Historical
+4969,Zukur,Yemen,Red Sea,14.02,42.75,624,Shield volcano,1679,9,21,,,,,,,U,Holocene
+4984,Savaii,Samoa,Samoa-SW Pacific,-13.612,-172.525,1858,Shield volcano,1907,10,6,,,,,,,D2,Historical
+5004,Karthala,Comoros,Indian O-W,-11.75,43.38,2361,Shield volcano,2005,11,25,3,1,,,,T,D1,Historical
+5005,Karthala,Comoros,Indian O-W,-11.75,43.38,2361,Shield volcano,1991,7,3,2,,,,,,D1,Historical
+5024,Redoubt,United States,Alaska-SW,60.485,-152.742,3108,Stratovolcano,-1550,,,,,,,,,D1,Historical
+5025,Augustine,United States,Alaska-SW,59.363,-153.435,1218,Lava dome,350,,,,,,,,,D1,Historical
+5026,Redoubt,United States,Alaska-SW,60.485,-152.742,3108,Stratovolcano,2009,3,23,,,,,,,D1,Historical
+5044,Westdahl,United States,Aleutian Is,54.516,-164.65,1563,Stratovolcano,1820,3,1,2,,,,,,D1,Historical
+5064,East Epi,Vanuatu,Vanuatu-SW Pacific,-16.68,168.389,833,Stratovolcano,1901,8,9,,,,,,W,D1,Historical
+5084,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,2006,11,30,1,1266,,,,m,D1,Historical
+5104,Miyakejima,Japan,Izu Is-Japan,34.094,139.526,775,Stratovolcano,2000,6,27,2,1,,,,,D1,Historical
+5124,Eyjafjallajokull,Iceland,Iceland-S,63.633,-19.633,1651,Stratovolcano,2010,3,31,2,2,,,,,D1,Historical
+5144,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,920,,,4,,,,,,D2,Historical
+5145,Grimsvotn,Iceland,Iceland-NE,64.416,-17.316,1719,Caldera,1753,10,15,2,,,,,,D1,Historical
+5146,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,934,,,4,,,,,,D2,Historical
+5147,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,950,,,,,,,,,D2,Historical
+5148,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,1500,,,4,,,,,,D2,Historical
+5149,Krysuvik-Trolladyngja,Iceland,Iceland-SW,63.917,-22.067,360,Crater rows,1151,,,1,,,,,,D6,Historical
+5150,Bardarbunga,Iceland,Iceland-NE,64.633,-17.516,2000,Stratovolcano,1477,2,,6,,,,,,D2,Historical
+5151,Bardarbunga,Iceland,Iceland-NE,64.633,-17.516,2000,Stratovolcano,1712,1,15,2,,,,,,D2,Historical
+5152,Bardarbunga,Iceland,Iceland-NE,64.633,-17.516,2000,Stratovolcano,1716,10,5,2,,,,,,D2,Historical
+5153,Bardarbunga,Iceland,Iceland-NE,64.633,-17.516,2000,Stratovolcano,1717,8,4,3,,,,,,D2,Historical
+5154,Bardarbunga,Iceland,Iceland-NE,64.633,-17.516,2000,Stratovolcano,1726,2,1,1,,,,,,D2,Historical
+5155,Bardarbunga,Iceland,Iceland-NE,64.633,-17.516,2000,Stratovolcano,1729,2,1,1,,,,,,D2,Historical
+5164,Pacaya,Guatemala,Guatemala,14.382,-90.601,2569,Complex volcano,2010,5,27,1,1,,3,,T,D1,Historical
+5184,Zealandia Bank,United States,Mariana Is-C Pacific,16.88,145.85,0,Stratovolcano,2010,5,29,,,,,,,U,Holocene
+5204,Churchill,United States,Alaska-E,61.38,-141.75,5005,Stratovolcano,60,,,6,,,,,,D6,Radiocarbon
+5205,Long Island,Papua New Guinea,New Guinea-NE of,-5.358,147.12,1280,Complex volcano,-2040,,,6,,,,,,D1,Historical
+5206,Quilotoa,Ecuador,Ecuador,-0.859,-78.904,3914,Caldera,1280,,,6,,,,,,D6,Radiocarbon
+5207,Changbaishan,North Korea,China-E,41.98,128.08,2744,Stratovolcano,946,,,7,,,,,,D4,Historical
+5208,Ceboruco,Mexico,Mexico,21.125,-104.508,2280,Stratovolcano,930,,,6,,,,,,D3,Historical
+5210,Witori,Papua New Guinea,New Britain-SW Pac,-5.575,150.516,724,Caldera,710,,,6,,,,,,D2,Historical
+5211,Ksudach,Russia,Kamchatka,51.844,157.572,1079,Stratovolcano,240,,,6,,,,,,D2,Historical
+5212,Ambrym,Vanuatu,Vanuatu-SW Pacific,-16.25,168.12,1334,Pyroclastic shield,50,,,6,,,,,,D1,Historical
+5224,Apoyeque,Nicaragua,Nicaragua,12.242,-86.342,518,Pyroclastic shield,-50,,,6,,,,,,D7,Radiocarbon
+5225,Okmok,United States,Aleutian Is,53.43,-168.13,1073,Shield volcano,-100,,,6,,,,,,D1,Historical
+5226,Raoul Island,New Zealand,Kermadec Is,-29.27,-177.92,516,Stratovolcano,-250,,,6,,,,,,D1,Historical
+5227,Pinatubo,Philippines,Luzon-Philippines,15.13,120.35,1486,Stratovolcano,-1050,,,6,,,,,,D1,Historical
+5228,Pinatubo,Philippines,Luzon-Philippines,15.13,120.35,1486,Stratovolcano,-3550,,,6,,,,,,D1,Historical
+5229,Witori,Papua New Guinea,New Britain-SW Pac,-5.575,150.516,724,Caldera,-1370,,,6,,,,,,D2,Historical
+5230,Witori,Papua New Guinea,New Britain-SW Pac,-5.575,150.516,724,Caldera,-4000,,,6,,,,,T,D2,Historical
+5231,Taupo,New Zealand,New Zealand,-38.781,175.893,760,Caldera,-1460,,,6,,,,,,D6,Radiocarbon
+5232,Veniaminof,United States,Alaska Peninsula,56.17,-159.38,2507,Stratovolcano,-1750,,,6,,,,,,D1,Historical
+5233,St. Helens,United States,US-Washington,46.2,-122.18,2549,Stratovolcano,-1860,,,6,,,,,,D1,Historical
+5234,"Hudson, Cerro",Chile,Chile-S,-45.9,-72.97,1905,Stratovolcano,-1890,,,6,,,,,,D1,Historical
+5235,Black Peak,United States,Alaska Peninsula,56.552,-158.785,1032,Stratovolcano,-1900,,,6,,,,,,D7,Radiocarbon
+5236,Taal,Philippines,Luzon-Philippines,14.011,120.998,311,Stratovolcano,-3580,,,6,,,,,,D1,Historical
+5237,Masaya,Nicaragua,Nicaragua,11.984,-86.169,594,Caldera,-4050,,,6,,,,,,D1,Historical
+5238,Macauley,New Zealand,Kermadec Is,-30.21,-178.475,238,Caldera,-4360,,,6,,,,,,U,Holocene
+5244,Sinabung,Indonesia,Sumatra,3.17,98.392,2460,Stratovolcano,2010,8,30,,2,,,,,U,Holocene
+5264,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,1883,10,10,,,,,,,D1,Historical
+5285,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,1884,2,,,,,,,,D1,Historical
+5304,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,2010,10,26,,367,277,,600,,D1,Historical
+5305,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,2006,6,14,1,2,,,,P,D1,Historical
+5324,Santorini,Greece,Greece,36.404,25.396,367,Shield volcano,-197,,,3,,,,,,D2,Historical
+5344,Tengger Caldera,Indonesia,Java,-7.942,112.95,2329,Stratovolcano,2010,12,28,,,,,,,D1,Historical
+5364,Kirishimayama,Japan,Kyushu-Japan,31.934,130.862,1700,Shield volcano,2011,1,28,,,,,,,D1,Historical
+5384,Bulusan,Philippines,Luzon-Philippines,12.769,124.056,1535,Stratovolcano,2006,6,7,2,1,,,,,D1,Historical
+5404,Bulusan,Philippines,Luzon-Philippines,12.769,124.056,1535,Stratovolcano,2011,2,23,2,1,,,,,D1,Historical
+5424,Karangetang,Indonesia,Sangihe Is-Indonesia,2.781,125.407,1797,Stratovolcano,2010,8,6,3,4,5,,,,D1,Historical
+5444,Puyehue-Cordon Caulle,Chile,Chile-C,-40.59,-72.117,2236,Stratovolcano,2011,6,4,4,,,,,,U,Holocene
+5445,Gamalama,Indonesia,Halmahera-Indonesia,0.81,127.332,1714,Stratovolcano,2011,12,27,3,4,,,,m,D1,Historical
+5464,Lokon-Empung,Indonesia,Sulawesi-Indonesia,1.358,124.792,1580,Stratovolcano,2011,7,17,,1,,,,,D1,Historical
+5484,Sheveluch,Russia,Kamchatka,56.653,161.36,3283,Stratovolcano,1999,8,15,4,,,,,,D1,Historical
+5485,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,2001,5,14,3,1,,,,,D1,Historical
+5486,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,2001,7,26,2,,,,,,D1,Historical
+5487,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,2002,8,28,3,,32,,,,D1,Historical
+5488,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1991,12,14,2,,,,2.5,,D1,Historical
+5489,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1981,3,17,2,,,,,,D1,Historical
+5504,Karangetang,Indonesia,Sangihe Is-Indonesia,2.781,125.407,1797,Stratovolcano,2011,3,18,,,,,,,D1,Historical
+5505,Karangetang,Indonesia,Sangihe Is-Indonesia,2.781,125.407,1797,Stratovolcano,2002,1,3,3,,,,,M,D1,Historical
+5524,Nabro,Eritrea,Africa-NE,13.37,41.7,2218,Stratovolcano,2011,6,22,4,31,,,,,Unknown,Holocene
+5525,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,2011,1,3,,1,1,,,M,D1,Historical
+5526,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,2008,8,22,3,2,2,2,,M,D1,Historical
+5527,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,2006,7,18,3,1,,,,,D1,Historical
+5528,Pacaya,Guatemala,Guatemala,14.382,-90.601,2569,Complex volcano,1987,1,25,3,,15,63,,,D1,Historical
+5544,Popocatepetl,Mexico,Mexico,19.023,-98.622,5393,Stratovolcano,1919,2,19,1,,,,,A,D1,Historical
+5545,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1981,6,30,,200,,,,m,D1,Historical
+5546,Soufriere Hills,Montserrat,W Indies,16.72,-62.18,915,Stratovolcano,1997,6,25,3,22,,,,P,D1,Historical
+5547,Tengger Caldera,Indonesia,Java,-7.942,112.95,2329,Stratovolcano,2004,6,8,2,,,,,T,D1,Historical
+5564,Katla,Iceland,Iceland-S,63.633,-19.083,1490,Subglacial volcano,2011,7,9,,,,,,,D2,Historical
+5565,Esjufjoll,Iceland,Iceland-SE,64.25,-16.583,1620,Stratovolcano,1927,9,5,1,1,,,,M,D2,Historical
+5584,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,2009,11,30,,,,,,,D1,Historical
+5585,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,2012,2,10,,,,,,,D1,Historical
+5605,Banda Api,Pacific Ocean,Banda Sea,-4.523,129.881,596,Caldera,1835,11,1,,,,,,,D1,Historical
+5624,Yasur,Vanuatu,Vanuatu-SW Pacific,-19.532,169.447,361,Stratovolcano,1863,8,17,,,,,,,D1,Historical
+5644,Kuwae,Vanuatu,Vanuatu-SW Pacific,-16.83,168.523,-2,Caldera,1958,10,7,2,,,,,,D1,Historical
+5664,Yasur,Vanuatu,Vanuatu-SW Pacific,-19.532,169.447,361,Stratovolcano,1878,2,11,,,,,,,D1,Historical
+5704,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,2010,1,,3,,,,,,D1,Historical
+5705,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,2010,11,,3,,,,,,D1,Historical
+5706,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,2011,4,,4,,,,,,D1,Historical
+5724,Tolbachik,Russia,Kamchatka,55.832,160.326,3611,Shield volcano,2012,12,12,,,,,,,D1,Historical
+5744,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,1998,4,28,,,,,,L,D1,Historical
+5745,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,2000,11,3,,2,,,,G,D1,Historical
+5746,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,2012,3,2,,,,,,L,D1,Historical
+5784,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,2013,2,12,,1,1,,,M,D1,Historical
+5804,Coropuna,Peru,Peru,-15.52,-72.65,6377,Stratovolcano,1784,7,,,,,,,,D1,Historical
+5824,Paluweh,Indonesia,Lesser Sunda Is,-8.32,121.708,875,Stratovolcano,2013,2,,,,,,,,D1,Historical
+5844,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1329,6,28,3,,,,,,D1,Historical
+5864,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,2013,5,7,,5,8,,,,D1,Historical
+5884,Shishaldin,United States,Aleutian Is,54.756,-163.97,2857,Stratovolcano,1856,7,26,,,,,,,D1,Historical
+5904,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1780,10,31,,,,,,,D1,Historical
+5924,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,2013,9,4,,,,,,,D1,Historical
+5944,Paluweh,Indonesia,Lesser Sunda Is,-8.32,121.708,875,Stratovolcano,2013,8,10,3,5,,,,,D1,Historical
+5964,Ubinas,Peru,Peru,-16.345,-70.897,5608,Stratovolcano,2013,9,1,,,,,,,D1,Historical
+5984,Sinabung,Indonesia,Sumatra,3.17,98.392,2460,Stratovolcano,2013,9,15,2,,,,,,U,Holocene
+6004,Sinabung,Indonesia,Sumatra,3.17,98.392,2460,Stratovolcano,2014,2,1,,17,3,,,,U,Holocene
+6024,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,2014,2,13,,7,,4098,,,D1,Historical
+6044,Myojinsho,Japan,Izu Is-Japan,31.888,139.918,11,Submarine volcano,1953,3,25,2,,,,,,D1,Historical
+6064,Ontakesan,Japan,Honshu-Japan,35.893,137.48,3067,Complex volcano,2014,9,27,3,55,70,,,,D1,Historical
+6084,Fogo,Cape Verde,Cape Verde Is,14.95,-24.35,2829,Stratovolcano,2014,11,23,,,,230,,L,D1,Historical
+6104,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,2014,11,10,,,,1,14.5,,D1,Historical
+6124,Calbuco,Chile,Chile-S,-41.33,-72.618,1974,Stratovolcano,1961,1,25,3,,,,,,D2,Historical
+6125,Calbuco,Chile,Chile-S,-41.33,-72.618,1974,Stratovolcano,1893,1,7,4,,,,,,D2,Historical
+6126,Calbuco,Chile,Chile-S,-41.33,-72.618,1974,Stratovolcano,2015,4,22,,,,,,,D2,Historical
+6144,Karangetang,Indonesia,Sangihe Is-Indonesia,2.781,125.407,1797,Stratovolcano,2015,5,7,,,,,,,D1,Historical
+6164,Sinabung,Indonesia,Sumatra,3.17,98.392,2460,Stratovolcano,2015,2,20,,,,,,,U,Holocene
+6165,Gamalama,Indonesia,Halmahera-Indonesia,0.81,127.332,1714,Stratovolcano,2014,12,18,,1,4,,,,D1,Historical
+6184,Manam,Papua New Guinea,New Guinea-NE of,-4.08,145.037,1807,Stratovolcano,2004,10,24,4,5,,,,T,D1,Historical
+6185,Manam,Papua New Guinea,New Guinea-NE of,-4.08,145.037,1807,Stratovolcano,2005,1,27,4,1,14,,,T,D1,Historical
+6186,Manam,Papua New Guinea,New Guinea-NE of,-4.08,145.037,1807,Stratovolcano,2007,3,,4,4,1,,,M,D1,Historical
+6187,Manam,Papua New Guinea,New Guinea-NE of,-4.08,145.037,1807,Stratovolcano,2015,7,31,2,,2,,,,D1,Historical
+6204,Sinabung,Indonesia,Sumatra,3.17,98.392,2460,Stratovolcano,2015,10,16,,1,,,,M,U,Holocene
+6224,"Hudson, Cerro",Chile,Chile-S,-45.9,-72.97,1905,Stratovolcano,1973,4,5,,2,,,,M,D1,Historical
+6244,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,1873,,,,9,,,,"G,T",D2,Historical
+6245,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,2001,10,20,2,1,,,,T,D1,Historical
+6246,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1669,3,19,3,2,5,,,L,D1,Historical
+6264,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,1984,10,16,3,1,,,,S,D1,Historical
+6265,Ararat,Turkey,Turkey,39.7,44.3,5165,Stratovolcano,1840,7,2,3,1900,,,,P,U,Holocene
+6266,Nyiragongo,"Congo, DRC",Africa-C,-1.52,29.25,3470,Stratovolcano,1990,11,21,,1,,,,S,D1,Historical
+6267,Karthala,Comoros,Indian O-W,-11.75,43.38,2361,Shield volcano,1903,,,,17,,,,G,D1,Historical
+6268,Taupo,New Zealand,New Zealand,-38.781,175.893,760,Caldera,1846,5,7,,63,,,,m,D6,Radiocarbon
+6269,Taupo,New Zealand,New Zealand,-38.781,175.893,760,Caldera,1910,3,20,,1,,,,m,D6,Radiocarbon
+6270,Ruapehu,New Zealand,New Zealand,-39.28,175.57,2797,Stratovolcano,1953,12,24,,151,,,,m,D1,Historical
+6284,Rabaul,Papua New Guinea,New Britain-SW Pac,-4.246,152.194,688,Pyroclastic shield,1990,6,24,,6,,,,G,D1,Historical
+6304,Ambae,Vanuatu,Vanuatu-SW Pacific,-15.389,167.835,1496,Shield volcano,1914,,,,100,,,,L,D1,Historical
+6305,Yasur,Vanuatu,Vanuatu-SW Pacific,-19.532,169.447,361,Stratovolcano,1995,2,4,3,2,,,,T,D1,Historical
+6324,Salak,Indonesia,Java,-6.716,106.733,2218,Stratovolcano,2007,7,7,,6,,,,G,D2,Historical
+6325,Tangkuban Parahu,Indonesia,Java,-6.77,107.6,2084,Stratovolcano,1923,6,,,3,,,,G,D1,Historical
+6326,Tangkuban Parahu,Indonesia,Java,-6.77,107.6,2084,Stratovolcano,1978,,,,3,,,,I,D1,Historical
+6327,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,1992,3,18,,1,2,,,G,D1,Historical
+6328,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1872,4,17,4,170,,,,P,D1,Historical
+6329,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1932,2,,,,,,,m,D1,Historical
+6344,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1962,10,,,2,5,,,m,D1,Historical
+6345,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1974,10,22,2,9,,6,,M,D1,Historical
+6346,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1976,11,25,2,29,,306,,M,D1,Historical
+6347,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1997,1,14,2,6,,,,,D1,Historical
+6348,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,2000,11,,2,1,,,,A,D1,Historical
+6349,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,2001,8,5,2,2,,,,P,D1,Historical
+6364,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1990,11,25,,4,,,,m,D1,Historical
+6365,Kelud,Indonesia,Java,-7.935,112.314,1730,Stratovolcano,1998,7,,,10,,,,m,D1,Historical
+6366,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1981,5,14,3,372,152,,,m,D1,Historical
+6367,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1988,7,30,3,1,,,,T,D1,Historical
+6368,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1992,,,3,3,,,,T,D1,Historical
+6369,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1994,2,3,3,6,,,,P,D1,Historical
+6370,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,1997,9,2,3,2,,,,T,D1,Historical
+6371,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,2000,7,27,3,2,,,,T,D1,Historical
+6372,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,2002,,,3,3,,,,T,D1,Historical
+6384,Rinjani,Indonesia,Lesser Sunda Is,-8.42,116.47,3726,Stratovolcano,1994,11,3,3,31,,,,m,D1,Historical
+6404,Kelimutu,Indonesia,Lesser Sunda Is,-8.77,121.82,1639,Complex volcano,1995,5,15,,1,,,,,D1,Historical
+6405,Egon,Indonesia,Lesser Sunda Is,-8.676,122.455,1661,Stratovolcano,2004,1,29,1,1,,,,T,D2,Historical
+6408,Wurlali,Indonesia,Banda Sea,-7.125,128.675,868,Stratovolcano,1993,1,21,,1,12,,,m,D3,Historical
+6409,Karangetang,Indonesia,Sangihe Is-Indonesia,2.781,125.407,1797,Stratovolcano,1992,1,21,2,2,,,,M,D1,Historical
+6424,Melebingoy,Philippines,Mindanao-Philippines,6.113,124.892,1824,Stratovolcano,1995,9,6,,60,,300,,,D5,Historical
+6425,Camiguin,Philippines,Mindanao-Philippines,9.203,124.673,1552,Stratovolcano,1949,6,,3,2,,,,P,D2,Historical
+6426,Camiguin,Philippines,Mindanao-Philippines,9.203,124.673,1552,Stratovolcano,1951,12,4,3,500,,,,P,D2,Historical
+6427,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,1875,,,,1500,,,,m,D1,Historical
+6428,Pinatubo,Philippines,Luzon-Philippines,15.13,120.35,1486,Stratovolcano,1993,6,26,1,4,,,,m,D1,Historical
+6429,Pinatubo,Philippines,Luzon-Philippines,15.13,120.35,1486,Stratovolcano,1993,10,4,,14,,,,m,D1,Historical
+6444,Kirishimayama,Japan,Kyushu-Japan,31.934,130.862,1700,Shield volcano,1989,8,26,,2,,,,G,D1,Historical
+6445,Unzendake,Japan,Kyushu-Japan,32.761,130.299,1483,Complex volcano,1957,7,,,13,,,,m,D1,Historical
+6446,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1989,2,12,,1,,,,G,D1,Historical
+6447,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1990,3,26,2,1,,,,G,D1,Historical
+6464,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1990,4,18,2,1,,,,G,D1,Historical
+6465,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1990,10,19,2,1,,,,G,D1,Historical
+6466,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1994,5,29,1,1,,,,G,D1,Historical
+6467,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,1997,11,23,,2,,,,G,D1,Historical
+6468,Hakoneyama,Japan,Honshu-Japan,35.233,139.021,1438,Complex volcano,1933,5,10,,1,,,,G,D7,Radiocarbon
+6469,Hakoneyama,Japan,Honshu-Japan,35.233,139.021,1438,Complex volcano,1951,11,5,,2,,,,G,D7,Radiocarbon
+6470,Hakoneyama,Japan,Honshu-Japan,35.233,139.021,1438,Complex volcano,1952,3,27,,1,,,,G,D7,Radiocarbon
+6471,Hakoneyama,Japan,Honshu-Japan,35.233,139.021,1438,Complex volcano,1953,7,26,,10,,,,A,D7,Radiocarbon
+6472,Hakoneyama,Japan,Honshu-Japan,35.233,139.021,1438,Complex volcano,1972,10,2,,2,,,,,D7,Radiocarbon
+6473,Ontakesan,Japan,Honshu-Japan,35.893,137.48,3067,Complex volcano,1984,9,14,,29,,,,A,D1,Historical
+6474,Yakedake,Japan,Honshu-Japan,36.227,137.587,2455,Stratovolcano,1995,2,11,1,4,,,,T,D1,Historical
+6484,Midagahara,Japan,Honshu-Japan,36.571,137.59,2621,Stratovolcano,1858,4,23,,,,,,m,D3,Historical
+6485,Midagahara,Japan,Honshu-Japan,36.571,137.59,2621,Stratovolcano,1858,7,3,,,,,,m,D3,Historical
+6486,Midagahara,Japan,Honshu-Japan,36.571,137.59,2621,Stratovolcano,1954,7,21,,1,,,,G,D3,Historical
+6487,Midagahara,Japan,Honshu-Japan,36.571,137.59,2621,Stratovolcano,1961,4,23,,1,,,,G,D3,Historical
+6504,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1913,5,29,1,1,1,,,T,D1,Historical
+6505,Asamayama,Japan,Honshu-Japan,36.406,138.523,2568,Complex volcano,1938,7,16,1,,,,,T,D1,Historical
+6506,Kusatsu-Shiranesan,Japan,Honshu-Japan,36.618,138.528,2165,Stratovolcano,1971,12,27,,6,,,,G,D1,Historical
+6507,Kusatsu-Shiranesan,Japan,Honshu-Japan,36.618,138.528,2165,Stratovolcano,1976,8,3,,3,,,,G,D1,Historical
+6508,Akagisan,Japan,Honshu-Japan,36.56,139.193,1828,Stratovolcano,1947,9,16,,699,,,,m,D6,Historical
+6509,Nasudake,Japan,Honshu-Japan,37.125,139.963,1915,Stratovolcano,1919,7,6,,2,,,,G,D2,Historical
+6510,Nasudake,Japan,Honshu-Japan,37.125,139.963,1915,Stratovolcano,1921,11,26,,1,,,,G,D2,Historical
+6511,Bandaisan,Japan,Honshu-Japan,37.601,140.072,1816,Stratovolcano,1938,5,9,,2,,,,m,D3,Historical
+6524,Adatarayama,Japan,Honshu-Japan,37.647,140.281,1728,Stratovolcano,1997,9,15,,4,,,,G,D1,Historical
+6525,Naruko,Japan,Honshu-Japan,38.729,140.734,470,Caldera,1969,8,26,,1,,,,G,D6,Historical
+6544,Akita-Yakeyama,Japan,Honshu-Japan,39.964,140.757,1366,Complex volcano,1986,5,8,,1,,,,G,D1,Historical
+6545,Akita-Yakeyama,Japan,Honshu-Japan,39.964,140.757,1366,Complex volcano,1988,,,,3,,,,I,D1,Historical
+6546,Hakkodasan,Japan,Honshu-Japan,40.659,140.877,1585,Stratovolcano,1997,7,12,,3,,,,G,U,Holocene
+6547,Toya,Japan,Hokkaido-Japan,42.544,140.839,733,Stratovolcano,1944,8,26,2,1,,1,,G,D1,Historical
+6548,Toya,Japan,Hokkaido-Japan,42.544,140.839,733,Stratovolcano,1977,8,7,3,3,,,,I,D1,Historical
+6549,Taisetsuzan,Japan,Hokkaido-Japan,43.664,142.854,2291,Stratovolcano,1958,7,21,,2,,,,G,D6,Tephrochronology
+6550,Taisetsuzan,Japan,Hokkaido-Japan,43.664,142.854,2291,Stratovolcano,1961,6,18,,2,,,,G,D6,Tephrochronology
+6564,Mutnovsky,Russia,Kamchatka,52.449,158.196,2288,Complex volcano,1991,6,,,1,,,,I,D2,Historical
+6565,Vilyuchinsky,Russia,Kamchatka,52.7,158.28,2173,Stratovolcano,1981,,,,,,,,A,D7,Tephrochronology
+6566,Sinabung,Indonesia,Sumatra,3.17,98.392,2460,Stratovolcano,2016,5,9,,1,4,,,,U,Holocene
+6567,Sinabung,Indonesia,Sumatra,3.17,98.392,2460,Stratovolcano,2016,5,21,,7,3,,100,,U,Holocene
+6568,Hood,United States,US-Oregon,45.374,-121.695,3426,Stratovolcano,1934,,,,1,,,,G,D3,Historical
+6569,Hood,United States,US-Oregon,45.374,-121.695,3426,Stratovolcano,1980,12,25,,1,,,,m,D3,Historical
+6570,Hualalai,United States,Hawaiian Is,19.692,-155.87,2523,Shield volcano,1784,,,,,,,,L,D3,Historical
+6584,Colima,Mexico,Mexico,19.514,-103.62,3850,Stratovolcano,1590,1,15,3,,,,,I,D1,Historical
+6585,"Chichon, El",Mexico,Mexico,17.36,-93.23,1150,Tuff cone,1375,,,5,,,,,M,D1,Historical
+6604,Santa Ana,El Salvador,El Salvador,13.853,-89.63,2381,Stratovolcano,2005,10,1,3,2,,,,A,D2,Historical
+6605,San Cristobal,Nicaragua,Nicaragua,12.702,-87.004,1745,Stratovolcano,1998,10,30,,1620,,,,m,D1,Historical
+6606,Arenal,Costa Rica,Costa Rica,10.463,-84.703,1670,Stratovolcano,2000,8,23,3,2,1,,,P,D1,Historical
+6607,Irazu,Costa Rica,Costa Rica,9.979,-83.852,3436,Stratovolcano,1963,3,17,3,15,,,,T,D1,Historical
+6624,"Huila, Nevado del",Colombia,Colombia,2.93,-76.03,5364,Stratovolcano,1994,6,6,,650,,200,2.4,m,D5,Historical
+6625,Reventador,Ecuador,Ecuador,-0.077,-77.656,3562,Stratovolcano,2002,11,3,4,,,,,I,D1,Historical
+6626,Guagua Pichincha,Ecuador,Ecuador,-0.171,-78.598,4784,Stratovolcano,1993,3,12,1,2,,,,T,D1,Historical
+6627,Cotopaxi,Ecuador,Ecuador,-0.677,-78.436,5911,Stratovolcano,-455,,,4,,,,,M,D2,Historical
+6628,Tungurahua,Ecuador,Ecuador,-1.467,-78.442,5023,Stratovolcano,-1010,,,5,,,,,,D1,Historical
+6644,Hekla,Iceland,Iceland-S,63.983,-19.666,1490,Stratovolcano,1510,10,15,4,,,,,I,D1,Historical
+6645,Grimsvotn,Iceland,Iceland-NE,64.416,-17.316,1719,Caldera,1860,,,,1,,,,m,D1,Historical
+6646,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,-2420,,,5,,,,,"P,T",D2,Historical
+6664,Tofua,Tonga,Tonga-SW Pacific,-19.75,-175.07,515,Caldera,1892,8,30,2,,,,,,D2,Historical
+6684,Tinakula,Solomon Is.,Santa Cruz Is-SW Pac,-10.386,165.804,796,Stratovolcano,1897,3,26,2,,,,,W,D1,Historical
+6704,Rinjani,Indonesia,Lesser Sunda Is,-8.42,116.47,3726,Stratovolcano,2016,9,27,,,,,,,D1,Historical
+6724,Yellowstone,United States,US-Wyoming,44.43,-110.67,2805,Caldera,2016,6,9,,1,,,,,D7,Tephrochronology
+6744,Asosan,Japan,Kyushu-Japan,32.885,131.085,1592,Caldera,2016,10,8,,,,,,T,D1,Historical
+6764,Sinabung,Indonesia,Sumatra,3.17,98.392,2460,Stratovolcano,2017,4,13,2,,,,,P,U,Holocene
+6784,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,2017,7,1,,8,11,,,,D1,Historical
+6804,Campi Flegrei,Italy,Italy,40.827,14.139,458,Caldera,2017,9,12,,3,,,,,D5,Historical
+6824,Ambae,Vanuatu,Vanuatu-SW Pacific,-15.389,167.835,1496,Shield volcano,2017,9,23,,,,,,T,D1,Historical
+6844,Okataina,New Zealand,New Zealand,-38.157,176.507,1111,Lava dome,2015,10,,,1,,,,I,D1,Historical
+6845,Okataina,New Zealand,New Zealand,-38.157,176.507,1111,Lava dome,2013,12,13,,1,,,,G,D1,Historical
+6864,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,2018,4,28,1,,1,716,370,L,D1,Historical
+6884,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,2017,12,18,,8,8,,,A,D1,Historical
+6904,Kadovar,Papua New Guinea,New Guinea-NE of,-3.608,144.588,365,Stratovolcano,2018,1,5,2,,,,,T,U,Holocene
+6924,Kusatsu-Shiranesan,Japan,Honshu-Japan,36.618,138.528,2165,Stratovolcano,2018,1,23,1,1,11,,,T,D1,Historical
+6944,Mayon,Philippines,Luzon-Philippines,13.257,123.685,2462,Stratovolcano,2018,1,13,2,,1972,,3.564,"T,P",D1,Historical
+6964,Sinabung,Indonesia,Sumatra,3.17,98.392,2460,Stratovolcano,2017,12,27,,,,,,T,U,Holocene
+6965,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,2017,3,15,,,10,,,P,D1,Historical
+6984,Billy Mitchell,Papua New Guinea,Bougainville-SW Paci,-6.09,155.225,1544,Pyroclastic shield,1580,,,6,,,,,,D5,Radiocarbon
+7004,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,2018,2,1,1,1,3,,,G,D1,Historical
+7044,Sarychev Peak,Russia,Kuril Is,48.092,153.2,1496,Stratovolcano,1946,11,13,4,,,,,,D1,Historical
+7084,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,2017,6,6,2,,,,,P,D1,Historical
+7104,Kadovar,Papua New Guinea,New Guinea-NE of,-3.608,144.588,365,Stratovolcano,2018,2,9,2,,,,,W,U,Holocene
+7124,Ijen,Indonesia,Java,-8.058,114.242,2769,Stratovolcano,2018,3,21,,,30,,,G,D1,Historical
+7144,Ambae,Vanuatu,Vanuatu-SW Pacific,-15.389,167.835,1496,Shield volcano,2018,3,30,3,4,,,,"T,G,M",D1,Historical
+7164,Fuego,Guatemala,Guatemala,14.473,-90.88,3763,Stratovolcano,2018,6,3,2,201,27,186,120,P,D1,Historical
+7184,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,2018,7,16,,,23,,1,T,D1,Historical
+7204,Manam,Papua New Guinea,New Guinea-NE of,-4.08,145.037,1807,Stratovolcano,2018,8,25,4,,,164,,"L,T",D1,Historical
+7224,Kick 'em Jenny,Netherlands,W Indies,12.3,-61.64,-185,Submarine volcano,1939,7,24,1,,,,,T,D1,Historical
+7244,Ambrym,Vanuatu,Vanuatu-SW Pacific,-16.25,168.12,1334,Pyroclastic shield,2018,12,15,2,,,,,"S,T,G",D1,Historical
+7264,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,2018,12,22,3,437,31943,2844,250,W,D1,Historical
+7284,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,2018,12,26,2,,28,15,115,S,D1,Historical
+7304,Manam,Papua New Guinea,New Guinea-NE of,-4.08,145.037,1807,Stratovolcano,2019,1,7,4,,,,,T,D1,Historical
+7324,Sinabung,Indonesia,Sumatra,3.17,98.392,2460,Stratovolcano,2019,5,7,4,,,,,T,U,Holocene
+7344,Ulawun,Papua New Guinea,New Britain-SW Pac,-5.05,151.33,2334,Stratovolcano,2019,6,26,4,,2,,14,"P,T",D1,Historical
+7345,Manam,Papua New Guinea,New Guinea-NE of,-4.08,145.037,1807,Stratovolcano,2019,6,28,4,,,,,"A,P,T",D1,Historical
+7364,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,2019,7,3,2,1,1,,,"P,T,W",D1,Historical
+7404,Dakataua,Papua New Guinea,New Britain-SW Pac,-5.046,150.1,408,Caldera,653,,,6,,,,,,D3,Anthropology
+7424,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,2019,8,28,2,,,,,W,D1,Historical
+7444,"Cendres, Ile des",Vietnam,SE Asia,10.158,109.014,-20,Submarine volcanoes,1923,3,2,2,,,,,L,D2,Historical
+7464,Whakaari/White Island,New Zealand,New Zealand,-37.52,177.18,294,Stratovolcano,2019,12,9,2,22,25,,,T,D1,Historical
+7484,Taal,Philippines,Luzon-Philippines,14.011,120.998,311,Stratovolcano,2020,1,12,4,39,,4573,67,T,D1,Historical
+7504,Ijen,Indonesia,Java,-8.058,114.242,2769,Stratovolcano,2020,5,29,,1,,,,"G,W, S",D1,Historical
+7524,Ritter Island,Papua New Guinea,New Guinea-NE of,-5.519,148.115,75,Stratovolcano,2007,5,19,1,,,,,"A,W",D1,Historical
+7525,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,1981,10,20,1,,,,,"A,T,W",D1,Historical
+7526,Dona Juana,Colombia,Colombia,1.5,-76.936,4137,Stratovolcano,1936,8,14,,18,,,,"A,F",D2,Historical
+7527,Sangay,Ecuador,Ecuador,-2.005,-78.341,5286,Stratovolcano,2021,3,5,2,,,,,T,D1,Historical
+7528,Soufriere St. Vincent,St. Vincent & the Grenadines,W Indies,13.33,-61.18,1220,Stratovolcano,2021,4,9,4,,,,325,"T,W",D1,Historical
+7529,Savaii,Samoa,Samoa-SW Pacific,-13.612,-172.525,1858,Shield volcano,1906,11,28,2,,,,,W,D2,Historical
+7530,Savaii,Samoa,Samoa-SW Pacific,-13.612,-172.525,1858,Shield volcano,1907,6,8,2,,,,,W,D2,Historical
+7531,Savaii,Samoa,Samoa-SW Pacific,-13.612,-172.525,1858,Shield volcano,1907,6,19,2,,,,,W,D2,Historical
+7532,Savaii,Samoa,Samoa-SW Pacific,-13.612,-172.525,1858,Shield volcano,1907,6,27,2,,,,,W,D2,Historical
+7533,Savaii,Samoa,Samoa-SW Pacific,-13.612,-172.525,1858,Shield volcano,1907,7,9,2,,,,,W,D2,Historical
+7534,Savaii,Samoa,Samoa-SW Pacific,-13.612,-172.525,1858,Shield volcano,1907,7,25,2,,,,,W,D2,Historical
+7535,Aira,Japan,Kyushu-Japan,31.577,130.659,1117,Stratovolcano,1797,,,2,,,,,"T,W",D1,Historical
+7536,Nyiragongo,"Congo, DRC",Africa-C,-1.52,29.25,3470,Stratovolcano,2021,5,22,2,32,,5000,,"L,I,S",D1,Historical
+7537,Sumisujima,Japan,Izu Is-Japan,31.44,140.051,136,Submarine volcano,2015,5,2,,,,,,"S,W",D2,Historical
+7538,Sumisujima,Japan,Izu Is-Japan,31.44,140.051,136,Submarine volcano,1984,6,13,,,,,,"W,S",D2,Historical
+7539,Sumisujima,Japan,Izu Is-Japan,31.44,140.051,136,Submarine volcano,1996,9,4,,,,,,"S,W",D2,Historical
+7540,Sumisujima,Japan,Izu Is-Japan,31.44,140.051,136,Submarine volcano,2006,1,1,,,,,,"S,W",D2,Historical
+7541,Sumisujima,Japan,Izu Is-Japan,31.44,140.051,136,Submarine volcano,2018,5,6,,,,,,"S,W",D2,Historical
+7542,Dempo,Indonesia,Sumatra,-4.016,103.121,3142,Stratovolcano,1770,,,,,,,,,D1,Historical
+7543,Pacaya,Guatemala,Guatemala,14.382,-90.601,2569,Complex volcano,2021,3,,1,,,,,"L,T",D1,Historical
+7544,Tokachidake,Japan,Hokkaido-Japan,43.418,142.686,2077,Stratovolcano,1926,9,8,3,,,,,,D1,Historical
+7546,Toya,Japan,Hokkaido-Japan,42.544,140.839,733,Stratovolcano,1944,7,11,,1,,,,P,D1,Historical
+7547,La Palma,Spain,Canary Is,28.57,-17.83,2426,Stratovolcano,2021,9,19,3,1,,1345,924,L,D1,Historical
+7548,Midagahara,Japan,Honshu-Japan,36.571,137.59,2621,Stratovolcano,1967,11,4,,2,,,,G,D3,Historical
+7549,Aogashima,Japan,Izu Is-Japan,32.458,139.759,423,Stratovolcano,1783,4,10,3,7,,61,,T,D4,Historical
+7550,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,2021,12,4,4,45,169,2970,20,T,D1,Historical
+7551,Hunga Tonga-Hunga Ha'apai,Tonga,Tonga-SW Pacific,-20.553,-175.384,114,Submarine volcano,2022,1,15,5,6,20,284,135.368,W,D1,Historical
+7555,Popocatepetl,Mexico,Mexico,19.023,-98.622,5393,Stratovolcano,2022,6,22,2,1,,,,P,D1,Historical
+7557,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,2022,10,9,2,,,,,"P,W",D1,Historical
+7558,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,2022,12,4,2,,,,,"P,W",D1,Historical
+7559,Semeru,Indonesia,Java,-8.108,112.922,3657,Stratovolcano,2022,12,4,4,,,,,"T,M",D1,Historical
+7560,Bagana,Papua New Guinea,Bougainville-SW Paci,-6.137,155.196,1855,Lava cone,2023,7,7,2,,,,,"T,G",D1,Historical
+7561,Marapi,Indonesia,Sumatra,-0.38,100.474,2885,Complex volcano,2023,12,3,,23,12,,,"P,T",D1,Historical
+7562,East Epi,Vanuatu,Vanuatu-SW Pacific,-16.68,168.389,833,Stratovolcano,2023,1,31,,,,,,W,D1,Historical
+7563,Reykjanes,Iceland,Iceland-SW,63.817,-22.717,140,Crater rows,2023,12,18,,1,,3,,"S,L",D6,Historical
+7564,Pelee,Martinique,W Indies,14.809,-61.166,1372,Stratovolcano,1902,6,6,4,,,,,"W,P",D2,Historical
+7565,Pelee,Martinique,W Indies,14.809,-61.166,1372,Stratovolcano,1902,7,10,4,,,,,"P,W",D2,Historical
+7566,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,2021,5,19,2,,,,,W,D1,Historical
+7567,Ruang,Indonesia,Sangihe Is-Indonesia,2.3,125.37,725,Stratovolcano,2024,4,16,,,,3200,15.5,,D2,Historical
+7568,Ijen,Indonesia,Java,-8.058,114.242,2769,Stratovolcano,2024,4,20,,1,,,,,D1,Historical
+7569,Marapi,Indonesia,Sumatra,-0.38,100.474,2885,Complex volcano,2024,5,11,2,67,33,521,,M,D1,Historical
+7570,Kanlaon,Philippines,Philippines-C,10.41,123.13,2422,Stratovolcano,2024,6,3,3,,,2680,2.5,"M,G,T",D1,Historical
+7571,Sheveluch,Russia,Kamchatka,56.653,161.36,3283,Stratovolcano,2024,8,17,4,,,,,,D1,Historical
+7572,Kilauea,United States,Hawaiian Is,19.421,-155.287,1222,Shield volcano,1994,7,8,3,,,,,W,D1,Historical
+7573,Rabaul,Papua New Guinea,New Britain-SW Pac,-4.246,152.194,688,Pyroclastic shield,1994,9,18,,,,,,"W,S",D1,Historical
+7574,Myojinsho,Japan,Izu Is-Japan,31.888,139.918,11,Submarine volcano,1952,9,17,2,,,,,,D1,Historical
+7575,Irazu,Costa Rica,Costa Rica,9.979,-83.852,3436,Stratovolcano,2019,5,2,,,,,,W,D1,Historical
+7576,Lewotobi,Indonesia,Lesser Sunda Is,-8.542,122.775,1703,Stratovolcano,2024,11,3,,9,64,23,,"T,P,L",D1,Historical
+7577,Kanlaon,Philippines,Philippines-C,10.41,123.13,2422,Stratovolcano,2024,12,9,2,,,1,2.2,"T,P",D1,Historical
+7578,Marapi,Indonesia,Sumatra,-0.38,100.474,2885,Complex volcano,1979,4,30,2,80,,,,M,D1,Historical
+7579,Agua,Guatemala,Guatemala,14.465,-90.743,3760,Stratovolcano,1541,9,11,,1300,,,,m,U,Holocene
+7580,Dieng Volcanic Complex,Indonesia,Java,-7.2,109.879,2565,Complex volcano,1978,,,,3,,,,I,D1,Historical
+7581,Merapi,Indonesia,Java,-7.54,110.446,2910,Stratovolcano,1904,1,30,2,16,45,,,P,D1,Historical
+7582,Klyuchevskoy,Russia,Kamchatka,56.056,160.642,4754,Stratovolcano,2025,7,29,,,,,,,D1,Historical
+7583,Hayli Gubbi,Ethiopia,Africa-NE,13.51,40.722,493,Shield volcano,2025,11,23,,,,,,T,U,Holocene
+7584,Sofugan,Japan,Izu Is-Japan,29.794,140.342,99,Submarine volcano,2023,10,8,,,,,,"S,W",Unknown,Uncertain
+7585,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,2024,7,4,2,,,,,,D1,Historical
+7586,Lewotobi,Indonesia,Lesser Sunda Is,-8.542,122.775,1703,Stratovolcano,2025,3,20,,1,1,,,"T,P",D1,Historical

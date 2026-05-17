@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Catallaxy Services | Data Virtualization with PolyBase</title>
+		<title>Catallaxy Services | Data Virtualization in SQL Server</title>
 
 		<link rel="stylesheet" href="../reveal.js/dist/reset.css">
 		<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
@@ -18,12 +18,12 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h2>Data Virtualization in SQL Server 2022</h2>
-					
+					<h2>Data Virtualization in SQL Server</h2>
+
 					<a href="https://www.catallaxyservices.com">Kevin Feasel</a> (<a href="https://twitter.com/feaselkl">@feaselkl</a>)<br />
 					<a href="https://csmore.info/on/polybase">https://csmore.info/on/polybase</a>
 				</section>
-				
+
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
 					<h3>Who Am I?  What Am I Doing Here?</h3>
 					<div class="container">
@@ -47,565 +47,374 @@
 							<a href="http://www.twitter.com/feaselkl"><img src="../WebsiteAssets/HeadShot.jpg" height="358" width="315" /></a>
 							<br />
 							<a href="http://www.twitter.com/feaselkl">@feaselkl</a>
-						</div>					
-					</div>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>PolyBase Revealed</h3>
-					
-					<div class="container">
-						<div class="col">
-							<a href="https://www.apress.com/us/book/9781484254608"><img src="../WebsiteAssets/PolyBaseRevealed.png" height="480" /></a>
 						</div>
-						<div class="col">
-							<ul>
-								<li>Released for SQL Server 2019</li>
-								<li>First PolyBase-specific book ever written</li>
-								<li>Covered PolyBase v1 (Hadoop + Azure Blob Storage) and v2 (ODBC)</li>
-							</ul>
-						</div>					
 					</div>
 				</section>
-				
+
+				<section data-background-image="presentation/assets/background/volcano.jpg" data-background-opacity="0.2">
+					<h3>The Scenario</h3>
+
+					<p>Volcano facts live in Cosmos DB.</p>
+					<p>Country economic statistics live as CSV files in Azure Blob Storage.</p>
+					<p>Eruption history lives in another SQL Server instance.</p>
+					<br />
+					<p>Your boss wants <strong>one report</strong> that joins all three.</p>
+					<p>You have an afternoon. Good luck.</p>
+				</section>
+
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>Dozens of Copies Sold</h3>
-					
-					<img src="presentation/assets/image/DozensOfUs.jpg" />
+					<h3>One T-SQL Query to Solve the Problem</h3>
+
+					<pre><code data-line-numbers="|2|3|5" data-trim><script type="text/template">
+					SELECT v.VolcanoName, v.Country, e.EventYear, e.VEI, e.DeathsTotal
+					FROM  dbo.Volcano AS v
+						INNER JOIN dbo.Eruption AS e
+							ON e.VolcanoName = v.VolcanoName
+						LEFT OUTER JOIN dbo.CountryData AS c
+							ON v.Country = c.Country
+					WHERE e.VEI >= 5
+					ORDER BY e.DeathsTotal DESC;
+					</script></code></pre>
 				</section>
 
-				<section data-background-image="presentation/assets/background/motivation.jpg" data-background-opacity="0.2">
-					<h3>Motivation</h3>
-					
-					<p>The goal of this talk is to cover Microsoft's technologies for data virtualization in SQL Server 2022, including PolyBase.</p>
-
-					<p>We will look at installation, configuration, and a number of practical business scenarios involving the product.</p>
-				</section>
-				
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
 					<h3>Agenda</h3>
-					
+
 					<ol>
-						<li class="active">A Historical Review</li>
-						<li>Installation + Configuration</li>
-						<li>The Building Blocks</li>
-						<li>Advanced Scenarios</li>
+						<li class="active">The Basics of PolyBase</li>
+						<li>External Data Sources</li>
+						<li>External Tables</li>
+						<li>Data Virtualization</li>
+						<li>Cold Storage</li>
+						<li>Wrapping Up</li>
 					</ol>
 				</section>
-				
+
 				<section data-background-image="presentation/assets/background/questions.jpg" data-background-opacity="0.2">
 					<h3>What is PolyBase?</h3>
-					
-					<p>PolyBase is Microsoft's technology for covering <s>three</s> two use cases:</p>
-					
-					<ol>
-						<li>Connecting to heterogeneous, remote data sources.</li>
-						<li>Data virtualization:  creating the appearance of local data while still having the data live remotely.</li>
-						<li><s>Scale-out versus scale-up and Massively Parallel Processing (MPP).</s></li>
-					</ol>
+
+					<p>SQL Server's framework for querying data that lives outside the database.</p>
+
+					<p>First shipped in SQL Server 2016 with support for Hadoop and Azure Blob Storage. Since then, it has expanded to support a wide range of external data sources.</p>
 				</section>
-				
+
+				<section data-background-image="presentation/assets/background/magnifying-glass.jpg" data-background-opacity="0.2">
+					<h3>The Primary Conceit</h3>
+
+					<p>External data sources are represented in SQL Server as <strong>external tables</strong>.  They have a schema defined in SQL Server, but the data itself lives at the source.</p>
+
+					<p>External resources behave like regular tables.  Filtering, joining, and aggregating all just work; the engine translates as needed and pulls only what the query asks for.</p>
+				</section>
+
 				<section data-background-image="presentation/assets/background/calendar.jpg" data-background-opacity="0.2">
-					<h3>A Brief History</h3>
-					
-					<ul>
-						<li>Parallel Data Warehouse (2012):  PolyBase introduced as a way to integrate SQL Server and Hadoop.</li>
-						<li>SQL Server 2016:  PolyBase "V1" introduced.</li>
-						<li>Azure SQL Data Warehouse (now Azure Synapse Analytics):  PolyBase used for data lake integrations.</li>
-						<li>SQL Server 2019:  PolyBase "V2" introduced.  PolyBase also brought into SQL Server Big Data Clusters (RIP).</li>
-						<li>SQL Server 2022:  Some data virtualization outside PolyBase.  This brings new functionality but also removes old features.</li>
-					</ul>
+					<h3>How We Got Here</h3>
+
+					<table style="font-size:0.75em; margin: 0 auto;">
+						<thead>
+							<tr><th>Year</th><th>What shipped</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>2016</td><td>PolyBase v1: Hadoop and Azure Blob Storage only</td></tr>
+							<tr><td>2019</td><td>PolyBase v2: ODBC connectors (SQL, Oracle, MongoDB, Teradata, generic ODBC on Windows)</td></tr>
+							<tr><td>2022</td><td>Hadoop and scale-out groups removed. Native S3, Azure Blob (abs), and ADLS Gen2 (adls) added.</td></tr>
+							<tr><td>2025</td><td>Native engine for Parquet/CSV/Delta with no PolyBase service required.</td></tr>
+						</tbody>
+					</table>
 				</section>
-				
-				<section data-background-image="presentation/assets/background/elephant5.jpg" data-background-opacity="0.2">
-					<h3>Supported Data Sources:  V1</h3>
-					
-					<p>PolyBase V1 supported two external data sources:</p>
-					
-					<ol>
-						<li>HDFS -- Hadoop</li>
-						<li>WASB(S) -- Blob Storage</li>
-					</ol>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/connections.jpg" data-background-opacity="0.2">
-					<h3>Supported Data Sources:  V2</h3>
-					
-					<p>PolyBase V2 includes V1 data sources as well as ODBC-based integrations:</p>
-					
-					<ol>
-						<li>SQL Server</li>
-						<li>Oracle</li>
-						<li>MongoDB / Cosmos DB</li>
-						<li>Teradata</li>
-						<li>Any ODBC connector -- Hive, Spark, Excel</li>
-					</ol>
-					
-					<p>Note that the generic ODBC connector is Windows-only.</p>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/folders.jpg" data-background-opacity="0.2">
-					<h3>Supported Data Sources:  2022</h3>
-					
-					<p>SQL Server 2022 <strong>eliminates</strong> V1 support.</p>
-					<p>In return, it introduces (or re-introduces):</p>
-					
-					<ol>
-						<li>Amazon S3</li>
-						<li>Azure Blob Storage (abs)</li>
-						<li>Azure Data Lake Storage Gen2 (adls), including Delta tables</li>
-					</ol>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/choices.jpg" data-background-opacity="0.2" data-markdown style="font-size:0.85em">
+
+				<section data-background-image="presentation/assets/background/folders.jpg" data-background-opacity="0.2" data-markdown style="font-size:0.85em">
 					<textarea data-template>
-					### Connectors and Versions
-					
-					|Data Source|2016-2019|2022|
-					|-----------|---------|----|
-					|Oracle, MongoDB, SQL Server, Teradata|Read-only (2019)|Read-only|
-					|Generic ODBC|Read-only (2019, Windows)|Read-only (Windows)|
-					|Azure Storage|Read/Write (wasbs)|Read/Write (abs/adls)|
-					|AWS S3|NONE|Read/Write|
-					|Hadoop (CDH and HDP)|Read/Write|NONE|
+					### What's New in 2025?
+
+					|Capability|2022|2025|
+					|----------|----|----|
+					|Files on Azure / S3|Requires PolyBase service|Native engine — no install|
+					|Generic ODBC connector|Windows-only|Supported on Linux|
+					|Auth options for cloud storage|SAS, access key|SAS, access key, Managed Identity|
+					|Default TDS version for SQL connectors|TDS 7.4|TDS 8.0 (breaking change)|
 					</textarea>
 				</section>
 
-				<section data-background-image="presentation/assets/background/duplicates.jpg" data-background-opacity="0.2">
-					<h3>Scale:  Out and Up</h3>
-					
-					<p>SQL Server is a classic "scale-up" technology:  if you want more power, add more RAM/CPUs/resources to the single server.</p>
+				<section data-background-image="presentation/assets/background/goats-butting-heads.jpg" data-background-opacity="0.2">
+					<h3>PolyBase vs Linked Servers</h3>
 
-					<p>Hadoop is a great example of an MPP system:  if you want more power, add more servers; the system will coordinate processing.</p>
+					<table style="font-size:0.78em; margin: 0 auto;">
+						<thead><tr><th></th><th>Linked Server</th><th>PolyBase</th></tr></thead>
+						<tbody>
+							<tr><td>Scope</td><td>Instance-level</td><td>Database-scoped</td></tr>
+							<tr><td>Drivers</td><td>OLE DB</td><td>ODBC</td></tr>
+							<tr><td>Auth</td><td>SQL and Windows auth</td><td>SQL auth only</td></tr>
+							<tr><td>Sweet spot</td><td>OLTP, distributed transactions</td><td>Analytic queries, large rowsets</td></tr>
+						</tbody>
+					</table>
+
+					<p>Query performance tends to be fairly similar between the two because of overlap in how they operate.</p>
 				</section>
-				
-				<section data-background-image="presentation/assets/background/space.jpg" data-background-opacity="0.2">
-					<h3>PolyBase and Scale</h3>
-					
-					<p>Prior to SQL Server 2022, PolyBase offered a feature known as Scale-Out Clusters, in which you could perform PolyBase commands against multiple SQL Server instances.  It looked to be the first phase in support for Massive Parallel Processing in on-premises SQL Server.</p>
-					
-					<p>It is no longer available in SQL Server 2022.  RIP.</p>
+
+				<section data-background-image="presentation/assets/background/security-padlock.jpg" data-background-opacity="0.2">
+					<h3>Security: The Big Difference</h3>
+
+					<p><strong>Linked Server</strong> security is at the <em>server</em>.  A login mapping reaches everything the remote login can see, including each database, schema, and table.</p>
+
+					<p><strong>PolyBase</strong> security is at the <em>object</em> level.  You <code>GRANT SELECT</code> on the specific external table, and that's all the user can reach, even if the underlying credential has broader access.</p>
 				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>Agenda</h3>
-					
-					<ol>
-						<li>What is PolyBase?</li>
-						<li class="active">Installation + Configuration</li>
-						<li>The Building Blocks</li>
-						<li>Cold Storage</li>
-						<li>ELT</li>
-						<li>Data Virtualization</li>
-						<li>Tuning and Administration</li>
-					</ol>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>SQL Server 2022 Installation</h3>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/01_NewInstallation.png" height="650" alt="New installation" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/02_PolyBase.png" height="650" alt="Install PolyBase components" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/03_Configuration.png" height="650" alt="Configure PolyBase" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/04_PolyBase2022Services.png" height="650" alt="Service selection for SQL Server 2022" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/05_InstallationComplete.png" height="650" alt="Installation is complete" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>SQL Server 2019 Installation</h3>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/03_V2AndV1.png" height="650" alt="Install V1 components as well" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/04_Standalone.png" height="650" alt="Install PolyBase standalone" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/05_AzulZulu.png" height="650" alt="Install Azul Zulu Open JRE" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/06_PolyBaseServices.png" height="650" alt="Configure PolyBase services" />
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<img src="presentation/assets/image/08_InstallationComplete.png" height="650" alt="Installation is complete" />
-				</section>
-				
+
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" height="650" data-background-opacity="0.4">
 					<h3>Enabling PolyBase</h3>
-					
+
 					<pre><code data-trim><script type="text/template">
-					USE [master]
+					USE [master];
 					GO
-					EXEC sp_configure
-						@configname = 'polybase enabled',
-						@configvalue = 1;
+					EXEC sp_configure 'polybase enabled', 1;
+					RECONFIGURE;
 					GO
-					-- Only needed for 2019 and earlier
-					EXEC sp_configure
-						@configname = 'hadoop connectivity',
-						@configvalue = 7;
-					GO
-					RECONFIGURE
-					GO
+					-- Then restart the SQL Server service.
 					</script></code></pre>
+
+					<p style="margin-top:1em">Only needed for database connectors (SQL Server, Cosmos DB, Postgres, Oracle). File-based queries on Azure / S3 work without it in SQL Server 2025.</p>
 				</section>
-				
-				<section data-background-image="presentation/assets/background/cobra.jpg" data-background-opacity="0.2">
-					<h3>Driver Installation</h3>
-					
-					<p>In order to use the generic ODBC connector, you need to install an appropriate ODBC driver on the machine hosting SQL Server.  Grab the right driver and follow the normal install steps.</p>
-				</section>
-				
+
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
 					<h3>Agenda</h3>
-					
+
 					<ol>
-						<li>A Historical Review</li>
-						<li>Installation + Configuration</li>
-						<li class="active">The Building Blocks</li>
-						<li>Advanced Scenarios</li>
+						<li>The Basics of PolyBase</li>
+						<li class="active">External Data Sources</li>
+						<li>External Tables</li>
+						<li>Data Virtualization</li>
+						<li>Cold Storage</li>
+						<li>Wrapping Up</li>
 					</ol>
 				</section>
 
-				<section data-background-image="presentation/assets/background/legend.jpg" data-background-opacity="0.2">
-					<h3>External Objects</h3>
-					
-					<p>Three sorts of external objects exist.</p>
-					
-					<ol>
-						<li>External Data Source</li>
-						<li>External File Format</li>
-						<li>External Table</li>
-					</ol>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/lab.jpg" data-background-opacity="0.2">
+				<section data-background-image="presentation/assets/background/data-scrabble.jpg" data-background-opacity="0.2">
 					<h3>External Data Source</h3>
-					
-					<p>An external data source tells SQL Server where it can find remote data.</p>
 
-					<p>That data does <strong>not</strong> migrate to SQL Server!  It lives on the external data source.</p>
+					<p>Tells SQL Server where the remote data lives.  Data does <strong>not</strong> migrate to your SQL Server instance. Instead, SQL Server learns how to reach it.</p>
+
+					<p style="margin-top:0.7em">Connector targets:</p>
+					<ul style="font-size:0.85em">
+						<li>Azure Blob Storage, ADLS Gen2, S3-compatible object storage</li>
+						<li>Cosmos DB (MongoDB API)</li>
+						<li>SQL Server / Azure SQL Database, Oracle, Teradata</li>
+						<li>Generic ODBC: Postgres, MySQL, others (on Linux as of 2025)</li>
+					</ul>
 				</section>
-				
+
+				<section data-background-image="presentation/assets/background/arrow-pointing-right.jpg" data-background-opacity="0.2">
+					<h3>Predicate Pushdown</h3>
+
+					<p>A naive approach pulls all rows from the external source and filters them locally. This can be very inefficient, especially for large datasets.</p>
+
+					<p>With <code>PUSHDOWN = ON</code> on the data source, supported predicates execute at the source instead. The remote engine uses its own indexes and partitioning, and only matching rows make the trip.</p>
+				</section>
+
+				<section data-background-image="presentation/assets/background/dictionary.jpg" data-background-opacity="0.2">
+					<h3>Predicate Pushdown Support</h3>
+
+					<p>Database connectors (SQL Server, Oracle, MongoDB, generic ODBC) tend to honor pushdown. Storage connectors likely will not and will send the entire file.</p>
+
+					<p>The rule of thumb: is there something on the other end that spends compute power to filter data?</p>
+				</section>
+
+				<section data-background-image="presentation/assets/background/data-stream.jpg" data-background-opacity="0.2">
+					<h3>TDS 8.0</h3>
+
+					<p>SQL-to-SQL external data sources require a trusted certificate by default in 2025. ODBC Driver 18 ships with <code>Encrypt=Yes</code> on by default, and queries may fail at runtime if the target can't present a valid certificate.</p>
+					<p style="margin-top:0.7em">This is a breaking change from previous versions, which defaulted to unencrypted connections for SQL connectors.  The new default is more secure, but may require some configuration work to get existing queries running again.</p>
+				</section>
+
+				<section data-background-image="presentation/assets/background/rubiks-cube.jpg" data-background-opacity="0.2">
+					<h3>Valid Solutions</h3>
+
+					<ul>
+						<li>Install a trusted certificate on the target server.</li>
+						<li><code>TrustServerCertificate=True</code> in <code>CONNECTION_OPTIONS</code> for self-signed scenarios.</li>
+						<li>Strict posture: <code>Encrypt=Strict</code>, <code>TrustServerCertificate=No</code>, use TLS 1.3.</li>
+					</ul>
+				</section>
+
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>Azure Blob Storage</h3>
-					
-					<pre><code data-line-numbers="|1|3|4" data-trim><script type="text/template">
-					CREATE EXTERNAL DATA SOURCE AzureNCPopBlob WITH
-					(
-						LOCATION = 'abs://ncpop@cspolybaseblob.blob.core.windows.net',
-						CREDENTIAL = AzureStorageCredential
-					);
-					</script></code></pre>
+					<h3>Agenda</h3>
+
+					<ol>
+						<li>The Basics of PolyBase</li>
+						<li>External Data Sources</li>
+						<li class="active">External Tables</li>
+						<li>Data Virtualization</li>
+						<li>Cold Storage</li>
+						<li>Wrapping Up</li>
+					</ol>
 				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>SQL Server</h3>
-					
-					<pre><code data-line-numbers="|1-2|4-9|6|7|8" data-trim><script type="text/template">
-					CREATE DATABASE SCOPED CREDENTIAL SqlWin10Credentials
-					WITH IDENTITY = 'PolyBaseUser', Secret = '<<Some Password>>';
-					GO
-					CREATE EXTERNAL DATA SOURCE SQLWIN10 WITH
-					(
-						LOCATION = 'sqlserver://SQLWIN10',
-						PUSHDOWN = ON,
-						CREDENTIAL = SqlWin10Credentials
-					);
-					</script></code></pre>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>Spark</h3>
-				
-					<pre><code data-line-numbers="|1-2|4-14|6|7|8-10|11|12|13" data-trim><script type="text/template">
-					CREATE DATABASE SCOPED CREDENTIAL SparkCredential
-					WITH IDENTITY = '<Your Username>', Secret = '<Your Password>';
-					GO
-					CREATE EXTERNAL DATA SOURCE ClusterinoSpark WITH
-					(
-						LOCATION = 'odbc://clusterino:10016',
-						CONNECTION_OPTIONS = 'Driver={Hortonworks Spark ODBC Driver};
-							Host = clusterino;
-							Port = 10016;
-							Database = default;
-							ServerNode = clusterino:10016',
-						CREDENTIAL = SparkCredential,
-						PUSHDOWN = ON
-					);
-					</script></code></pre>
-				</section>
-				
+
 				<section data-background-image="presentation/assets/background/paper-stack.jpg" data-background-opacity="0.2">
 					<h3>External File Format</h3>
-					
-					<p>An external file format tells SQL Server what type of file you intend to use.  SQL Server supports delimited files (e.g., comma or tab separated), ORC, and Parquet formats.</p>
 
-					<p>This is <strong>not</strong> required for V2 data sources, as they do not read from files.  It is required for Blob Storage/Data Lake Storage and S3.</p>
+					<p>Tells SQL Server <em>how</em> a file is shaped.  Only needed for file-based sources (Blob / ADLS / S3). ODBC-based external objects can skip this step.</p>
+
+					<p>Primary supported formats:</p>
+					<ul style="font-size:0.85em">
+						<li><code>DELIMITEDTEXT</code>: CSV, TSV, custom delimiters</li>
+						<li><code>PARQUET</code>: columnar, embedded schema, snappy or gzip compression</li>
+						<li><code>DELTA</code>: read-only</li>
+					</ul>
 				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>CSV (with Header)</h3>
-					
-					<pre><code data-line-numbers="|1|3|4-11|6|7|8|9|10" data-trim><script type="text/template">
-					CREATE EXTERNAL FILE FORMAT CsvFileFormat WITH
-					(
-						FORMAT_TYPE = DELIMITEDTEXT,
-						FORMAT_OPTIONS
-						(
-							FIELD_TERMINATOR = N',',
-							FIRST_ROW = 2,
-							USE_TYPE_DEFAULT = True,
-							STRING_DELIMITER = '"',
-							ENCODING = 'UTF8'
-						)
-					);
-					</script></code></pre>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<h3>Optimized Row Columnar (ORC)</h3>
-					
-					<pre><code data-line-numbers="|3|4" data-trim><script type="text/template">
-					CREATE EXTERNAL FILE FORMAT OrcFileFormat WITH
-					(
-						FORMAT_TYPE = ORC,
-						DATA_COMPRESSION = 'org.apache.hadoop.io.compress.DefaultCodec'
-					);
-					</script></code></pre>
-				</section>
-				
+
 				<section data-background-image="presentation/assets/background/table.jpg" data-background-opacity="0.2">
 					<h3>External Table</h3>
-					
-					<p>An external table tells SQL Server the structure of your external resource.  SQL Server requires <strong>structured</strong> data and will reject records which do not fit the data types and sizes you set.</p>
+
+					<p>The SQL Server projection over the external resource. Defines column names, types, and nullability. Looks and feels like a regular table within SQL Server.</p>
+
+					<p>External tables allow a limited set of DDL commands and do not let you create indexes or (most) constraints.</p>
 				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<pre><code data-line-numbers="|1|1-9|10-17|12|13|14|15-16" data-trim><script type="text/template">
-					CREATE EXTERNAL TABLE dbo.ParkingViolationsORC
-					(
-						SummonsNumber VARCHAR(50),
-						PlateID VARCHAR(120),
-						RegistrationState VARCHAR(30),
-						PlateType VARCHAR(50),
-						IssueDate VARCHAR(50),
-						...
-					)
-					WITH
-					(
-						DATA_SOURCE = DataLake,
-						LOCATION = N'/PolyBaseData/NYCParkingTicketsORC/',
-						FILE_FORMAT = OrcFileFormat,
-						REJECT_TYPE = VALUE,
-						REJECT_VALUE = 5000
-					);
-					</script></code></pre>
-				</section>
-				
+
 				<section data-background-image="presentation/assets/background/rejection.jpg" data-background-opacity="0.2">
 					<h3>Rejection and You</h3>
-					
-					<p>Going from unstructured to structured data is a risk:  conversions may fail.  When that happens, the PolyBase engine rejects that row.  After we meet a rejection threshold, PolyBase fails the query.</p>
+
+					<p>Type-checking is just as strict as regular tables in SQL Server. If a row does not fit the schema, PolyBase rejects it. Three knobs exist to tune this behavior:</p>
+					<ul style="font-size:0.8em">
+						<li><code>REJECT_TYPE</code> &mdash; <code>VALUE</code> (count) or <code>PERCENTAGE</code> (cumulative)</li>
+						<li><code>REJECT_VALUE</code> &mdash; the threshold; query fails when crossed</li>
+						<li><code>REJECT_SAMPLE_VALUE</code> &mdash; rows per percentage-check window</li>
+					</ul>
+
+					<p>Rejection only matters for object storage. ODBC sources require every row to be valid by definition.</p>
 				</section>
-				
-				<section data-background-image="presentation/assets/background/sound-mixer.jpg" data-background-opacity="0.2">
-					<h3>Rejection and You</h3>
-					
-					<p>The three parameters we control are:</p>
 
-					<p><code>REJECT_TYPE</code> : { <code>VALUE</code>, <code>PERCENTAGE</code> }
-
-					<p><code>REJECT_VALUE</code></p>
-
-					<p><code>REJECT_SAMPLE_VALUE</code> = Number of rows to pull in before recalculating rejection percentage.</p>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/white-wall.jpg" data-background-opacity="0.2" data-markdown>
-					<textarea data-template>
-					### Rejection and You
-
-					Suppose `REJECT_TYPE = PERCENTAGE`, `REJECT_VALUE = 20`, and `REJECT_SAMPLE_VALUE = 5000`.
-
-					|Round|Rows|Failures|%|Result|
-					|-----|----|--------|-|------|
-					|1|5000|750|15%|Continue|
-					|2|5000|1100|18.5%|Continue|
-					|3|5000|1500|22.3%|Fail|
-
-					Percentage is **cumulative**, not per-batch.
-					</textarea>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<pre><code data-line-numbers="|1-9|3|12|13|14" data-trim><script type="text/template">
-					CREATE EXTERNAL TABLE dbo.ParkingViolationsSQL
-					(
-						SummonsNumber VARCHAR(50),
-						PlateID VARCHAR(120),
-						RegistrationState VARCHAR(30),
-						PlateType VARCHAR(50),
-						IssueDate VARCHAR(50),
-						...
-					)
-					WITH
-					(
-						DATA_SOURCE = SQLCONTROL,
-						LOCATION = 'Scratch.dbo.ParkingViolationsLocal'
-					);
-					</script></code></pre>
-				</section>
-				
-				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
-					<pre><code data-line-numbers="|1-11|14|15" data-trim><script type="text/template">
-					CREATE EXTERNAL TABLE dbo.NorthCarolinaPopulationTypedSpark
-					(
-						SummaryLevel INT,
-						CountyID INT,
-						PlaceID INT,
-						IsPrimaryGeography BIT,
-						Name NVARCHAR(255),
-						PopulationType NVARCHAR(255),
-						Year INT,
-						Population INT
-					)
-					WITH
-					(
-						DATA_SOURCE = ClusterinoSpark,
-						LOCATION = 'NorthCarolinaPopulationTyped'
-					);
-					</script></code></pre>
-				</section>
-				
 				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
 					<h3>Demo Time</h3>
 				</section>
-				
+
 				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
 					<h3>Agenda</h3>
-					
+
 					<ol>
-						<li>A Historical Review</li>
-						<li>Installation + Configuration</li>
-						<li>The Building Blocks</li>
-						<li class="active">Advanced Scenarios</li>
+						<li>The Basics of PolyBase</li>
+						<li>External Data Sources</li>
+						<li>External Tables</li>
+						<li class="active">Data Virtualization</li>
+						<li>Cold Storage</li>
+						<li>Wrapping Up</li>
+					</ol>
+				</section>
+
+				<section data-background-image="presentation/assets/background/connected-devices.jpg" data-background-opacity="0.2">
+					<h3>Data Virtualization</h3>
+
+					<p>The primary use case for PolyBase is data virtualization: when data lives across multiple systems and you want to query and join it with T-SQL.</p>
+
+					<p>This technique is best for occasional federated queries. Because of performance and scalability issues, it is <strong>not</strong> a replacement for moving the data when latency or volume demand it.</p>
+				</section>
+
+				<section data-background-image="presentation/assets/background/stack.jpg" data-background-opacity="0.2">
+					<h3>The Volcano Stack</h3>
+
+					<table style="font-size:0.85em; margin: 0 auto;">
+						<thead><tr><th>Source</th><th>Technology</th><th>Holds</th></tr></thead>
+						<tbody>
+							<tr><td>Cosmos DB</td><td>MongoDB API</td><td>Volcano facts</td></tr>
+							<tr><td>Azure Blob Storage</td><td>CSV file</td><td>Country statistics</td></tr>
+							<tr><td>PostgreSQL</td><td>Generic ODBC</td><td>Volcano-type descriptions</td></tr>
+							<tr><td>SQL Server</td><td>SQL Server ODBC</td><td>Eruption history (NCEI)</td></tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
+					<h3>Demo Time</h3>
+				</section>
+
+				<section data-background-image="presentation/assets/background/writing.jpg" data-background-opacity="0.2">
+					<h3>Going the Other Way</h3>
+
+					<p>Reading external data is half the story.  PolyBase can also <strong>write</strong> a query result back out to cloud storage.</p>
+
+					<p>The mechanism is <code>CREATE EXTERNAL TABLE AS SELECT</code>, also known as CETAS.</p>
+
+					<p>CETAS requires the <code>allow polybase export</code> option to be enabled.</p>
+				</section>
+
+				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
+					<h3>Demo Time</h3>
+				</section>
+
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Agenda</h3>
+
+					<ol>
+						<li>The Basics of PolyBase</li>
+						<li>External Data Sources</li>
+						<li>External Tables</li>
+						<li>Data Virtualization</li>
+						<li class="active">Cold Storage</li>
+						<li>Wrapping Up</li>
 					</ol>
 				</section>
 
 				<section data-background-image="presentation/assets/background/ice.jpg" data-background-opacity="0.2">
 					<h3>Cold Storage</h3>
-					
-					<p>Assumptions:</p>
-					
-					<ol>
-						<li>You have one or more giant tables in SQL Server.</li>
-						<li>Users only query a small, pre-known fraction of that data (e.g., last year or last 2 years).</li>
-						<li>Occasionally someone needs this under-utilized data.</li>
-						<li>When users do need the under-utilized data, they can afford to wait a while.</li>
-					</ol>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/ice-crystals.jpg" data-background-opacity="0.2">
-					<h3>Cold Storage</h3>
-					
-					<p>Technique:  write old data to Azure Blob Storage / Hadoop and use partitioned views to join back together.</p>
-					
-					<p>Benefits:</p>
-					
-					<ol>
-						<li>Blob Storage and HDFS tend to be much cheaper than SQL Server disks</li>
-						<li>Less data >> faster queries on SQL server</li>
-						<li>Partitioned views mean no code changes are necessary and queries automatically benefit</li>
-					</ol>
-				</section>
 
-				<section data-background-image="presentation/assets/background/tunnel.jpg" data-background-opacity="0.2">
-					<h3>ELT</h3>
-					
-					<p>Assumptions:</p>
-					
-					<ol>
-						<li>You need the same data in multiple databases, such as OLTP + warehouse</li>
-						<li>You have processes in place (e.g., SSIS packages) to Extract, Transform, and Load this data</li>
-						<li>You have a large amount of data</li>
-					</ol>
-				</section>
-				
-				<section data-background-image="presentation/assets/background/chain.jpg" data-background-opacity="0.2">
-					<h3>ELT</h3>
-					
-					<p>Technique:  instead of Extract-Transform-Load, use PolyBase and the Extract-Load-Transform (ELT) pattern to land and transform data.</p>
-					
-					<p>Benefits:</p>
-					
-					<ol>
-						<li>ELT is typically less memory-intensive than ETL</li>
-						<li>ELT scales to larger data sizes than ETL</li>
-						<li>ELT with PolyBase lets you stick with T-SQL instead of T-SQL + SSIS / Biml + C#</li>
-					</ol>
+					<p>Your SQL Server-based disks are likely very fast and very expensive. As data ages, we can move it to cheaper (but slower) storage options, while still being able to query it when necessary.</p>
+
+					<p>A view can (optionally) stitch the two halves together so the application sees one table, regardless of where the bytes actually live.</p>
+
+					<p style="margin-top:0.7em; font-size:0.85em">Best when older data is rarely touched but still occasionally needed for compliance, history, or analytics.</p>
 				</section>
 
 				<section data-background-image="presentation/assets/background/stack.jpg" data-background-opacity="0.2">
-					<h3>Data Virtualization</h3>
-					
-					<p>Assumptions:</p>
-					
-					<ol>
-						<li>You have data in several, different source systems</li>
-						<li>These source systems use several technologies, such as SQL Server, Oracle, Spark, Cosmos DB, etc.</li>
-						<li>You would like to query these source systems with T-SQL and integrate them together in your queries</li>
-						<li>Performance is not a key consideration</li>
-					</ol>
+					<h3>The Raleigh Fire Stack</h3>
+
+					<table style="font-size:0.85em; margin: 0 auto;">
+						<thead><tr><th>Tier</th><th>Years</th><th>Where it lives</th></tr></thead>
+						<tbody>
+							<tr><td>Hot</td><td>2024 &ndash; 2025</td><td>Local SQL Server tables</td></tr>
+							<tr><td>Cold</td><td>2007 &ndash; 2023</td><td>Parquet on S3 (MinIO)</td></tr>
+							<tr><td>Stitch</td><td>All years</td><td>One view, <code>UNION ALL</code> across the year tables</td></tr>
+						</tbody>
+					</table>
+
+					<p style="margin-top:1em; font-size:0.8em">Each year table carries a <code>CHECK</code> constraint on <code>dispatch_date_time</code> so the optimizer can skip partitions.</p>
 				</section>
-				
-				<section data-background-image="presentation/assets/background/flexible.jpg" data-background-opacity="0.2">
-					<h3>Data Virtualization</h3>
-					
-					<p>Technique:  use PolyBase external data sources and external tables to create SQL Server representations of data sets.</p>
-					
-					<p>Benefits:</p>
-					
-					<ol>
-						<li>One language to query them all</li>
-						<li>Users do not need to know where the data really lives</li>
-						<li>All filtering, reshaping, and data logic works as T-SQL regardless of the data's origin</li>
-					</ol>
+
+				<section data-background-image="presentation/assets/background/snow-plow.jpg" data-background-opacity="0.2">
+					<h3>Partition Elimination</h3>
+
+					<p>When a query filters by date, the optimizer reads each table's <code>CHECK</code> constraint and prunes the partitions that can't contribute rows.</p>
+
+					<p>Cold partitions only get touched when the query actually references that data. Otherwise, we don't need to waste the compute resources.</p>
 				</section>
-				
+
 				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
 					<h3>Demo Time</h3>
 				</section>
 
-				<section data-background-image="presentation/assets/background/wrappingup.jpg" data-background-opacity="0.2">
-					<h3>Wrapping Up</h3>
-					
-					<p>SQL Server 2022 offers an update to data virtualization, retaining ODBC-based PolyBase and adding an API-based virtualization process.</p>
-					
-					<p>Data virtualization in SQL Server has a number of useful business cases.  It won't give you the greatest performance, but if you want a unified SQL interface and performance is not a top consideration, it does the job.</p>
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Agenda</h3>
+
+					<ol>
+						<li>The Basics of PolyBase</li>
+						<li>External Data Sources</li>
+						<li>External Tables</li>
+						<li>Data Virtualization</li>
+						<li>Cold Storage</li>
+						<li class="active">Wrapping Up</li>
+					</ol>
 				</section>
-				
+
+				<section data-background-image="presentation/assets/background/wrappingup.jpg" data-background-opacity="0.2">
+					<h3>Recap</h3>
+
+					<ul>
+						<li>SQL Server can query remote databases and external storage (Azure Blob Storage or Amazon S3) via T-SQL.</li>
+						<li>In 2025, file queries are built into the engine, meaning no separate PolyBase service is required for that task.</li>
+						<li>Microsoft continues to invest in external object capabilities.</li>
+						<li>PolyBase is best when you need to join heterogeneous, remote data sources and performance is not the primary concern.</li>
+					</ul>
+				</section>
+
 				<section data-background-image="presentation/assets/background/wrappingup.jpg" data-background-opacity="0.2">
 					<h3>Wrapping Up</h3>
-					
+
 					<p>
 						To learn more, go here:
 						<br />
@@ -621,7 +430,7 @@
 					<p>
 						Catallaxy Services consulting:
 						<br />
-						<a href="https://csmore.info/contact">https://CSmore.info/on/contact</a>
+						<a href="https://csmore.info/contact">https://csmore.info/contact</a>
 					</p>
 				</section>
 			</div>
@@ -648,7 +457,7 @@
 				center: true,
 				hash: true,
 				transition: 'fade',
-				
+
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath, RevealMenu, RevealChart ]

@@ -1,0 +1,51 @@
+-- Create the eruption fact table and bulk-load the curated NCEI dataset
+-- from the bind-mounted data directory. Idempotent: re-running drops and
+-- recreates the table, so docker compose down -v + up gives a fresh load.
+
+USE [ExternalExample];
+GO
+
+IF (OBJECT_ID('dbo.Eruption', 'U') IS NOT NULL)
+    DROP TABLE dbo.Eruption;
+GO
+
+CREATE TABLE dbo.Eruption
+(
+    EruptionId        INT NOT NULL PRIMARY KEY CLUSTERED,
+    VolcanoName       NVARCHAR(150) NOT NULL,
+    Country           NVARCHAR(75)  NOT NULL,
+    Region            NVARCHAR(150) NULL,
+    Latitude          FLOAT         NULL,
+    Longitude         FLOAT         NULL,
+    Elevation         INT           NULL,
+    Morphology        NVARCHAR(75)  NULL,
+    EventYear         INT           NOT NULL,
+    EventMonth        TINYINT       NULL,
+    EventDay          TINYINT       NULL,
+    VEI               TINYINT       NULL,
+    DeathsTotal       INT           NULL,
+    InjuriesTotal     INT           NULL,
+    HousesDestroyed   INT           NULL,
+    DamageMillionsUSD FLOAT         NULL,
+    Agent             VARCHAR(20)   NULL,
+    TimeErupt         VARCHAR(10)   NULL,
+    [Status]          VARCHAR(50)   NULL
+);
+GO
+
+BULK INSERT dbo.Eruption
+FROM '/var/opt/mssql/data-shared/VolcanoEruptions.csv'
+WITH
+(
+    FORMAT          = 'CSV',
+    FIRSTROW        = 2,
+    FIELDQUOTE      = '"',
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR   = '0x0a',
+    TABLOCK
+);
+GO
+
+-- Grant the PolyBase reader login SELECT-only access. Rendered from REMOTE_SQL_USER.
+GRANT SELECT ON dbo.Eruption TO [${REMOTE_SQL_USER}];
+GO

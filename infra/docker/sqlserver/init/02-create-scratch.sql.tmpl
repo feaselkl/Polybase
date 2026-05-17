@@ -1,0 +1,20 @@
+-- Rendered with envsubst at first boot. ${MASTER_KEY_PASSWORD} comes from .env.
+USE [master];
+GO
+IF (DB_ID('Scratch') IS NULL)
+BEGIN
+    CREATE DATABASE Scratch;
+END
+GO
+USE Scratch;
+GO
+IF NOT EXISTS
+(
+    SELECT 1
+    FROM sys.symmetric_keys
+    WHERE name LIKE '%DatabaseMasterKey%'
+)
+BEGIN
+    CREATE MASTER KEY ENCRYPTION BY PASSWORD = '${MASTER_KEY_PASSWORD}';
+END
+GO

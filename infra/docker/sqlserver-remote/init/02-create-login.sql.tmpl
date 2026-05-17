@@ -1,0 +1,23 @@
+-- SQL login the primary will authenticate as when reading the eruption table.
+-- The login is mapped to a database user with SELECT on dbo.Eruption only.
+-- Rendered with envsubst at first boot from REMOTE_SQL_USER / REMOTE_SQL_PASSWORD.
+
+USE [master];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.server_principals WHERE name = N'${REMOTE_SQL_USER}')
+BEGIN
+    CREATE LOGIN [${REMOTE_SQL_USER}]
+        WITH PASSWORD = '${REMOTE_SQL_PASSWORD}',
+             CHECK_POLICY = OFF;
+END
+GO
+
+USE [ExternalExample];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'${REMOTE_SQL_USER}')
+BEGIN
+    CREATE USER [${REMOTE_SQL_USER}] FOR LOGIN [${REMOTE_SQL_USER}];
+END
+GO
